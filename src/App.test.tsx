@@ -1,0 +1,64 @@
+import { render, screen } from '@testing-library/react';
+import App from './App';
+
+describe('Landing page RC Motorista', () => {
+  it('renderiza a promessa principal e CTAs de conversao', () => {
+    render(<App />);
+
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: /motorista particular com atendimento profissional/i,
+      }),
+    ).toBeInTheDocument();
+
+    expect(screen.getByText(/transporte particular e executivo com Rafael Corsini/i)).toBeInTheDocument();
+    expect(screen.getAllByRole('link', { name: /agendar pelo whatsapp/i }).length).toBeGreaterThan(0);
+    expect(screen.getAllByRole('link', { name: /ver instagram/i }).length).toBeGreaterThan(0);
+  });
+
+  it('mantem navegacao curta para as secoes principais', () => {
+    render(<App />);
+
+    expect(screen.getByRole('banner')).toBeInTheDocument();
+    expect(screen.getByRole('navigation', { name: /navegacao principal/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /serviços/i })).toHaveAttribute('href', '#servicos');
+    expect(screen.getByRole('link', { name: /diferenciais/i })).toHaveAttribute('href', '#diferenciais');
+    expect(screen.getByRole('link', { name: /contato/i })).toHaveAttribute('href', '#contato');
+  });
+
+  it('exibe servicos, diferenciais e fluxo de agendamento', () => {
+    render(<App />);
+
+    expect(screen.getByRole('heading', { name: /serviços para cada compromisso/i })).toBeInTheDocument();
+    expect(screen.getByText(/transfers para aeroportos/i)).toBeInTheDocument();
+    expect(screen.getByText(/compromissos executivos/i)).toBeInTheDocument();
+    expect(screen.getByText(/eventos e ocasiões especiais/i)).toBeInTheDocument();
+    expect(screen.getByText(/viagens particulares/i)).toBeInTheDocument();
+    expect(screen.getByText(/atendimento recorrente/i)).toBeInTheDocument();
+
+    expect(screen.getByRole('heading', { name: /diferenciais pensados para sua rotina/i })).toBeInTheDocument();
+    expect(screen.getByText(/pontualidade/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/discrição/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/comunicação rápida/i).length).toBeGreaterThan(0);
+
+    expect(screen.getByRole('heading', { name: /como funciona/i })).toBeInTheDocument();
+    expect(screen.getByText(/chame no whatsapp/i)).toBeInTheDocument();
+    expect(screen.getByText(/informe trajeto, data e horário/i)).toBeInTheDocument();
+    expect(screen.getByText(/receba a confirmação/i)).toBeInTheDocument();
+  });
+
+  it('oferece prova social editavel e contatos com links validos', () => {
+    render(<App />);
+
+    expect(screen.getByRole('heading', { name: /clientes que priorizam confiança/i })).toBeInTheDocument();
+    expect(screen.getAllByText(/depoimento editável/i).length).toBeGreaterThanOrEqual(2);
+
+    const whatsappLinks = screen.getAllByRole('link', { name: /whatsapp/i });
+    expect(whatsappLinks.some((link) => link.getAttribute('href')?.startsWith('https://wa.me/55'))).toBe(true);
+
+    const instagramLinks = screen.getAllByRole('link', { name: /instagram/i });
+    expect(instagramLinks.some((link) => link.getAttribute('href')?.includes('instagram.com'))).toBe(true);
+    expect(screen.getByRole('link', { name: /telefone/i })).toHaveAttribute('href', expect.stringMatching(/^tel:\+55/));
+  });
+});
