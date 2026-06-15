@@ -8,7 +8,7 @@ O projeto foi desenvolvido como uma peca de portfolio, com stack moderna, fluxo 
 
 - Projeto em desenvolvimento na branch `develop`.
 - Branch `main` reservada para versao estavel/deploy.
-- Deploy Vercel: a definir apos publicacao.
+- Deploy Vercel: https://landing-page-rc-motorista.vercel.app
 
 ## Stack
 
