@@ -64,7 +64,7 @@ export function Hero() {
                 <Route aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-sky-300" />
                 <div>
                   <p className="font-semibold text-white">Trajeto planejado</p>
-                  <p className="text-sm text-slate-400">Origem, destino e horário alinhados antes da saída.</p>
+                  <p className="text-sm text-slate-400">Origem, destino e horário alinhados antes da partida.</p>
                 </div>
               </div>
               <div className="flex gap-4">

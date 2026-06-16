@@ -12,7 +12,7 @@ describe('Landing page RC Motorista', () => {
       }),
     ).toBeInTheDocument();
 
-    expect(screen.getByText(/transporte executivo com Rafael Corsini/i)).toBeInTheDocument();
+    expect(screen.getByText(/transporte exclusivo com motorista executivo/i)).toBeInTheDocument();
     expect(screen.getAllByRole('link', { name: /agendar pelo whatsapp/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole('link', { name: /ver instagram/i }).length).toBeGreaterThan(0);
   });
@@ -30,15 +30,15 @@ describe('Landing page RC Motorista', () => {
   it('exibe servicos, diferenciais e fluxo de agendamento', () => {
     render(<App />);
 
-    expect(screen.getByRole('heading', { name: /serviços para cada compromisso/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /serviços personalizados para cada compromisso/i })).toBeInTheDocument();
     expect(screen.getByText(/transfers para aeroportos/i)).toBeInTheDocument();
     expect(screen.getByText(/compromissos executivos/i)).toBeInTheDocument();
     expect(screen.getByText(/eventos e ocasiões especiais/i)).toBeInTheDocument();
     expect(screen.getByText(/viagens particulares/i)).toBeInTheDocument();
-    expect(screen.getByText(/atendimento recorrente/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /atendimento recorrente/i })).toBeInTheDocument();
 
     expect(screen.getByRole('heading', { name: /diferenciais pensados para sua rotina/i })).toBeInTheDocument();
-    expect(screen.getByText(/pontualidade/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /pontualidade/i })).toBeInTheDocument();
     expect(screen.getAllByText(/discrição/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/atendimento direto/i)).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: /conforto/i })).toBeInTheDocument();
@@ -47,7 +47,7 @@ describe('Landing page RC Motorista', () => {
     expect(screen.getByRole('heading', { name: /como funciona/i })).toBeInTheDocument();
     expect(screen.getByText(/chame no whatsapp/i)).toBeInTheDocument();
     expect(screen.getByText(/informe trajeto, data e horário/i)).toBeInTheDocument();
-    expect(screen.getByText(/receba a confirmação/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /receba a confirmação/i })).toBeInTheDocument();
   });
 
   it('remove a prova social e mantem contatos com links validos', () => {

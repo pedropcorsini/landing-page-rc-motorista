@@ -11,7 +11,7 @@ export function HowItWorks() {
               Como funciona
             </h2>
             <p className="mt-4 text-lg leading-8 text-slate-400">
-              O processo foi pensado para remover fricção: poucas etapas, informações objetivas e confirmação direta.
+              Solicite seu atendimento, informe os detalhes do compromisso e receba a confirmação com todas as informações necessárias.
             </p>
           </div>
 
