@@ -10,9 +10,9 @@ export const site = {
   whatsappHref: `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
   instagramHandle: '@rcmotorista',
   instagramHref: 'https://www.instagram.com/rcmotorista/',
-  headline: 'Motorista particular com atendimento profissional, pontual e discreto.',
+  headline: 'Motorista Executivo com atendimento profissional, pontual e discreto.',
   subheadline:
-    'Transporte particular e executivo com Rafael Corsini para aeroportos, compromissos, eventos e viagens agendadas.',
+    'Transporte executivo com Rafael Corsini para aeroportos, compromissos, eventos e viagens agendadas.',
   nav: [
     { label: 'Serviços', href: '#servicos' },
     { label: 'Diferenciais', href: '#diferenciais' },
@@ -58,10 +58,6 @@ export const site = {
       title: 'Conforto',
       description: 'Experiência tranquila, organizada e adequada para deslocamentos importantes.',
     },
-    {
-      title: 'Comunicação rápida',
-      description: 'Confirmações e ajustes pelo WhatsApp para facilitar o agendamento.',
-    },
   ],
   steps: [
     {
@@ -75,23 +71,6 @@ export const site = {
     {
       title: 'Receba a confirmação',
       description: 'Rafael confirma disponibilidade, combina os detalhes e organiza o atendimento.',
-    },
-  ],
-  testimonials: [
-    {
-      label: 'Depoimento editável',
-      quote: 'Atendimento pontual e muito profissional. Recomendo para viagens ao aeroporto.',
-      author: 'Cliente particular',
-    },
-    {
-      label: 'Depoimento editável',
-      quote: 'Motorista educado, discreto e confiável para compromissos importantes.',
-      author: 'Cliente executivo',
-    },
-    {
-      label: 'Depoimento editável',
-      quote: 'Comunicação rápida e serviço organizado do início ao fim.',
-      author: 'Cliente recorrente',
     },
   ],
 } as const;

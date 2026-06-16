@@ -8,11 +8,11 @@ describe('Landing page RC Motorista', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: /motorista particular com atendimento profissional/i,
+        name: /motorista executivo com atendimento profissional/i,
       }),
     ).toBeInTheDocument();
 
-    expect(screen.getByText(/transporte particular e executivo com Rafael Corsini/i)).toBeInTheDocument();
+    expect(screen.getByText(/transporte executivo com Rafael Corsini/i)).toBeInTheDocument();
     expect(screen.getAllByRole('link', { name: /agendar pelo whatsapp/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole('link', { name: /ver instagram/i }).length).toBeGreaterThan(0);
   });
@@ -40,7 +40,9 @@ describe('Landing page RC Motorista', () => {
     expect(screen.getByRole('heading', { name: /diferenciais pensados para sua rotina/i })).toBeInTheDocument();
     expect(screen.getByText(/pontualidade/i)).toBeInTheDocument();
     expect(screen.getAllByText(/discrição/i).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/comunicação rápida/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/atendimento direto/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /conforto/i })).toBeInTheDocument();
+    expect(screen.queryByText(/comunicação rápida/i)).not.toBeInTheDocument();
 
     expect(screen.getByRole('heading', { name: /como funciona/i })).toBeInTheDocument();
     expect(screen.getByText(/chame no whatsapp/i)).toBeInTheDocument();
@@ -48,11 +50,12 @@ describe('Landing page RC Motorista', () => {
     expect(screen.getByText(/receba a confirmação/i)).toBeInTheDocument();
   });
 
-  it('oferece prova social editavel e contatos com links validos', () => {
+  it('remove a prova social e mantem contatos com links validos', () => {
     render(<App />);
 
-    expect(screen.getByRole('heading', { name: /clientes que priorizam confiança/i })).toBeInTheDocument();
-    expect(screen.getAllByText(/depoimento editável/i).length).toBeGreaterThanOrEqual(2);
+    expect(screen.queryByText(/prova social/i)).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: /clientes que priorizam confiança/i })).not.toBeInTheDocument();
+    expect(screen.queryByText(/depoimento editável/i)).not.toBeInTheDocument();
 
     const whatsappLinks = screen.getAllByRole('link', { name: /whatsapp/i });
     expect(whatsappLinks.some((link) => link.getAttribute('href')?.startsWith('https://wa.me/5511952946402'))).toBe(

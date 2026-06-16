@@ -28,7 +28,6 @@ O projeto foi desenvolvido como uma peca de portfolio, com stack moderna, fluxo 
 - Secao de servicos oferecidos.
 - Secao de diferenciais do atendimento.
 - Fluxo simples de agendamento em 3 passos.
-- Depoimentos editaveis para futura substituicao por relatos reais.
 - Contato final com WhatsApp, Instagram, telefone e regiao de atendimento.
 - Dados principais centralizados em `src/data/site.ts`.
 - Layout responsivo com visual dark premium.
@@ -63,7 +62,6 @@ src/
     Services.tsx
     Differentials.tsx
     HowItWorks.tsx
-    Testimonials.tsx
     Contact.tsx
     Footer.tsx
   data/
@@ -103,5 +101,4 @@ O arquivo `vercel.json` ja define o comando de build e diretorio de saida.
 ## Observacoes
 
 - Informacoes de telefone, WhatsApp, Instagram e regiao ficam centralizadas em `src/data/site.ts` para manutencao simples.
-- Depoimentos foram marcados como editaveis para evitar prova social falsa.
 - O plano original do projeto esta em `PLAN.md`.
