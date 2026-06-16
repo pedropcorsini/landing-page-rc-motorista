@@ -102,6 +102,6 @@ O arquivo `vercel.json` ja define o comando de build e diretorio de saida.
 
 ## Observacoes
 
-- Informacoes de telefone, WhatsApp, Instagram e regiao sao provisórias e devem ser atualizadas em `src/data/site.ts`.
+- Informacoes de telefone, WhatsApp, Instagram e regiao ficam centralizadas em `src/data/site.ts` para manutencao simples.
 - Depoimentos foram marcados como editaveis para evitar prova social falsa.
 - O plano original do projeto esta em `PLAN.md`.

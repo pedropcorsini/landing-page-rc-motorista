@@ -55,10 +55,32 @@ describe('Landing page RC Motorista', () => {
     expect(screen.getAllByText(/depoimento editável/i).length).toBeGreaterThanOrEqual(2);
 
     const whatsappLinks = screen.getAllByRole('link', { name: /whatsapp/i });
-    expect(whatsappLinks.some((link) => link.getAttribute('href')?.startsWith('https://wa.me/55'))).toBe(true);
+    expect(whatsappLinks.some((link) => link.getAttribute('href')?.startsWith('https://wa.me/5511952946402'))).toBe(
+      true,
+    );
 
     const instagramLinks = screen.getAllByRole('link', { name: /instagram/i });
-    expect(instagramLinks.some((link) => link.getAttribute('href')?.includes('instagram.com'))).toBe(true);
+    expect(instagramLinks.some((link) => link.getAttribute('href') === 'https://www.instagram.com/rcmotorista/')).toBe(
+      true,
+    );
     expect(screen.getByRole('link', { name: /telefone/i })).toHaveAttribute('href', expect.stringMatching(/^tel:\+55/));
+    expect(screen.getByText('(11) 95294-6402')).toBeInTheDocument();
+  });
+
+  it('exibe footer com icones sociais discretos e creditos', () => {
+    render(<App />);
+
+    expect(screen.getByText(/2026 RC Motorista/i)).toBeInTheDocument();
+    expect(screen.getByText(/todos os direitos reservados/i)).toBeInTheDocument();
+    expect(screen.getByText(/desenvolvido por Pedro Passos Corsini/i)).toBeInTheDocument();
+
+    expect(screen.getByRole('link', { name: /whatsapp no rodape/i })).toHaveAttribute(
+      'href',
+      expect.stringContaining('https://wa.me/5511952946402'),
+    );
+    expect(screen.getByRole('link', { name: /instagram no rodape/i })).toHaveAttribute(
+      'href',
+      'https://www.instagram.com/rcmotorista/',
+    );
   });
 });
