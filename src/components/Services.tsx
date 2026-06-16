@@ -12,7 +12,7 @@ export function Services() {
           <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
             Serviços personalizados para cada compromisso
           </h2>
-          <p className="mt-4 text-lg leading-8 text-slate-400">
+          <p className="mt-4 text-lg leading-8 text-white/60">
             Do transfer ao atendimento recorrente, cada trajeto é planejado para oferecer conforto, segurança e previsibilidade.
           </p>
         </div>
@@ -30,7 +30,7 @@ export function Services() {
                   <Icon aria-hidden="true" className="h-5 w-5" />
                 </div>
                 <h3 className="font-heading text-lg font-semibold text-white">{service.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-400">{service.description}</p>
+                <p className="mt-3 text-sm leading-6 text-white/60">{service.description}</p>
               </article>
             );
           })}

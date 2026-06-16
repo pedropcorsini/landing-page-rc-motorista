@@ -8,7 +8,7 @@ import { Services } from './components/Services';
 
 export default function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-ink text-slate-50 antialiased">
+    <div className="min-h-screen overflow-x-hidden bg-ink text-white antialiased">
       <Header />
       <main>
         <Hero />

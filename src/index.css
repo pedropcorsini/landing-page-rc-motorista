@@ -7,7 +7,7 @@
 :root {
   color-scheme: dark;
   font-family: 'Nunito Sans', system-ui, sans-serif;
-  background: #070a0f;
+  background: #070707;
 }
 
 html {
@@ -17,7 +17,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #070a0f;
+  background: #070707;
 }
 
 * {
