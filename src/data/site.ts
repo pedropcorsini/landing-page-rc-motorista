@@ -12,17 +12,17 @@ export const site = {
   instagramHref: 'https://www.instagram.com/rcmotorista/',
   headline: 'Motorista Executivo com atendimento profissional, pontual e discreto.',
   subheadline:
-    'Transporte executivo com Rafael Corsini para aeroportos, compromissos, eventos e viagens agendadas.',
+    'Transporte exclusivo com Motorista Executivo para aeroportos, compromissos, eventos e viagens.',
   nav: [
     { label: 'Serviços', href: '#servicos' },
     { label: 'Diferenciais', href: '#diferenciais' },
     { label: 'Contato', href: '#contato' },
   ],
-  trustBadges: ['Atendimento sob agendamento', 'Rotas planejadas', 'Contato direto'],
+  trustBadges: ['Atendimento por agendamento', 'Rotas planejadas', 'Contato direto'],
   services: [
     {
       title: 'Transfers para aeroportos',
-      description: 'Chegadas e partidas com horário combinado, rota definida e acompanhamento direto.',
+      description: 'Atendimento receptivo em chegadas e apoio em partidas, rotas definidas e acompanhamento direto.',
     },
     {
       title: 'Compromissos executivos',
@@ -30,7 +30,7 @@ export const site = {
     },
     {
       title: 'Eventos e ocasiões especiais',
-      description: 'Atendimento pontual para jantares, festas, cerimônias e eventos particulares.',
+      description: 'Atendimento pontual e discreto para eventos diversos, show, jantares e eventos particulares.',
     },
     {
       title: 'Viagens particulares',
@@ -38,7 +38,7 @@ export const site = {
     },
     {
       title: 'Atendimento recorrente',
-      description: 'Rotinas semanais ou mensais para quem precisa de um motorista de confiança.',
+      description: 'Rotinas semanais ou mensais para quem precisa de um motorista de confiança. Disponibilidade sob consulta.',
     },
   ],
   differentials: [

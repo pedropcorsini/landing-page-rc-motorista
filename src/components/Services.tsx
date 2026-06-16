@@ -10,10 +10,10 @@ export function Services() {
         <div className="max-w-2xl">
           <p className="text-sm font-bold uppercase tracking-[0.24em] text-brand">Serviços</p>
           <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
-            Serviços para cada compromisso
+            Serviços personalizados para cada compromisso
           </h2>
           <p className="mt-4 text-lg leading-8 text-slate-400">
-            Uma página clara para converter interessados em conversas reais, com serviços descritos sem exageros.
+            Do transfer ao atendimento recorrente, cada trajeto é planejado para oferecer conforto, segurança e previsibilidade.
           </p>
         </div>
 

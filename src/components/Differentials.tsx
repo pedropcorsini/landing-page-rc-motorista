@@ -19,7 +19,7 @@ export function Differentials() {
           </div>
           <div className="mt-8 rounded-3xl border border-brand/20 bg-brand/10 p-5 text-sky-100">
             <CheckCircle2 aria-hidden="true" className="mb-3 h-6 w-6 text-brand" />
-            <p className="font-semibold">Ideal para quem precisa de previsibilidade, discrição e contato direto com o motorista.</p>
+            <p className="font-semibold">Ideal para quem precisa de pontualidade, discrição, conforto, segurança e contato direto com o motorista.</p>
           </div>
         </div>
 
