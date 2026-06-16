@@ -1,4 +1,4 @@
-import { MessageCircle } from 'lucide-react';
+import { WhatsAppIcon } from './BrandIcons';
 import { site } from '../data/site';
 
 export function Header() {
@@ -31,7 +31,7 @@ export function Header() {
           className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink transition-colors duration-200 hover:bg-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
           aria-label="WhatsApp"
         >
-          <MessageCircle aria-hidden="true" className="h-4 w-4" />
+          <WhatsAppIcon className="h-4 w-4" />
           <span>WhatsApp</span>
         </a>
       </div>

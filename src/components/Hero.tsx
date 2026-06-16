@@ -1,4 +1,5 @@
-import { ArrowRight, CalendarCheck, Camera, MapPin, MessageCircle, Route } from 'lucide-react';
+import { CalendarCheck, MapPin, Route } from 'lucide-react';
+import { InstagramIcon, WhatsAppIcon } from './BrandIcons';
 import { site } from '../data/site';
 
 export function Hero() {
@@ -20,14 +21,14 @@ export function Hero() {
               href={site.whatsappHref}
               className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-4 text-base font-bold text-ink transition-colors duration-200 hover:bg-[#42e37c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
             >
+              <WhatsAppIcon className="h-5 w-5" />
               Agendar pelo WhatsApp
-              <ArrowRight aria-hidden="true" className="h-5 w-5" />
             </a>
             <a
               href={site.instagramHref}
               className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-4 text-base font-semibold text-white transition-colors duration-200 hover:border-white/30 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
             >
-              <Camera aria-hidden="true" className="h-5 w-5" />
+              <InstagramIcon className="h-5 w-5" />
               Ver Instagram
             </a>
           </div>
@@ -67,7 +68,7 @@ export function Hero() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <MessageCircle aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-sky-300" />
+                <WhatsAppIcon className="mt-1 h-5 w-5 flex-none text-sky-300" />
                 <div>
                   <p className="font-semibold text-white">Contato direto</p>
                   <p className="text-sm text-slate-400">Agendamento e confirmação pelo WhatsApp.</p>
@@ -79,6 +80,7 @@ export function Hero() {
               href={site.whatsappHref}
               className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-2xl border border-whatsapp/30 bg-whatsapp/10 px-5 py-4 font-bold text-whatsapp transition-colors duration-200 hover:bg-whatsapp/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
             >
+              <WhatsAppIcon className="h-5 w-5" />
               Agendar pelo WhatsApp
             </a>
           </div>

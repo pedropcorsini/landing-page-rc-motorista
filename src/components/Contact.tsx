@@ -1,4 +1,5 @@
-import { ArrowRight, Camera, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { ArrowRight, MapPin, Phone } from 'lucide-react';
+import { InstagramIcon, WhatsAppIcon } from './BrandIcons';
 import { site } from '../data/site';
 
 export function Contact() {
@@ -20,6 +21,7 @@ export function Contact() {
                 href={site.whatsappHref}
                 className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-4 font-bold text-ink transition-colors duration-200 hover:bg-[#42e37c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
               >
+                <WhatsAppIcon className="h-5 w-5" />
                 Agendar pelo WhatsApp
                 <ArrowRight aria-hidden="true" className="h-5 w-5" />
               </a>
@@ -27,7 +29,7 @@ export function Contact() {
                 href={site.instagramHref}
                 className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-4 font-semibold text-white transition-colors duration-200 hover:border-white/30 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
               >
-                <Camera aria-hidden="true" className="h-5 w-5" />
+                <InstagramIcon className="h-5 w-5" />
                 Ver Instagram
               </a>
             </div>
@@ -40,7 +42,7 @@ export function Contact() {
                 className="flex cursor-pointer items-center gap-4 rounded-3xl border border-white/10 bg-ink/50 p-5 transition-colors duration-200 hover:border-whatsapp/40 hover:bg-whatsapp/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
                 aria-label="WhatsApp"
               >
-                <MessageCircle aria-hidden="true" className="h-6 w-6 text-whatsapp" />
+                <WhatsAppIcon className="h-6 w-6 text-whatsapp" />
                 <div>
                   <p className="font-semibold text-white">WhatsApp</p>
                   <p className="text-sm text-slate-400">Resposta direta para agendamento</p>
@@ -51,7 +53,7 @@ export function Contact() {
                 className="flex cursor-pointer items-center gap-4 rounded-3xl border border-white/10 bg-ink/50 p-5 transition-colors duration-200 hover:border-brand/40 hover:bg-brand/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
                 aria-label="Instagram"
               >
-                <Camera aria-hidden="true" className="h-6 w-6 text-brand" />
+                <InstagramIcon className="h-6 w-6 text-brand" />
                 <div>
                   <p className="font-semibold text-white">Instagram</p>
                   <p className="text-sm text-slate-400">{site.instagramHandle}</p>

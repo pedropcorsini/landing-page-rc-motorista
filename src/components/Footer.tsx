@@ -1,4 +1,4 @@
-import { Camera, MessageCircle } from 'lucide-react';
+import { InstagramIcon, WhatsAppIcon } from './BrandIcons';
 import { site } from '../data/site';
 
 export function Footer() {
@@ -18,14 +18,14 @@ export function Footer() {
             className="grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-white/10 text-slate-400 transition-colors duration-200 hover:border-whatsapp/40 hover:text-whatsapp focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
             aria-label="WhatsApp no rodape"
           >
-            <MessageCircle aria-hidden="true" className="h-4 w-4" />
+            <WhatsAppIcon className="h-4 w-4" />
           </a>
           <a
             href={site.instagramHref}
             className="grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-white/10 text-slate-400 transition-colors duration-200 hover:border-brand/40 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
             aria-label="Instagram no rodape"
           >
-            <Camera aria-hidden="true" className="h-4 w-4" />
+            <InstagramIcon className="h-4 w-4" />
           </a>
         </div>
       </div>
