@@ -8,9 +8,9 @@ export function HowItWorks() {
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-brand">Agendamento</p>
             <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
-              Como funciona
+              Como funciona?
             </h2>
-            <p className="mt-4 text-lg leading-8 text-slate-400">
+            <p className="mt-4 text-lg leading-8 text-white/60">
               Solicite seu atendimento, informe os detalhes do compromisso e receba a confirmação com todas as informações necessárias.
             </p>
           </div>
@@ -22,7 +22,7 @@ export function HowItWorks() {
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <h3 className="mt-5 font-heading text-lg font-semibold text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-400">{step.description}</p>
+                <p className="mt-3 text-sm leading-6 text-white/60">{step.description}</p>
               </article>
             ))}
           </div>

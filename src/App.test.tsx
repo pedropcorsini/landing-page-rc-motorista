@@ -8,7 +8,7 @@ describe('Landing page RC Motorista', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: /motorista executivo com atendimento profissional/i,
+        name: /motorista executivo para quem valoriza pontualidade/i,
       }),
     ).toBeInTheDocument();
 
@@ -38,10 +38,10 @@ describe('Landing page RC Motorista', () => {
     expect(screen.getByRole('heading', { name: /atendimento recorrente/i })).toBeInTheDocument();
 
     expect(screen.getByRole('heading', { name: /diferenciais pensados para sua rotina/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /pontualidade/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: /pontualidade/i })).toBeInTheDocument();
     expect(screen.getAllByText(/discrição/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/atendimento direto/i)).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /conforto/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: /conforto/i })).toBeInTheDocument();
     expect(screen.queryByText(/comunicação rápida/i)).not.toBeInTheDocument();
 
     expect(screen.getByRole('heading', { name: /como funciona/i })).toBeInTheDocument();

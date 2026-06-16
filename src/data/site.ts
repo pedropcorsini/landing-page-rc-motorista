@@ -10,7 +10,7 @@ export const site = {
   whatsappHref: `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
   instagramHandle: '@rcmotorista',
   instagramHref: 'https://www.instagram.com/rcmotorista/',
-  headline: 'Motorista Executivo com atendimento profissional, pontual e discreto.',
+  headline: 'Motorista Executivo para quem valoriza pontualidade, conforto e discrição.',
   subheadline:
     'Transporte exclusivo com Motorista Executivo para aeroportos, compromissos, eventos e viagens.',
   nav: [

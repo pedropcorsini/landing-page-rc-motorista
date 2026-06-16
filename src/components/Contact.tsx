@@ -5,21 +5,21 @@ import { site } from '../data/site';
 export function Contact() {
   return (
     <section id="contato" className="px-4 py-20">
-      <div className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 bg-surface">
+      <div className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 bg-surface shadow-glow">
         <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="p-8 sm:p-10 lg:p-12">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-brand">Contato</p>
             <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
               Precisa de um motorista de confiança?
             </h2>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-400">
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
               Fale diretamente com Rafael Corsini para consultar disponibilidade, combinar trajeto e agendar seu atendimento.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href={site.whatsappHref}
-                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-4 font-bold text-ink transition-colors duration-200 hover:bg-[#42e37c] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
+                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-4 font-bold text-ink transition-colors duration-200 hover:bg-[#ff7a1a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
               >
                 <WhatsAppIcon className="h-5 w-5" />
                 Agendar pelo WhatsApp
@@ -45,7 +45,7 @@ export function Contact() {
                 <WhatsAppIcon className="h-6 w-6 text-whatsapp" />
                 <div>
                   <p className="font-semibold text-white">WhatsApp</p>
-                  <p className="text-sm text-slate-400">Resposta direta para agendamento</p>
+                  <p className="text-sm text-white/60">Resposta direta para agendamento</p>
                 </div>
               </a>
               <a
@@ -56,7 +56,7 @@ export function Contact() {
                 <InstagramIcon className="h-6 w-6 text-brand" />
                 <div>
                   <p className="font-semibold text-white">Instagram</p>
-                  <p className="text-sm text-slate-400">{site.instagramHandle}</p>
+                  <p className="text-sm text-white/60">{site.instagramHandle}</p>
                 </div>
               </a>
               <a
@@ -67,14 +67,14 @@ export function Contact() {
                 <Phone aria-hidden="true" className="h-6 w-6 text-brand" />
                 <div>
                   <p className="font-semibold text-white">Telefone</p>
-                  <p className="text-sm text-slate-400">{site.phoneDisplay}</p>
+                  <p className="text-sm text-white/60">{site.phoneDisplay}</p>
                 </div>
               </a>
               <div className="flex items-center gap-4 rounded-3xl border border-white/10 bg-ink/50 p-5">
                 <MapPin aria-hidden="true" className="h-6 w-6 text-brand" />
                 <div>
                   <p className="font-semibold text-white">Região</p>
-                  <p className="text-sm text-slate-400">{site.location}</p>
+                  <p className="text-sm text-white/60">{site.location}</p>
                 </div>
               </div>
             </div>
