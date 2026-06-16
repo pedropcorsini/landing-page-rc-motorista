@@ -46,7 +46,7 @@ export function Hero() {
           <div className="rounded-[1.5rem] border border-white/10 bg-surface p-6 sm:p-8">
             <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-6">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand">Atendimento particular</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand">Atendimento executivo</p>
                 <h2 className="mt-3 font-heading text-2xl font-semibold text-white">Corrida agendada</h2>
               </div>
               <CalendarCheck aria-hidden="true" className="h-8 w-8 text-brand" />

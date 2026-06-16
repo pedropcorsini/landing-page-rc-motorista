@@ -9,7 +9,7 @@ O projeto tambem deve servir como item de portfolio, com stack moderna, historic
 ## Escopo
 
 - Criar uma landing page dark, moderna, clean e focada em conversao.
-- Posicionar Rafael Corsini como motorista particular/profissional confiavel.
+- Posicionar Rafael Corsini como Motorista Executivo confiavel.
 - Usar CTAs claros para WhatsApp, Instagram e telefone.
 - Centralizar dados editaveis para facilitar futuras alteracoes.
 - Estruturar o projeto como peca de portfolio profissional.
@@ -92,7 +92,6 @@ landing-page-rc-motorista/
       Services.tsx
       Differentials.tsx
       HowItWorks.tsx
-      Testimonials.tsx
       Contact.tsx
       Footer.tsx
 ```
@@ -195,13 +194,13 @@ Conteudos centralizados:
 Headline:
 
 ```txt
-Motorista particular com atendimento profissional, pontual e discreto.
+Motorista Executivo com atendimento profissional, pontual e discreto.
 ```
 
 Subheadline:
 
 ```txt
-Transporte particular e executivo com Rafael Corsini para aeroportos, compromissos, eventos e viagens agendadas.
+Transporte executivo com Rafael Corsini para aeroportos, compromissos, eventos e viagens agendadas.
 ```
 
 CTA principal:
