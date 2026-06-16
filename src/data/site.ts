@@ -1,15 +1,15 @@
-const whatsappNumber = '5511999999999';
+const whatsappNumber = '5511952946402';
 const whatsappMessage = encodeURIComponent('Olá Rafael, gostaria de agendar uma corrida com a RC Motorista.');
 
 export const site = {
   brand: 'RC Motorista',
   driver: 'Rafael Corsini',
   location: 'São Paulo e região',
-  phoneDisplay: '(11) 99999-9999',
-  phoneHref: 'tel:+5511999999999',
+  phoneDisplay: '(11) 95294-6402',
+  phoneHref: 'tel:+5511952946402',
   whatsappHref: `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
   instagramHandle: '@rcmotorista',
-  instagramHref: 'https://instagram.com/rcmotorista',
+  instagramHref: 'https://www.instagram.com/rcmotorista/',
   headline: 'Motorista particular com atendimento profissional, pontual e discreto.',
   subheadline:
     'Transporte particular e executivo com Rafael Corsini para aeroportos, compromissos, eventos e viagens agendadas.',
