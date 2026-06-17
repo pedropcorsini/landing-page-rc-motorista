@@ -10,19 +10,19 @@ export const site = {
   whatsappHref: `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
   instagramHandle: '@rcmotorista',
   instagramHref: 'https://www.instagram.com/rcmotorista/',
-  headline: 'Motorista Executivo para quem valoriza pontualidade, conforto e discrição.',
+  headline: 'Motorista particular com atendimento profissional, pontual e discreto.',
   subheadline:
-    'Transporte exclusivo com Motorista Executivo para aeroportos, compromissos, eventos e viagens.',
+    'Transporte particular e executivo com Rafael Corsini para aeroportos, compromissos, eventos e viagens agendadas.',
   nav: [
     { label: 'Serviços', href: '#servicos' },
     { label: 'Diferenciais', href: '#diferenciais' },
     { label: 'Contato', href: '#contato' },
   ],
-  trustBadges: ['Atendimento por agendamento', 'Rotas planejadas', 'Contato direto'],
+  trustBadges: ['Atendimento sob agendamento', 'Rotas planejadas', 'Contato direto'],
   services: [
     {
       title: 'Transfers para aeroportos',
-      description: 'Atendimento receptivo em chegadas e apoio em partidas, rotas definidas e acompanhamento direto.',
+      description: 'Chegadas e partidas com horário combinado, rota definida e acompanhamento direto.',
     },
     {
       title: 'Compromissos executivos',
@@ -30,7 +30,7 @@ export const site = {
     },
     {
       title: 'Eventos e ocasiões especiais',
-      description: 'Atendimento pontual e discreto para eventos diversos, show, jantares e eventos particulares.',
+      description: 'Atendimento pontual para jantares, festas, cerimônias e eventos particulares.',
     },
     {
       title: 'Viagens particulares',
@@ -38,7 +38,7 @@ export const site = {
     },
     {
       title: 'Atendimento recorrente',
-      description: 'Rotinas semanais ou mensais para quem precisa de um motorista de confiança. Disponibilidade sob consulta.',
+      description: 'Rotinas semanais ou mensais para quem precisa de um motorista de confiança.',
     },
   ],
   differentials: [
@@ -58,6 +58,14 @@ export const site = {
       title: 'Conforto',
       description: 'Experiência tranquila, organizada e adequada para deslocamentos importantes.',
     },
+    {
+      title: 'Comunicação rápida',
+      description: 'Confirmações e ajustes pelo WhatsApp para facilitar o agendamento.',
+    },
+    {
+      title: 'Segurança',
+      description: 'Condução responsável, atenção ao percurso e cuidado em cada etapa do deslocamento.',
+    },
   ],
   steps: [
     {
@@ -71,6 +79,23 @@ export const site = {
     {
       title: 'Receba a confirmação',
       description: 'Rafael confirma disponibilidade, combina os detalhes e organiza o atendimento.',
+    },
+  ],
+  testimonials: [
+    {
+      label: 'Depoimento editável',
+      quote: 'Atendimento pontual e muito profissional. Recomendo para viagens ao aeroporto.',
+      author: 'Cliente particular',
+    },
+    {
+      label: 'Depoimento editável',
+      quote: 'Motorista educado, discreto e confiável para compromissos importantes.',
+      author: 'Cliente executivo',
+    },
+    {
+      label: 'Depoimento editável',
+      quote: 'Comunicação rápida e serviço organizado do início ao fim.',
+      author: 'Cliente recorrente',
     },
   ],
 } as const;
