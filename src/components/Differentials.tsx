@@ -1,7 +1,7 @@
-import { CheckCircle2, Clock3, ShieldCheck, Sparkles, UserRoundCheck } from 'lucide-react';
+import { CheckCircle2, Clock3, EyeOff, MessageCircle, ShieldCheck, Sparkles, UserRoundCheck } from 'lucide-react';
 import { site } from '../data/site';
 
-const icons = [Clock3, ShieldCheck, UserRoundCheck, Sparkles];
+const icons = [Clock3, EyeOff, UserRoundCheck, Sparkles, MessageCircle, ShieldCheck];
 
 export function Differentials() {
   return (
@@ -23,7 +23,7 @@ export function Differentials() {
           </div>
         </div>
 
-        <div className="relative z-10 grid gap-2.5 sm:grid-cols-2 lg:h-full lg:max-w-[520px] lg:grid-rows-2 lg:self-stretch">
+        <div className="relative z-10 grid gap-2.5 sm:grid-cols-2 lg:h-full lg:max-w-[520px] lg:grid-rows-3 lg:self-stretch">
           {site.differentials.map((item, index) => {
             const Icon = icons[index];
 
