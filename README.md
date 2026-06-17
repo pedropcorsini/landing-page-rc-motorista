@@ -1,14 +1,62 @@
-# Landing Page RC Motorista
+<div align="center">
 
-Landing page profissional para a marca **RC Motorista**, de Rafael Corsini, com foco em conversao de clientes/passageiros por WhatsApp, Instagram e telefone.
+<h1>RC Motorista</h1>
 
-O projeto foi desenvolvido como uma peca de portfolio, com stack moderna, fluxo Git formal, testes automatizados e preparacao para deploy na Vercel.
+<p><strong>Landing page profissional para transporte particular e executivo.</strong></p>
 
-## Status
+<p>Uma presença digital criada para transmitir confiança, apresentar serviços com clareza e facilitar o primeiro contato pelo WhatsApp.</p>
 
-- Projeto em desenvolvimento na branch `develop`.
-- Branch `main` reservada para versao estavel/deploy.
-- Deploy Vercel: https://landing-page-rc-motorista.vercel.app
+<p><a href="https://landing-page-rc-motorista.vercel.app">Ver site ao vivo</a></p>
+
+</div>
+
+## Preview principal
+
+<p align="center">
+  <img src="docs/preview-hero.jpeg" alt="Preview da hero da landing page RC Motorista" width="100%" />
+</p>
+
+## Visão geral
+
+A **RC Motorista**, de Rafael Corsini, precisava de uma landing page objetiva, elegante e orientada à conversão. O projeto foi desenvolvido para apresentar o serviço de transporte particular e executivo de forma profissional, destacando atributos essenciais para esse tipo de atendimento: pontualidade, discrição, conforto, segurança e contato direto.
+
+Mais do que uma página institucional, a landing foi pensada como uma ferramenta comercial. A experiência conduz o visitante desde a proposta de valor inicial até a ação principal: iniciar uma conversa pelo WhatsApp para consultar disponibilidade e agendar o atendimento.
+
+## Proposta de valor
+
+A página posiciona a RC Motorista como uma alternativa confiável para clientes que precisam de deslocamentos planejados, atendimento reservado e comunicação simples. O foco está em reduzir dúvidas, reforçar credibilidade e facilitar a tomada de decisão.
+
+- Transporte particular e executivo com atendimento sob agendamento.
+- Comunicação direta com Rafael Corsini, sem intermediação genérica.
+- Serviços apresentados de forma clara para diferentes necessidades de deslocamento.
+- Experiência visual alinhada a uma percepção de confiança, discrição e profissionalismo.
+
+## Estratégia de conversão
+
+O principal objetivo da landing é transformar visitantes em contatos qualificados. Para isso, a estrutura evita excesso de informação e prioriza mensagens claras, leitura rápida e chamadas de ação bem posicionadas.
+
+- WhatsApp como canal principal de conversão.
+- CTA principal acima da dobra e repetido em pontos estratégicos.
+- Navegação curta, com acesso rápido às seções essenciais.
+- Conteúdo direto, sem métricas inventadas ou prova social artificial.
+- Hierarquia visual pensada para destacar serviço, diferenciais e contato.
+
+## Experiência da página
+
+A interface utiliza uma estética dark premium para reforçar sofisticação e discrição, sem comprometer legibilidade. A construção visual combina contraste, espaçamento generoso, cards objetivos e ícones consistentes para criar uma experiência clara em desktop e mobile.
+
+- Hero com proposta de valor direta e CTAs de contato.
+- Seção de serviços para aeroportos, compromissos, eventos, viagens e atendimento recorrente.
+- Galeria visual para valorizar detalhes do atendimento.
+- Diferenciais com foco em pontualidade, discrição, conforto, comunicação rápida e segurança.
+- Fluxo de agendamento em três etapas simples.
+- Contato final com WhatsApp, Instagram, telefone e região de atendimento.
+
+## Valor como projeto de portfólio
+
+Este projeto demonstra a criação de uma solução digital completa para um serviço real. A landing combina posicionamento comercial, design responsivo, copy orientada à conversão e implementação moderna em React.
+
+O resultado é uma peça de portfólio com aplicação prática: além de apresentar domínio técnico, o projeto mostra capacidade de transformar um serviço local em uma presença digital mais clara, confiável e preparada para gerar novos contatos.
 
 ## Stack
 
@@ -17,88 +65,15 @@ O projeto foi desenvolvido como uma peca de portfolio, com stack moderna, fluxo 
 - TypeScript
 - Tailwind CSS
 - lucide-react
-- Vitest
-- Testing Library
-- Vercel
 
-## Funcionalidades
+## Deploy
 
-- Hero com proposta de valor clara.
-- CTAs para WhatsApp e Instagram.
-- Secao de servicos oferecidos.
-- Secao de diferenciais do atendimento.
-- Fluxo simples de agendamento em 3 passos.
-- Contato final com WhatsApp, Instagram, telefone e regiao de atendimento.
-- Dados principais centralizados em `src/data/site.ts`.
-- Layout responsivo com visual dark premium.
+Site publicado em produção:
 
-## Como Rodar Localmente
+https://landing-page-rc-motorista.vercel.app
 
-```bash
-npm install
-npm run dev
-```
+Branch de produção: `main`
 
-## Scripts
+## Autor
 
-```bash
-npm run dev
-npm test
-npm run build
-npm run preview
-```
-
-## Estrutura
-
-```txt
-src/
-  App.tsx
-  App.test.tsx
-  index.css
-  main.tsx
-  components/
-    Header.tsx
-    Hero.tsx
-    Services.tsx
-    Differentials.tsx
-    HowItWorks.tsx
-    Contact.tsx
-    Footer.tsx
-  data/
-    site.ts
-  test/
-    setup.ts
-```
-
-## Fluxo De Branches
-
-- `main`: branch estavel, recomendada para deploy na Vercel.
-- `develop`: branch de desenvolvimento ativo.
-
-## Testes
-
-O projeto segue um fluxo TDD para a estrutura principal da landing:
-
-- Testes escritos antes da implementacao da pagina final.
-- Validacao de headline, CTAs, navegacao, servicos, diferenciais, fluxo de agendamento, prova social e links de contato.
-- Execucao com Vitest e Testing Library.
-
-```bash
-npm test
-```
-
-## Deploy Na Vercel
-
-Configuracao esperada:
-
-- Framework: Vite
-- Build command: `npm run build`
-- Output directory: `dist`
-- Branch de producao: `main`
-
-O arquivo `vercel.json` ja define o comando de build e diretorio de saida.
-
-## Observacoes
-
-- Informacoes de telefone, WhatsApp, Instagram e regiao ficam centralizadas em `src/data/site.ts` para manutencao simples.
-- O plano original do projeto esta em `PLAN.md`.
+Desenvolvido por **Pedro Passos Corsini** como projeto de portfólio e produto real para a marca RC Motorista.
