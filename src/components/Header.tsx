@@ -1,33 +1,15 @@
 import { WhatsAppIcon } from './BrandIcons';
 import { site } from '../data/site';
+import rcLogo from '../../docs/rc-logo-transparente.png';
 
 function LogoMark() {
   return (
-    <svg
+    <img
       aria-hidden="true"
-      className="h-10 w-14 flex-none"
-      fill="none"
-      viewBox="0 0 56 40"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect width="56" height="40" rx="14" fill="#111111" />
-      <rect x="0.5" y="0.5" width="55" height="39" rx="13.5" stroke="white" strokeOpacity="0.12" />
-      <path d="M28 11V29" stroke="#F97316" strokeLinecap="round" strokeWidth="1.5" />
-      <text
-        fill="#F8FAFC"
-        fontFamily="Rubik, system-ui, sans-serif"
-        fontSize="15"
-        fontWeight="600"
-        letterSpacing="0.02em"
-      >
-        <tspan x="12" y="25">
-          R
-        </tspan>
-        <tspan x="35" y="25">
-          C
-        </tspan>
-      </text>
-    </svg>
+      alt=""
+      className="h-10 w-auto flex-none"
+      src={rcLogo}
+    />
   );
 }
 
