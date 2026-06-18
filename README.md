@@ -13,7 +13,7 @@
 ## Preview principal
 
 <p align="center">
-  <img src="docs/preview-hero.jpeg" alt="Preview da hero da landing page RC Motorista" width="100%" />
+  <img src="docs/preview-hero-att.jpeg" alt="Preview da hero da landing page RC Motorista" width="100%" />
 </p>
 
 ## Visão geral

@@ -1,16 +1,20 @@
 import { InstagramIcon, WhatsAppIcon } from './BrandIcons';
 import { site } from '../data/site';
+import rcLogo from '../../docs/rc-logo-transparente.png';
 
 export function Footer() {
   return (
     <footer className="border-t border-white/10 px-4 py-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
-        <div className="max-w-xl">
-          <p className="font-heading font-semibold text-white">{site.brand}</p>
-          <p>{site.driver} | Atendimento mediante disponibilidade e agendamento.</p>
-          <p className="mt-3 text-xs leading-5 text-white/40">
-            2026 {site.brand}. Todos os direitos reservados. Desenvolvido por Pedro Passos Corsini.
-          </p>
+        <div className="flex max-w-xl items-start gap-4">
+          <img aria-hidden="true" alt="" className="h-14 w-14 flex-none object-contain" src={rcLogo} />
+          <div>
+            <p className="font-heading font-semibold text-white">{site.brand}</p>
+            <p>{site.driver} | Atendimento mediante disponibilidade e agendamento.</p>
+            <p className="mt-3 text-xs leading-5 text-white/40">
+              2026 {site.brand}. Todos os direitos reservados. Desenvolvido por Pedro Passos Corsini.
+            </p>
+          </div>
         </div>
         <div className="flex items-center gap-3">
           <a
