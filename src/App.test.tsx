@@ -77,7 +77,11 @@ describe('Landing page RC Motorista', () => {
 
     expect(screen.getByText(/2026 RC Motorista/i)).toBeInTheDocument();
     expect(screen.getByText(/todos os direitos reservados/i)).toBeInTheDocument();
-    expect(screen.getByText(/desenvolvido por Pedro Passos Corsini/i)).toBeInTheDocument();
+    expect(screen.getByText(/desenvolvido por/i)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Pedro Passos Corsini/i })).toHaveAttribute(
+      'href',
+      'https://github.com/pedropcorsini',
+    );
 
     expect(screen.getByRole('link', { name: /whatsapp no rodape/i })).toHaveAttribute(
       'href',

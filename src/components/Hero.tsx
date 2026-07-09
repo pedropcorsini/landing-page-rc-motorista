@@ -1,5 +1,5 @@
 import { CalendarCheck, MapPin, Route } from 'lucide-react';
-import { InstagramIcon, WhatsAppIcon } from './BrandIcons';
+import { WhatsAppIcon } from './BrandIcons';
 import { site } from '../data/site';
 
 export function Hero() {
@@ -8,31 +8,11 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255,106,0,0.30),transparent_34%),radial-gradient(circle_at_80%_10%,rgba(255,106,0,0.12),transparent_26%)]" />
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
-          <p className="mb-5 inline-flex rounded-full border border-brand/40 bg-brand/10 px-4 py-2 text-sm font-semibold text-brand">
-            {site.brand} | {site.driver}
-          </p>
           <h1 className="max-w-4xl font-heading text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
             Motorista Executivo para quem valoriza{' '}
             <span className="text-brand">pontualidade, conforto e discrição.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/75">{site.subheadline}</p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={site.whatsappHref}
-              className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-4 text-base font-bold text-ink transition-colors duration-200 hover:bg-[#ff7a1a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
-            >
-              <WhatsAppIcon className="h-5 w-5" />
-              Agendar pelo WhatsApp
-            </a>
-            <a
-              href={site.instagramHref}
-              className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-4 text-base font-semibold text-white transition-colors duration-200 hover:border-white/30 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
-            >
-              <InstagramIcon className="h-5 w-5" />
-              Ver Instagram
-            </a>
-          </div>
 
           <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/70">
             {site.trustBadges.map((badge) => (

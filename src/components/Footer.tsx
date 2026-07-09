@@ -12,7 +12,16 @@ export function Footer() {
             <p className="font-heading font-semibold text-white">{site.brand}</p>
             <p>{site.driver} | Atendimento mediante disponibilidade e agendamento.</p>
             <p className="mt-3 text-xs leading-5 text-white/40">
-              2026 {site.brand}. Todos os direitos reservados. Desenvolvido por Pedro Passos Corsini.
+              2026 {site.brand}. Todos os direitos reservados. Desenvolvido por{' '}
+              <a
+                href="https://github.com/pedropcorsini"
+                className="rounded-sm font-semibold text-white/65 underline decoration-brand/50 underline-offset-4 transition-colors duration-200 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Pedro Passos Corsini
+              </a>
+              .
             </p>
           </div>
         </div>

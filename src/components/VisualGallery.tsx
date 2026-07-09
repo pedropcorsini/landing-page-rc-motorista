@@ -1,24 +1,35 @@
+import image1 from '../../images/1.png';
+import image2 from '../../images/2.png';
+import image3 from '../../images/3.jpeg';
+import image4 from '../../images/4.jpeg';
+import image5 from '../../images/5.jpeg';
+
 const galleryItems = [
   {
     title: 'Atendimento executivo',
-    description: 'Imagem principal para destacar presença, conforto e discrição.',
+    image: image1,
+    alt: 'Atendimento executivo da RC Motorista',
     featured: true,
   },
   {
     title: 'Interior confortável',
-    description: 'Espaço reservado para imagem do interior do veículo.',
+    image: image2,
+    alt: 'Interior confortável do veículo',
   },
   {
     title: 'Aeroportos',
-    description: 'Espaço reservado para chegadas, partidas e transfers.',
+    image: image3,
+    alt: 'Serviço de transfer para aeroportos',
   },
   {
     title: 'Compromissos',
-    description: 'Espaço reservado para contexto urbano e executivo.',
+    image: image4,
+    alt: 'Deslocamento para compromissos executivos',
   },
   {
     title: 'Eventos',
-    description: 'Espaço reservado para atendimento noturno ou especial.',
+    image: image5,
+    alt: 'Atendimento para eventos e ocasiões especiais',
   },
 ];
 
@@ -44,16 +55,15 @@ export function VisualGallery() {
                 item.featured ? 'lg:col-span-2 lg:row-span-2 lg:min-h-[460px]' : 'lg:aspect-[4/3] lg:min-w-0'
               }`}
             >
-              <div
-                aria-label={item.title}
-                className="absolute inset-0 scale-100 bg-[radial-gradient(circle_at_30%_20%,rgba(255,106,0,0.18),transparent_30%),linear-gradient(135deg,#020202,#101010_52%,#050505)] transition-transform duration-700 ease-out motion-reduce:transform-none lg:scale-105 lg:group-hover:scale-100"
-                role="img"
+              <img
+                alt={item.alt}
+                className="absolute inset-0 h-full w-full scale-100 object-cover transition-transform duration-700 ease-out motion-reduce:transform-none lg:scale-105 lg:group-hover:scale-100"
+                loading={item.featured ? 'eager' : 'lazy'}
+                src={item.image}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
               <div className="relative flex min-h-[320px] h-full flex-col justify-end p-6 lg:min-h-0">
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-brand">Imagem teste</p>
-                <h3 className="mt-3 font-heading text-xl font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 max-w-sm text-sm leading-6 text-white/60">{item.description}</p>
+                <h3 className="font-heading text-2xl font-semibold text-white sm:text-3xl lg:text-2xl">{item.title}</h3>
               </div>
             </article>
           ))}

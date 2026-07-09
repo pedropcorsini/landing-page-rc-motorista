@@ -8,7 +8,7 @@ export default {
         surface: '#111111',
         line: '#27272A',
         brand: '#FF6A00',
-        whatsapp: '#FF6A00',
+        whatsapp: '#25D366',
       },
       fontFamily: {
         heading: ['Rubik', 'system-ui', 'sans-serif'],

@@ -17,8 +17,8 @@ export function Differentials() {
               O foco é simples: facilitar o agendamento, manter comunicação clara e entregar um atendimento confiável do primeiro contato até o destino.
             </p>
           </div>
-          <div className="mt-8 rounded-3xl border border-brand/25 bg-brand/10 p-5 text-white/85">
-            <CheckCircle2 aria-hidden="true" className="mb-3 h-6 w-6 text-brand" />
+          <div className="mt-8 flex items-start gap-3 rounded-3xl border border-brand/25 bg-brand/10 p-5 text-white/85">
+            <CheckCircle2 aria-hidden="true" className="mt-0.5 h-6 w-6 flex-none text-brand" />
             <p className="font-semibold">Ideal para quem precisa de pontualidade, discrição, conforto, segurança e contato direto com o motorista.</p>
           </div>
         </div>

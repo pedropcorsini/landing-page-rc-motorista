@@ -19,7 +19,7 @@ export function Contact() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href={site.whatsappHref}
-                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-4 font-bold text-ink transition-colors duration-200 hover:bg-[#ff7a1a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
+                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-whatsapp px-6 py-4 font-bold text-ink transition-colors duration-200 hover:bg-[#1ebe5d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
               >
                 <WhatsAppIcon className="h-5 w-5" />
                 Agendar pelo WhatsApp
@@ -42,7 +42,7 @@ export function Contact() {
                 className="flex cursor-pointer items-center gap-4 rounded-3xl border border-white/10 bg-ink/50 p-5 transition-colors duration-200 hover:border-whatsapp/40 hover:bg-whatsapp/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
                 aria-label="WhatsApp"
               >
-                <WhatsAppIcon className="h-6 w-6 text-whatsapp" />
+                <WhatsAppIcon className="h-6 w-6 text-brand" />
                 <div>
                   <p className="font-semibold text-white">WhatsApp</p>
                   <p className="text-sm text-white/60">Resposta direta para agendamento</p>

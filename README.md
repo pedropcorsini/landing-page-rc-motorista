@@ -76,4 +76,4 @@ Branch de produção: `main`
 
 ## Autor
 
-Desenvolvido por **Pedro Passos Corsini** como projeto de portfólio e produto real para a marca RC Motorista.
+Desenvolvido por **[Pedro Passos Corsini](https://github.com/pedropcorsini)** como projeto de portfólio e produto real para a marca RC Motorista.

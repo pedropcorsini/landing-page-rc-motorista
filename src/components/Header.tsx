@@ -1,4 +1,4 @@
-import { WhatsAppIcon } from './BrandIcons';
+import { InstagramIcon, WhatsAppIcon } from './BrandIcons';
 import { site } from '../data/site';
 import rcLogo from '../../docs/rc-logo-transparente.png';
 
@@ -10,6 +10,14 @@ function LogoMark() {
       className="h-10 w-auto flex-none"
       src={rcLogo}
     />
+  );
+}
+
+function InstagramGradientMark() {
+  return (
+    <span className="grid h-6 w-6 place-items-center rounded-lg bg-[radial-gradient(circle_at_30%_110%,#feda75_0%,#fa7e1e_25%,#d62976_50%,#962fbf_75%,#4f5bd5_100%)] shadow-[0_0_20px_rgba(214,41,118,0.28)]">
+      <InstagramIcon className="h-3.5 w-3.5 text-white" />
+    </span>
   );
 }
 
@@ -33,21 +41,33 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full transition-colors duration-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
+              className="group relative inline-flex rounded-full px-1.5 py-2 transition-[color,transform] duration-300 ease-out hover:-translate-y-0.5 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand motion-reduce:transform-none"
             >
-              {item.label}
+              <span className="relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-center after:scale-x-0 after:rounded-full after:bg-gradient-to-r after:from-transparent after:via-brand after:to-transparent after:opacity-0 after:transition-[opacity,transform] after:duration-300 after:ease-out group-hover:after:scale-x-100 group-hover:after:opacity-100 group-focus-visible:after:scale-x-100 group-focus-visible:after:opacity-100">
+                {item.label}
+              </span>
             </a>
           ))}
         </nav>
 
-        <a
-          href={site.whatsappHref}
-          className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink transition-colors duration-200 hover:bg-orange-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
-          aria-label="WhatsApp"
-        >
-          <WhatsAppIcon className="h-4 w-4" />
-          <span>WhatsApp</span>
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={site.instagramHref}
+            className="grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-white/10 bg-white/5 text-white transition-colors duration-200 hover:border-white/25 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand sm:inline-flex sm:w-auto sm:gap-2 sm:px-4 sm:text-sm sm:font-semibold"
+            aria-label="Instagram"
+          >
+            <InstagramGradientMark />
+            <span className="hidden sm:inline">Instagram</span>
+          </a>
+          <a
+            href={site.whatsappHref}
+            className="grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-whatsapp text-sm font-semibold text-ink transition-colors duration-200 hover:bg-[#1ebe5d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp sm:inline-flex sm:w-auto sm:gap-2 sm:px-4"
+            aria-label="WhatsApp"
+          >
+            <WhatsAppIcon className="h-4 w-4" />
+            <span className="hidden sm:inline">WhatsApp</span>
+          </a>
+        </div>
       </div>
     </header>
   );
