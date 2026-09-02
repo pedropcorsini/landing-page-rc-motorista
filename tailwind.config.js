@@ -11,8 +11,8 @@ export default {
         whatsapp: '#25D366',
       },
       fontFamily: {
-        heading: ['Rubik', 'system-ui', 'sans-serif'],
-        body: ['Nunito Sans', 'system-ui', 'sans-serif'],
+        heading: ['Fraunces', 'serif'],
+        body: ['Public Sans', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         glow: '0 24px 80px rgba(255, 106, 0, 0.24)',
