@@ -1,7 +1,7 @@
-import { BriefcaseBusiness, CalendarDays, Plane, Repeat, Route } from 'lucide-react';
+import { BriefcaseBusiness, CalendarDays, Plane, Route } from 'lucide-react';
 import { site } from '../data/site';
 
-const icons = [Plane, BriefcaseBusiness, CalendarDays, Route, Repeat];
+const icons = [Plane, BriefcaseBusiness, CalendarDays, Route];
 
 export function Services() {
   return (
@@ -13,11 +13,11 @@ export function Services() {
             Serviços personalizados para cada compromisso
           </h2>
           <p className="mt-3 text-base leading-7 text-white/60 sm:mt-4 sm:text-lg sm:leading-8">
-            Do transfer ao atendimento recorrente, cada trajeto é planejado para oferecer conforto, segurança e previsibilidade.
+            Do transfer ao atendimento recorrente, cada trajeto é planejado para oferecer conforto, segurança, organização e previsibilidade.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-3 sm:mt-10 sm:gap-4 md:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-8 grid gap-3 sm:mt-10 sm:gap-4 md:grid-cols-2 lg:grid-cols-4">
           {site.services.map((service, index) => {
             const Icon = icons[index];
 

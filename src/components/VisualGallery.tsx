@@ -8,13 +8,13 @@ import image5 from '../../images/5.jpeg';
 
 const galleryItems = [
   {
-    title: 'Atendimento executivo',
+    title: 'Atendimento Executivo VIP',
     image: image1,
     alt: 'Atendimento executivo da RC Motorista',
     featured: true,
   },
   {
-    title: 'Interior confortável',
+    title: 'Serviço de bordo personalizados',
     image: image2,
     alt: 'Interior confortável do veículo',
   },
@@ -63,12 +63,12 @@ export function VisualGallery() {
     <section className="px-4 py-14 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl">
-          <p className="text-sm font-bold uppercase tracking-[0.24em] text-brand">Detalhes</p>
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-brand">Excelência operacional</p>
           <h2 className="mt-3 font-heading text-2xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
-            Atendimento em cada detalhe
+            Profissional de apoio à agenda executiva e particular
           </h2>
           <p className="mt-3 text-base leading-7 text-white/60 sm:mt-4 sm:text-lg sm:leading-8">
-            Espaço visual para apresentar veículo, conforto e momentos do atendimento sem tirar o foco da conversão.
+            Disponibilidade, Confiança, Organização, Tranquilidade, Tempo e Previsibilidade são os principais pontos que oferecemos, cuidando de toda a sua experiência de deslocamento.
           </p>
         </div>
 

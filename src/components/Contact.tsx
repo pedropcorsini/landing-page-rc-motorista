@@ -10,10 +10,10 @@ export function Contact() {
           <div className="p-6 sm:p-10 lg:p-12">
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-brand">Contato</p>
             <h2 className="mt-3 font-heading text-2xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
-              Precisa de um motorista de confiança?
+              Precisa de um profissional confiável para cuidar da sua mobilidade e te dar o suporte durante toda essa agenda?
             </h2>
             <p className="mt-4 max-w-2xl text-base leading-7 text-white/60 sm:mt-5 sm:text-lg sm:leading-8">
-              Fale diretamente com Rafael Corsini para consultar disponibilidade, combinar trajeto e agendar seu atendimento.
+              Fale diretamente com Rafael C. para consultar disponibilidade, combinar trajeto e agendar seu atendimento.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">

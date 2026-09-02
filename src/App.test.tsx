@@ -12,7 +12,7 @@ describe('Landing page RC Motorista', () => {
       }),
     ).toBeInTheDocument();
 
-    expect(screen.getByText(/transporte particular e executivo com Rafael Corsini/i)).toBeInTheDocument();
+    expect(screen.getByText(/mobilidade executiva com Rafael C\./i)).toBeInTheDocument();
     expect(screen.getAllByRole('link', { name: /agendar pelo whatsapp/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole('link', { name: /ver instagram/i }).length).toBeGreaterThan(0);
   });
@@ -34,8 +34,7 @@ describe('Landing page RC Motorista', () => {
     expect(screen.getByText(/transfers para aeroportos/i)).toBeInTheDocument();
     expect(screen.getByText(/compromissos executivos/i)).toBeInTheDocument();
     expect(screen.getByText(/eventos e ocasiões especiais/i)).toBeInTheDocument();
-    expect(screen.getByText(/viagens particulares/i)).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /atendimento recorrente/i })).toBeInTheDocument();
+    expect(screen.getByText(/viagens particulares e executivas/i)).toBeInTheDocument();
 
     expect(screen.getByRole('heading', { name: /diferenciais pensados para sua rotina/i })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 3, name: /pontualidade/i })).toBeInTheDocument();

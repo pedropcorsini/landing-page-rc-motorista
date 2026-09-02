@@ -14,7 +14,7 @@ export function Differentials() {
               Diferenciais pensados para sua rotina
             </h2>
             <p className="mt-4 text-base leading-7 text-white/60 sm:mt-5 sm:text-lg sm:leading-8">
-              O foco é simples: facilitar o agendamento, manter comunicação clara e entregar um atendimento confiável do primeiro contato até o destino.
+              O objetivo é simples: facilitar o agendamento, manter comunicação clara e entregar um atendimento confiável do primeiro contato até o destino.
             </p>
           </div>
           <div className="mt-6 flex items-start gap-3 rounded-3xl border border-brand/25 bg-brand/10 p-4 text-white/85 sm:mt-8 sm:p-5">

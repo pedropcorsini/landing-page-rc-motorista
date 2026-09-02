@@ -3,7 +3,7 @@ const whatsappMessage = encodeURIComponent('Olá Rafael, gostaria de agendar uma
 
 export const site = {
   brand: 'RC Motorista',
-  driver: 'Rafael Corsini',
+  driver: 'Rafael C.',
   location: 'São Paulo e região',
   phoneDisplay: '(11) 95294-6402',
   phoneHref: 'tel:+5511952946402',
@@ -12,7 +12,7 @@ export const site = {
   instagramHref: 'https://www.instagram.com/rcmotorista/',
   headline: 'Motorista particular com atendimento profissional, pontual e discreto.',
   subheadline:
-    'Transporte particular e executivo com Rafael Corsini para aeroportos, compromissos, eventos e viagens agendadas.',
+    'Mobilidade executiva com Rafael C. para aeroportos, compromissos, eventos e viagens agendadas.',
   nav: [
     { label: 'Serviços', href: '#servicos' },
     { label: 'Diferenciais', href: '#diferenciais' },
@@ -22,7 +22,7 @@ export const site = {
   services: [
     {
       title: 'Transfers para aeroportos',
-      description: 'Chegadas e partidas com horário combinado, rota definida e acompanhamento direto.',
+      description: 'Chegadas e partidas com horário combinado, receptivo, rota definida e acompanhamento direto.',
     },
     {
       title: 'Compromissos executivos',
@@ -33,12 +33,8 @@ export const site = {
       description: 'Atendimento pontual para jantares, festas, cerimônias e eventos particulares.',
     },
     {
-      title: 'Viagens particulares',
-      description: 'Trajetos planejados com conforto, comunicação clara e disponibilidade sob consulta.',
-    },
-    {
-      title: 'Atendimento recorrente',
-      description: 'Rotinas semanais ou mensais para quem precisa de um motorista de confiança.',
+      title: 'Viagens particulares e executivas',
+      description: 'Trajetos planejados com conforto, comunicação clara, com todo apoio e suporte necessários em seu deslocamento.',
     },
   ],
   differentials: [
@@ -48,15 +44,15 @@ export const site = {
     },
     {
       title: 'Discrição',
-      description: 'Atendimento reservado para rotinas pessoais, familiares e profissionais.',
+      description: 'Atendimento reservado para rotinas pessoais, familiares, profissionais e executivas.',
     },
     {
       title: 'Atendimento direto',
-      description: 'Contato direto com Rafael Corsini, sem intermediação ou suporte genérico.',
+      description: 'Contato direto com Rafael C., sem intermediação ou suporte genérico.',
     },
     {
       title: 'Conforto',
-      description: 'Experiência tranquila, organizada e adequada para deslocamentos importantes.',
+      description: 'Experiência tranquila, organizada e adequada para a melhor experiência nos deslocamentos.',
     },
     {
       title: 'Comunicação rápida',
