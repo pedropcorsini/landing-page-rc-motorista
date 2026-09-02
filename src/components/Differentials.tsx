@@ -5,19 +5,19 @@ const icons = [Clock3, EyeOff, UserRoundCheck, Sparkles, MessageCircle, ShieldCh
 
 export function Differentials() {
   return (
-    <section id="diferenciais" className="px-4 py-20">
+    <section id="diferenciais" className="px-4 py-14 sm:py-20">
       <div className="relative isolate mx-auto grid max-w-6xl gap-5 lg:grid-cols-[1fr_0.82fr] lg:items-stretch">
-        <div className="relative z-0 rounded-[2rem] border border-white/10 bg-surface p-8 shadow-glow sm:p-10 lg:h-full">
+        <div className="relative z-0 rounded-[2rem] border border-white/10 bg-surface p-6 shadow-glow sm:p-10 lg:h-full">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-brand">Diferenciais</p>
-            <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
+            <h2 className="mt-3 font-heading text-2xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
               Diferenciais pensados para sua rotina
             </h2>
-            <p className="mt-5 text-lg leading-8 text-white/60">
+            <p className="mt-4 text-base leading-7 text-white/60 sm:mt-5 sm:text-lg sm:leading-8">
               O foco é simples: facilitar o agendamento, manter comunicação clara e entregar um atendimento confiável do primeiro contato até o destino.
             </p>
           </div>
-          <div className="mt-8 flex items-start gap-3 rounded-3xl border border-brand/25 bg-brand/10 p-5 text-white/85">
+          <div className="mt-6 flex items-start gap-3 rounded-3xl border border-brand/25 bg-brand/10 p-4 text-white/85 sm:mt-8 sm:p-5">
             <CheckCircle2 aria-hidden="true" className="mt-0.5 h-6 w-6 flex-none text-brand" />
             <p className="font-semibold">Ideal para quem precisa de pontualidade, discrição, conforto, segurança e contato direto com o motorista.</p>
           </div>

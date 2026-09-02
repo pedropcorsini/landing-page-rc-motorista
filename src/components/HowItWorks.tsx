@@ -2,22 +2,22 @@ import { site } from '../data/site';
 
 export function HowItWorks() {
   return (
-    <section className="px-4 py-20">
-      <div className="mx-auto max-w-6xl rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 sm:p-10">
+    <section className="px-4 py-14 sm:py-20">
+      <div className="mx-auto max-w-6xl rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 sm:p-10">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.24em] text-brand">Agendamento</p>
-            <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
+            <h2 className="mt-3 font-heading text-2xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
               Como funciona?
             </h2>
-            <p className="mt-4 text-lg leading-8 text-white/60">
+            <p className="mt-3 text-base leading-7 text-white/60 sm:mt-4 sm:text-lg sm:leading-8">
               Solicite seu atendimento, informe os detalhes do compromisso e receba a confirmação com todas as informações necessárias.
             </p>
           </div>
 
           <div className="grid gap-4 md:grid-cols-3">
             {site.steps.map((step, index) => (
-              <article key={step.title} className="rounded-3xl border border-white/10 bg-ink/60 p-6">
+              <article key={step.title} className="rounded-3xl border border-white/10 bg-ink/60 p-5 sm:p-6">
                 <span className="grid h-10 w-10 place-items-center rounded-full bg-white text-sm font-bold text-ink">
                   {String(index + 1).padStart(2, '0')}
                 </span>

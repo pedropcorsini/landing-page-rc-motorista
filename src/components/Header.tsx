@@ -7,7 +7,7 @@ function LogoMark() {
     <img
       aria-hidden="true"
       alt=""
-      className="h-10 w-auto flex-none"
+      className="h-8 w-auto flex-none sm:h-10"
       src={rcLogo}
     />
   );

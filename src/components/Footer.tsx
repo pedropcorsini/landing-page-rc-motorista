@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="border-t border-white/10 px-4 py-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
         <div className="flex max-w-xl items-start gap-4">
-          <img aria-hidden="true" alt="" className="h-14 w-14 flex-none object-contain" src={rcLogo} />
+          <img aria-hidden="true" alt="" className="h-11 w-11 flex-none object-contain sm:h-14 sm:w-14" src={rcLogo} />
           <div>
             <p className="font-heading font-semibold text-white">{site.brand}</p>
             <p>{site.driver} | Atendimento mediante disponibilidade e agendamento.</p>

@@ -60,19 +60,19 @@ export function VisualGallery() {
   }, [activeItem]);
 
   return (
-    <section className="px-4 py-20">
+    <section className="px-4 py-14 sm:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-2xl">
           <p className="text-sm font-bold uppercase tracking-[0.24em] text-brand">Detalhes</p>
-          <h2 className="mt-3 font-heading text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
+          <h2 className="mt-3 font-heading text-2xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
             Atendimento em cada detalhe
           </h2>
-          <p className="mt-4 text-lg leading-8 text-white/60">
+          <p className="mt-3 text-base leading-7 text-white/60 sm:mt-4 sm:text-lg sm:leading-8">
             Espaço visual para apresentar veículo, conforto e momentos do atendimento sem tirar o foco da conversão.
           </p>
         </div>
 
-        <div className="-mx-4 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 lg:mx-0 lg:grid lg:grid-cols-4 lg:grid-rows-2 lg:overflow-visible lg:px-0 lg:pb-0">
+        <div className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:mt-10 lg:mx-0 lg:grid lg:grid-cols-4 lg:grid-rows-2 lg:overflow-visible lg:px-0 lg:pb-0">
           {galleryItems.map((item, index) => (
             <article
               key={item.title}
@@ -93,8 +93,8 @@ export function VisualGallery() {
                 src={item.image}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-              <div className="relative flex min-h-[320px] h-full flex-col justify-end p-6 lg:min-h-0">
-                <h3 className="font-heading text-2xl font-semibold text-white sm:text-3xl lg:text-2xl">{item.title}</h3>
+              <div className="relative flex min-h-[220px] h-full flex-col justify-end p-5 sm:min-h-[280px] sm:p-6 lg:min-h-0">
+                <h3 className="font-heading text-xl font-semibold text-white sm:text-3xl lg:text-2xl">{item.title}</h3>
               </div>
             </article>
           ))}
