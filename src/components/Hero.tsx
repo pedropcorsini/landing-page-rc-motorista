@@ -1,70 +1,49 @@
-import { CalendarCheck, MapPin, Route } from 'lucide-react';
 import { WhatsAppIcon } from './BrandIcons';
 import { site } from '../data/site';
+import heroCar from '../../images/hero-carro.jpg';
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden px-4 pb-20 pt-32 sm:pt-36 lg:pb-28">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255,106,0,0.30),transparent_34%),radial-gradient(circle_at_80%_10%,rgba(255,106,0,0.12),transparent_26%)]" />
-      <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-        <div>
-          <h1 className="max-w-4xl font-heading text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
-            Motorista Executivo para quem valoriza{' '}
-            <span className="text-brand">pontualidade, conforto e discrição.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/75">{site.subheadline}</p>
+    <section
+      id="top"
+      className="relative isolate flex min-h-[640px] items-center overflow-hidden pb-16 pt-28 sm:min-h-[720px] sm:pt-32 md:min-h-[760px] lg:min-h-[820px] lg:pb-20"
+    >
+      <img
+        alt="Carro executivo da RC Motorista em atendimento noturno"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-[50%_58%]"
+        fetchPriority="high"
+        loading="eager"
+        src={heroCar}
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink/90 via-ink/65 to-ink" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-[420px] bg-[radial-gradient(circle_at_50%_0%,rgba(255,106,0,0.22),transparent_45%)]" />
 
-          <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/70">
-            {site.trustBadges.map((badge) => (
-              <span key={badge} className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2">
-                {badge}
-              </span>
-            ))}
-          </div>
+      <div className="mx-auto max-w-3xl px-4 text-center">
+        <h1 className="font-heading text-4xl font-semibold leading-tight tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
+          Motorista Executivo para quem valoriza{' '}
+          <span className="text-brand">pontualidade, conforto e discrição.</span>
+        </h1>
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/80">{site.subheadline}</p>
+
+        <div className="mt-9 flex justify-center">
+          <a
+            href={site.whatsappHref}
+            className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-whatsapp px-7 py-4 font-bold text-ink transition-colors duration-200 hover:bg-[#1ebe5d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
+          >
+            <WhatsAppIcon className="h-5 w-5" />
+            Agendar pelo WhatsApp
+          </a>
         </div>
 
-        <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 shadow-glow backdrop-blur">
-          <div className="rounded-[1.5rem] border border-white/10 bg-surface p-6 sm:p-8">
-            <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-6">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand">Atendimento executivo</p>
-                <h2 className="mt-3 font-heading text-2xl font-semibold text-white">Viagem agendada</h2>
-              </div>
-              <CalendarCheck aria-hidden="true" className="h-8 w-8 text-brand" />
-            </div>
-
-            <div className="space-y-5 py-6">
-              <div className="flex gap-4">
-                <MapPin aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-brand" />
-                <div>
-                  <p className="font-semibold text-white">Região de atendimento</p>
-                  <p className="text-sm text-white/60">{site.location}</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <Route aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-brand" />
-                <div>
-                  <p className="font-semibold text-white">Trajeto planejado</p>
-                  <p className="text-sm text-white/60">Origem, destino e horário alinhados antes da partida.</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <WhatsAppIcon className="mt-1 h-5 w-5 flex-none text-brand" />
-                <div>
-                  <p className="font-semibold text-white">Contato direto</p>
-                  <p className="text-sm text-white/60">Agendamento e confirmação pelo WhatsApp.</p>
-                </div>
-              </div>
-            </div>
-
-            <a
-              href={site.whatsappHref}
-              className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-2xl border border-whatsapp/30 bg-whatsapp/10 px-5 py-4 font-bold text-whatsapp transition-colors duration-200 hover:bg-whatsapp/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
+        <div className="mt-7 flex flex-wrap justify-center gap-3 text-sm text-white/70">
+          {site.trustBadges.map((badge) => (
+            <span
+              key={badge}
+              className="rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 backdrop-blur-sm"
             >
-              <WhatsAppIcon className="h-5 w-5" />
-              Agendar pelo WhatsApp
-            </a>
-          </div>
+              {badge}
+            </span>
+          ))}
         </div>
       </div>
     </section>
