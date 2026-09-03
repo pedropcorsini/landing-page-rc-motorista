@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-[560px] items-center overflow-hidden pb-12 pt-24 sm:min-h-[720px] sm:pb-16 sm:pt-32 md:min-h-[760px] lg:min-h-[820px] lg:pb-20"
+      className="relative isolate flex min-h-[100svh] items-center overflow-hidden pb-12 pt-24 sm:min-h-[720px] sm:pb-16 sm:pt-32 md:min-h-[760px] lg:min-h-[820px] lg:pb-20"
     >
       <img
         alt="Carro executivo da RC Motorista em atendimento noturno"
