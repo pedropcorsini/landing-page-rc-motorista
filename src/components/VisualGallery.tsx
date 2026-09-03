@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { X } from 'lucide-react';
 import image1 from '../../images/atendimento-executivo.jpg';
-import image2 from '../../images/2.png';
+import image2 from '../../images/interior-veiculo.png';
 import image3 from '../../images/aeroportos.jpg';
-import image4 from '../../images/4.jpeg';
-import image5 from '../../images/5.jpeg';
+import image4 from '../../images/compromissos.jpeg';
+import image5 from '../../images/eventos.jpeg';
 
 const galleryItems = [
   {
