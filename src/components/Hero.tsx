@@ -36,7 +36,6 @@ export function Hero() {
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand">RC Motorista</p>
                 <p className="mt-1 text-xs font-semibold text-white sm:text-sm">Atendimento sob agendamento</p>
               </div>
-              <span className="hidden text-right text-[10px] font-bold uppercase tracking-[0.16em] text-white/50 sm:block">01 / 05</span>
             </div>
           </div>
         </div>
