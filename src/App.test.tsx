@@ -8,7 +8,7 @@ describe('Landing page RC Motorista', () => {
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: /motorista executivo para quem valoriza pontualidade/i,
+        name: /motorista executivo com pontualidade/i,
       }),
     ).toBeInTheDocument();
 
@@ -71,7 +71,7 @@ describe('Landing page RC Motorista', () => {
     expect(screen.getByText('(11) 95294-6402')).toBeInTheDocument();
   });
 
-  it('exibe footer com icones sociais discretos e creditos', () => {
+  it('exibe footer com creditos', () => {
     render(<App />);
 
     expect(screen.getByText(/2026 RC Motorista/i)).toBeInTheDocument();
@@ -82,13 +82,5 @@ describe('Landing page RC Motorista', () => {
       'https://github.com/pedropcorsini',
     );
 
-    expect(screen.getByRole('link', { name: /whatsapp no rodape/i })).toHaveAttribute(
-      'href',
-      expect.stringContaining('https://wa.me/5511952946402'),
-    );
-    expect(screen.getByRole('link', { name: /instagram no rodape/i })).toHaveAttribute(
-      'href',
-      'https://www.instagram.com/rcmotorista/',
-    );
   });
 });

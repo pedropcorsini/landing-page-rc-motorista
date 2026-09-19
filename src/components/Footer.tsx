@@ -1,15 +1,14 @@
-import { InstagramIcon, WhatsAppIcon } from './BrandIcons';
 import { site } from '../data/site';
 import rcLogo from '../../docs/rc-logo-transparente.png';
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 px-4 py-10">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
+    <footer className="border-t border-white/10 px-4 py-12">
+      <div className="mx-auto max-w-7xl text-sm text-white/60 sm:px-2">
         <div className="flex max-w-xl items-start gap-4">
-          <img aria-hidden="true" alt="" className="h-11 w-11 flex-none object-contain sm:h-14 sm:w-14" src={rcLogo} />
+          <img aria-hidden="true" alt="" className="h-12 w-12 flex-none object-contain" src={rcLogo} />
           <div>
-            <p className="font-heading font-semibold text-white">{site.brand}</p>
+            <p className="font-heading text-xl text-white">{site.brand}</p>
             <p>{site.driver} | Atendimento mediante disponibilidade e agendamento.</p>
             <p className="mt-3 text-xs leading-5 text-white/40">
               2026 {site.brand}. Todos os direitos reservados. Desenvolvido por{' '}
@@ -24,22 +23,6 @@ export function Footer() {
               .
             </p>
           </div>
-        </div>
-        <div className="flex items-center gap-3">
-          <a
-            href={site.whatsappHref}
-            className="grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-white/10 text-white/55 transition-colors duration-200 hover:border-whatsapp/50 hover:text-whatsapp focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp"
-            aria-label="WhatsApp no rodape"
-          >
-            <WhatsAppIcon className="h-4 w-4" />
-          </a>
-          <a
-            href={site.instagramHref}
-            className="grid h-10 w-10 cursor-pointer place-items-center rounded-full border border-white/10 text-white/55 transition-colors duration-200 hover:border-brand/50 hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand"
-            aria-label="Instagram no rodape"
-          >
-            <InstagramIcon className="h-4 w-4" />
-          </a>
         </div>
       </div>
     </footer>

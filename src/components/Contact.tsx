@@ -4,22 +4,22 @@ import { site } from '../data/site';
 
 export function Contact() {
   return (
-    <section id="contato" className="px-4 py-14 sm:py-20">
-      <div className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 bg-surface shadow-glow">
-        <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="p-6 sm:p-10 lg:p-12">
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-brand">Contato</p>
-            <h2 className="mt-3 font-heading text-2xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
-              Precisa de um profissional confiável para cuidar da sua mobilidade e te dar o suporte durante toda essa agenda?
+    <section id="contato" className="px-4 py-20 sm:py-28">
+      <div className="mx-auto max-w-[1440px] overflow-hidden border border-brand/40 bg-brand">
+        <div className="grid gap-0 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="p-7 sm:p-12 lg:p-16">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-ink/65">Contato</p>
+            <h2 className="mt-5 max-w-3xl font-heading text-4xl leading-[1.02] tracking-[-0.035em] text-ink sm:text-6xl lg:text-7xl">
+              Profissional confiável e pontual
             </h2>
-            <p className="mt-4 max-w-2xl text-base leading-7 text-white/60 sm:mt-5 sm:text-lg sm:leading-8">
+            <p className="mt-6 max-w-2xl text-base leading-7 text-ink/70 sm:text-lg sm:leading-8">
               Fale diretamente com Rafael C. para consultar disponibilidade, combinar trajeto e agendar seu atendimento.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row">
               <a
                 href={site.whatsappHref}
-                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-whatsapp px-5 py-3.5 font-bold text-ink transition-colors duration-200 hover:bg-[#1ebe5d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp sm:px-6 sm:py-4"
+                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-ink px-5 py-4 font-bold text-white transition-colors duration-200 hover:bg-[#202020] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink sm:px-6"
               >
                 <WhatsAppIcon className="h-5 w-5" />
                 Agendar pelo WhatsApp
@@ -27,7 +27,7 @@ export function Contact() {
               </a>
               <a
                 href={site.instagramHref}
-                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3.5 font-semibold text-white transition-colors duration-200 hover:border-white/30 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand sm:px-6 sm:py-4"
+                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full border border-ink/30 px-5 py-4 font-semibold text-ink transition-colors duration-200 hover:border-ink hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink sm:px-6"
               >
                 <InstagramIcon className="h-5 w-5" />
                 Ver Instagram
@@ -35,11 +35,11 @@ export function Contact() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 bg-white/[0.03] p-6 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+          <div className="border-t border-ink/20 bg-ink p-7 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
             <div className="space-y-4">
               <a
                 href={site.whatsappHref}
-                className="flex cursor-pointer items-center gap-4 rounded-3xl border border-white/10 bg-ink/50 p-4 transition-colors duration-200 hover:border-whatsapp/40 hover:bg-whatsapp/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp sm:p-5"
+                className="hidden cursor-pointer items-center gap-4 border-b border-white/15 py-4 transition-colors duration-200 hover:border-whatsapp/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-whatsapp lg:flex sm:py-5"
                 aria-label="WhatsApp"
               >
                 <WhatsAppIcon className="h-6 w-6 text-brand" />
@@ -50,7 +50,7 @@ export function Contact() {
               </a>
               <a
                 href={site.instagramHref}
-                className="flex cursor-pointer items-center gap-4 rounded-3xl border border-white/10 bg-ink/50 p-4 transition-colors duration-200 hover:border-brand/40 hover:bg-brand/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand sm:p-5"
+                className="hidden cursor-pointer items-center gap-4 border-b border-white/15 py-4 transition-colors duration-200 hover:border-brand/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand lg:flex sm:py-5"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="h-6 w-6 text-brand" />
@@ -61,7 +61,7 @@ export function Contact() {
               </a>
               <a
                 href={site.phoneHref}
-                className="flex cursor-pointer items-center gap-4 rounded-3xl border border-white/10 bg-ink/50 p-4 transition-colors duration-200 hover:border-brand/40 hover:bg-brand/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand sm:p-5"
+                className="hidden cursor-pointer items-center gap-4 border-b border-white/15 py-4 transition-colors duration-200 hover:border-brand/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand lg:flex sm:py-5"
                 aria-label="Telefone"
               >
                 <Phone aria-hidden="true" className="h-6 w-6 text-brand" />
@@ -70,7 +70,7 @@ export function Contact() {
                   <p className="text-sm text-white/60">{site.phoneDisplay}</p>
                 </div>
               </a>
-              <div className="flex items-center gap-4 rounded-3xl border border-white/10 bg-ink/50 p-4 sm:p-5">
+              <div className="flex items-center gap-4 border-b border-white/15 py-4 sm:py-5">
                 <MapPin aria-hidden="true" className="h-6 w-6 text-brand" />
                 <div>
                   <p className="font-semibold text-white">Região</p>

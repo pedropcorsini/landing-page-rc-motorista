@@ -9,7 +9,7 @@ import { VisualGallery } from './components/VisualGallery';
 
 export default function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-ink text-white antialiased">
+    <div className="min-h-screen overflow-x-hidden bg-ink text-white antialiased selection:bg-brand selection:text-ink">
       <Header />
       <main>
         <Hero />

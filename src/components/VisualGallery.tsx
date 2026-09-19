@@ -60,24 +60,26 @@ export function VisualGallery() {
   }, [activeItem]);
 
   return (
-    <section className="px-4 py-14 sm:py-20">
-      <div className="mx-auto max-w-6xl">
-        <div className="max-w-2xl">
-          <p className="text-sm font-bold uppercase tracking-[0.24em] text-brand">Excelência operacional</p>
-          <h2 className="mt-3 font-heading text-2xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
+    <section className="px-4 py-20 sm:py-28">
+      <div className="mx-auto max-w-[1440px] sm:px-8 lg:px-12">
+        <div className="grid gap-8 lg:grid-cols-[0.65fr_1fr] lg:items-end lg:gap-16">
+          <div>
+          <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-brand">Excelência operacional</p>
+          <h2 className="mt-5 font-heading text-4xl leading-[1.02] tracking-[-0.025em] text-white sm:text-5xl">
             Profissional de apoio à agenda executiva e particular
           </h2>
-          <p className="mt-3 text-base leading-7 text-white/60 sm:mt-4 sm:text-lg sm:leading-8">
+          </div>
+          <p className="max-w-xl text-base leading-7 text-white/60 sm:text-lg sm:leading-8">
             Disponibilidade, Confiança, Organização, Tranquilidade, Tempo e Previsibilidade são os principais pontos que oferecemos, cuidando de toda a sua experiência de deslocamento.
           </p>
         </div>
 
-        <div className="-mx-4 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:mt-10 lg:mx-0 lg:grid lg:grid-cols-4 lg:grid-rows-2 lg:overflow-visible lg:px-0 lg:pb-0">
+        <div className="-mx-4 mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-4 sm:mt-14 lg:mx-0 lg:grid lg:grid-cols-12 lg:grid-rows-2 lg:gap-4 lg:overflow-visible lg:px-0 lg:pb-0">
           {galleryItems.map((item, index) => (
             <article
               key={item.title}
-              className={`group relative min-w-[82%] snap-start overflow-hidden rounded-[2rem] border border-white/10 bg-black ${
-                item.featured ? 'lg:col-span-2 lg:row-span-2 lg:min-h-[460px]' : 'lg:aspect-[4/3] lg:min-w-0'
+              className={`group relative min-w-[82%] snap-start overflow-hidden border border-white/15 bg-black ${
+                item.featured ? 'lg:col-span-6 lg:row-span-2 lg:min-h-[560px]' : 'lg:col-span-3 lg:aspect-[1.25] lg:min-w-0'
               }`}
             >
               <button
@@ -94,7 +96,7 @@ export function VisualGallery() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
               <div className="relative flex min-h-[220px] h-full flex-col justify-end p-5 sm:min-h-[280px] sm:p-6 lg:min-h-0">
-                <h3 className="font-heading text-xl font-semibold text-white sm:text-3xl lg:text-2xl">{item.title}</h3>
+                <h3 className="font-heading text-xl text-white sm:text-3xl lg:text-2xl">{item.title}</h3>
               </div>
             </article>
           ))}

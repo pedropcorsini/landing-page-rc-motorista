@@ -2,27 +2,25 @@ import { site } from '../data/site';
 
 export function HowItWorks() {
   return (
-    <section className="px-4 py-14 sm:py-20">
-      <div className="mx-auto max-w-6xl rounded-[2rem] border border-white/10 bg-white/[0.04] p-5 sm:p-10">
-        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+    <section className="px-4 py-20 sm:py-28">
+      <div className="mx-auto max-w-[1440px] border-y border-white/15 py-10 sm:px-8 sm:py-16 lg:px-12">
+        <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-start lg:gap-20">
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.24em] text-brand">Agendamento</p>
-            <h2 className="mt-3 font-heading text-2xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
+            <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-brand">Agendamento</p>
+            <h2 className="mt-5 font-heading text-4xl leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl">
               Como funciona?
             </h2>
-            <p className="mt-3 text-base leading-7 text-white/60 sm:mt-4 sm:text-lg sm:leading-8">
+            <p className="mt-6 text-base leading-7 text-white/60 sm:text-lg sm:leading-8">
               Solicite seu atendimento, informe os detalhes do compromisso e receba a confirmação com todas as informações necessárias.
             </p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-0 md:grid-cols-3">
             {site.steps.map((step, index) => (
-              <article key={step.title} className="rounded-3xl border border-white/10 bg-ink/60 p-5 sm:p-6">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-white text-sm font-bold text-ink">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <h3 className="mt-5 font-heading text-lg font-semibold text-white">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/60">{step.description}</p>
+              <article key={step.title} className="border-t border-white/15 py-6 md:border-l md:border-t-0 md:px-6 md:first:border-l-0 md:first:pl-0">
+                <span className="font-heading text-4xl text-brand">{String(index + 1).padStart(2, '0')}</span>
+                <h3 className="mt-6 font-heading text-2xl leading-tight text-white">{step.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-white/55">{step.description}</p>
               </article>
             ))}
           </div>
