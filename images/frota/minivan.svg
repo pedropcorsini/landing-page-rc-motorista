@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 896" fill="none">
+  <title>Placeholder: minivan</title>
+  <ellipse cx="600" cy="675" rx="470" ry="22" fill="#ffffff" opacity="0.06"/>
+  <g stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 120 640 L 1100 640" stroke-width="1.5" stroke-dasharray="6 10" opacity="0.25"/>
+    <path d="M 170 600 L 170 520 Q 180 480 240 470 L 360 450 Q 430 330 520 300 L 960 300 Q 1010 305 1025 360 L 1035 600 Z" stroke-width="4" opacity="0.9"/>
+    <path d="M 395 448 Q 450 345 525 322 L 950 322 Q 990 328 1000 440 Z" stroke-width="3" opacity="0.7"/>
+    <path d="M 640 300 L 640 590" stroke-width="2.5" opacity="0.55"/>
+    <path d="M 200 520 L 1030 520" stroke-width="1.5" opacity="0.35"/>
+    <circle cx="340" cy="600" r="72" fill="#08090d" stroke-width="4" opacity="0.95"/>
+    <circle cx="340" cy="600" r="38" stroke-width="2.5" opacity="0.6"/>
+    <circle cx="880" cy="600" r="72" fill="#08090d" stroke-width="4" opacity="0.95"/>
+    <circle cx="880" cy="600" r="38" stroke-width="2.5" opacity="0.6"/>
+  </g>
+</svg>

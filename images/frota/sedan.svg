@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 896" fill="none">
+  <title>Placeholder: sedan</title>
+  <ellipse cx="600" cy="675" rx="470" ry="22" fill="#ffffff" opacity="0.06"/>
+  <g stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 120 640 L 1100 640" stroke-width="1.5" stroke-dasharray="6 10" opacity="0.25"/>
+    <path d="M 180 600 L 180 540 Q 185 505 230 495 L 420 470 Q 500 380 560 370 L 780 370 Q 860 375 920 460 L 1010 480 Q 1040 490 1040 530 L 1040 600 Z" stroke-width="4" opacity="0.9"/>
+    <path d="M 450 468 Q 510 395 565 390 L 770 390 Q 830 395 880 462 Z" stroke-width="3" opacity="0.7"/>
+    <path d="M 670 300 L 670 590" stroke-width="2.5" opacity="0.55"/>
+    <path d="M 200 520 L 1030 520" stroke-width="1.5" opacity="0.35"/>
+    <circle cx="360" cy="600" r="72" fill="#08090d" stroke-width="4" opacity="0.95"/>
+    <circle cx="360" cy="600" r="38" stroke-width="2.5" opacity="0.6"/>
+    <circle cx="860" cy="600" r="72" fill="#08090d" stroke-width="4" opacity="0.95"/>
+    <circle cx="860" cy="600" r="38" stroke-width="2.5" opacity="0.6"/>
+  </g>
+</svg>
