@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import App from './App';
 
 describe('Landing page RC Motorista', () => {
@@ -6,69 +6,83 @@ describe('Landing page RC Motorista', () => {
     render(<App />);
 
     expect(
-      screen.getByRole('heading', {
-        level: 1,
-        name: /motorista executivo com pontualidade/i,
-      }),
+      screen.getByRole('heading', { level: 1, name: /motorista executivo em são paulo e região/i }),
     ).toBeInTheDocument();
-
-    expect(screen.getByText(/mobilidade executiva com Rafael C\./i)).toBeInTheDocument();
+    expect(
+      screen.getByText('Mobilidade executiva com Rafael C. para aeroportos, compromissos, eventos e viagens agendadas.'),
+    ).toBeInTheDocument();
     expect(screen.getAllByRole('link', { name: /agendar pelo whatsapp/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole('link', { name: /ver instagram/i }).length).toBeGreaterThan(0);
   });
 
-  it('mantem navegacao curta para as secoes principais', () => {
-    render(<App />);
+  it('mantem navegacao para todas as secoes da pagina', () => {
+    const { container } = render(<App />);
 
-    expect(screen.getByRole('banner')).toBeInTheDocument();
-    expect(screen.getByRole('navigation', { name: /navegacao principal/i })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /serviços/i })).toHaveAttribute('href', '#servicos');
-    expect(screen.getByRole('link', { name: /diferenciais/i })).toHaveAttribute('href', '#diferenciais');
-    expect(screen.getByRole('link', { name: /contato/i })).toHaveAttribute('href', '#contato');
+    const nav = screen.getByRole('navigation', { name: /navegação principal/i });
+    const expected = [
+      ['Início', '#top'],
+      ['Sobre', '#sobre'],
+      ['Serviços', '#servicos'],
+      ['Frota', '#frota'],
+      ['Diferenciais', '#diferenciais'],
+      ['Como solicitar', '#como-solicitar'],
+      ['Dúvidas', '#duvidas'],
+    ];
+
+    for (const [label, href] of expected) {
+      expect(within(nav).getByRole('link', { name: label })).toHaveAttribute('href', href);
+      expect(container.querySelector(href)).not.toBeNull();
+    }
   });
 
-  it('exibe servicos, diferenciais e fluxo de agendamento', () => {
+  it('exibe servicos, frota, diferenciais, passos e duvidas', () => {
     render(<App />);
 
-    expect(screen.getByRole('heading', { name: /serviços personalizados para cada compromisso/i })).toBeInTheDocument();
-    expect(screen.getByText(/transfers para aeroportos/i)).toBeInTheDocument();
-    expect(screen.getByText(/compromissos executivos/i)).toBeInTheDocument();
-    expect(screen.getByText(/eventos e ocasiões especiais/i)).toBeInTheDocument();
-    expect(screen.getByText(/viagens particulares e executivas/i)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: /serviços sob medida para cada compromisso/i })).toBeInTheDocument();
+    for (const service of [
+      /^transfers para aeroportos$/i,
+      /^compromissos executivos$/i,
+      /^eventos e ocasiões especiais$/i,
+      /^viagens particulares e executivas$/i,
+      /^atendimento recorrente$/i,
+      /^serviço de bordo personalizado$/i,
+    ]) {
+      expect(screen.getByRole('heading', { level: 3, name: service })).toBeInTheDocument();
+    }
+
+    expect(screen.getByRole('heading', { level: 2, name: /opções de mobilidade/i })).toBeInTheDocument();
+    for (const vehicle of [/^sedã executivo$/i, /^suv executivo$/i, /^minivan executiva$/i, /^van executiva$/i]) {
+      expect(screen.getByRole('heading', { level: 3, name: vehicle })).toBeInTheDocument();
+    }
 
     expect(screen.getByRole('heading', { name: /diferenciais pensados para sua rotina/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 3, name: /pontualidade/i })).toBeInTheDocument();
-    expect(screen.getAllByText(/discrição/i).length).toBeGreaterThan(0);
-    expect(screen.getByText(/atendimento direto/i)).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 3, name: /conforto/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 3, name: /comunicação rápida/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 3, name: /segurança/i })).toBeInTheDocument();
-    expect(screen.getByText(/condução responsável, atenção ao percurso/i)).toBeInTheDocument();
+    for (const item of [/^pontualidade$/i, /^discrição$/i, /^atendimento direto$/i, /^conforto$/i, /^comunicação rápida$/i, /^segurança$/i]) {
+      expect(screen.getByRole('heading', { level: 3, name: item })).toBeInTheDocument();
+    }
 
-    expect(screen.getByRole('heading', { name: /como funciona/i })).toBeInTheDocument();
-    expect(screen.getByText(/chame no whatsapp/i)).toBeInTheDocument();
-    expect(screen.getByText(/informe trajeto, data e horário/i)).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: /receba a confirmação/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: /agende em três passos simples/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: /chame no whatsapp/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: /informe trajeto, data e horário/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: /receba a confirmação/i })).toBeInTheDocument();
+
+    expect(screen.getByRole('heading', { level: 2, name: /perguntas frequentes/i })).toBeInTheDocument();
   });
 
-  it('remove a prova social e mantem contatos com links validos', () => {
+  it('nao exibe depoimentos inventados e mantem contatos com links validos', () => {
     render(<App />);
 
-    expect(screen.queryByText(/prova social/i)).not.toBeInTheDocument();
-    expect(screen.queryByRole('heading', { name: /clientes que priorizam confiança/i })).not.toBeInTheDocument();
-    expect(screen.queryByText(/depoimento editável/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/depoimento/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/avaliações/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/24h|24 horas/i)).not.toBeInTheDocument();
 
     const whatsappLinks = screen.getAllByRole('link', { name: /whatsapp/i });
-    expect(whatsappLinks.some((link) => link.getAttribute('href')?.startsWith('https://wa.me/5511952946402'))).toBe(
-      true,
-    );
+    expect(whatsappLinks.every((link) => link.getAttribute('href')?.startsWith('https://wa.me/5511952946402'))).toBe(true);
 
     const instagramLinks = screen.getAllByRole('link', { name: /instagram/i });
-    expect(instagramLinks.some((link) => link.getAttribute('href') === 'https://www.instagram.com/rcmotorista/')).toBe(
-      true,
-    );
+    expect(instagramLinks.some((link) => link.getAttribute('href') === 'https://www.instagram.com/rcmotorista/')).toBe(true);
+
     expect(screen.getByRole('link', { name: /telefone/i })).toHaveAttribute('href', expect.stringMatching(/^tel:\+55/));
-    expect(screen.getByText('(11) 95294-6402')).toBeInTheDocument();
+    expect(screen.getAllByText('(11) 95294-6402').length).toBeGreaterThan(0);
   });
 
   it('exibe footer com creditos', () => {
@@ -81,6 +95,5 @@ describe('Landing page RC Motorista', () => {
       'href',
       'https://github.com/pedropcorsini',
     );
-
   });
 });
