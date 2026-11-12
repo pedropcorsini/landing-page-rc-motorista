@@ -1,50 +1,39 @@
-import { CheckCircle2, Clock3, EyeOff, MessageCircle, ShieldCheck, Sparkles, UserRoundCheck } from 'lucide-react';
+import { SectionHeading } from './SectionHeading';
+import { icons } from './icons';
 import { site } from '../data/site';
-import interiorVehicle from '../../images/interior-veiculo.png';
-
-const icons = [Clock3, EyeOff, UserRoundCheck, Sparkles, MessageCircle, ShieldCheck];
 
 export function Differentials() {
+  const { differentialsSection } = site;
+
   return (
-    <section id="diferenciais" className="border-y border-white/10 bg-[#0c0c0c] px-4 py-20 sm:py-28">
-      <div className="mx-auto grid max-w-[1440px] gap-12 sm:px-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-center lg:gap-24 lg:px-12">
-        <div className="relative min-h-[420px] overflow-hidden border border-white/15 sm:min-h-[620px]">
-          <img src={interiorVehicle} alt="Interior confortável do veículo da RC Motorista" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/10" />
-          <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-brand">O cuidado está nos detalhes</p>
-            <p className="mt-2 max-w-xs font-heading text-3xl leading-none text-white">Sua agenda merece um deslocamento à altura.</p>
-          </div>
-        </div>
+    <section id="diferenciais" aria-labelledby="diferenciais-title" className="bg-ink py-20 lg:py-28">
+      <div className="container-site">
+        <SectionHeading
+          id="diferenciais-title"
+          align="left"
+          eyebrow={differentialsSection.eyebrow}
+          title={differentialsSection.title}
+          description={differentialsSection.description}
+        />
 
-        <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-brand">Diferenciais</p>
-          <h2 className="mt-5 max-w-xl font-heading text-4xl leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl">
-              Diferenciais pensados para sua rotina
-            </h2>
-            <p className="mt-6 max-w-xl text-base leading-7 text-white/60 sm:text-lg sm:leading-8">
-              O objetivo é simples: facilitar o agendamento, manter comunicação clara e entregar um atendimento confiável do primeiro contato até o destino.
-            </p>
-          <div className="mt-8 flex items-start gap-3 border-y border-brand/30 py-4 text-white/85 sm:mt-10 sm:py-5">
-            <CheckCircle2 aria-hidden="true" className="mt-0.5 h-6 w-6 flex-none text-brand" />
-            <p className="font-semibold">Ideal para quem precisa de pontualidade, discrição, conforto, segurança e contato direto com o motorista.</p>
-          </div>
-
-        <div className="mt-8 grid border-t border-white/15 sm:grid-cols-2">
-          {site.differentials.map((item, index) => {
-            const Icon = icons[index];
-
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {site.differentials.map((item) => {
+            const Icon = icons[item.icon];
             return (
-              <article key={item.title} className="group border-b border-white/15 py-5 sm:px-4 sm:py-6 sm:nth-[odd]:border-r sm:first-of-type:pt-6">
+              <article
+                key={item.title}
+                className="flex flex-col rounded-2xl border border-white/[0.08] bg-card px-[1.35rem] py-7 shadow-card transition-all duration-300 ease-expo hover:-translate-y-1 hover:border-brand hover:shadow-card-hover"
+              >
                 <div className="flex items-center gap-3">
-                  <Icon aria-hidden="true" className="h-4 w-4 text-brand" />
-                  <h3 className="font-heading text-xl text-white">{item.title}</h3>
+                  <span className="grid h-11 w-11 flex-none place-items-center rounded-full border border-brand/[0.32] bg-brand/[0.12] text-brand-light">
+                    <Icon aria-hidden="true" className="h-5 w-5" />
+                  </span>
+                  <h3 className="font-heading text-[1.05rem] font-bold text-white">{item.title}</h3>
                 </div>
-                <p className="mt-2 text-sm leading-5 text-white/55">{item.description}</p>
+                <p className="mt-4 text-[0.9rem] leading-relaxed text-mist">{item.description}</p>
               </article>
             );
           })}
-        </div>
         </div>
       </div>
     </section>
