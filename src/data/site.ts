@@ -1,7 +1,7 @@
-import sedanImage from '../../images/frota/sedan.svg';
-import suvImage from '../../images/frota/suv.svg';
-import minivanImage from '../../images/frota/minivan.svg';
-import vanImage from '../../images/frota/van.svg';
+import sedanImage from '../../images/frota/sedan.jpg';
+import suvImage from '../../images/frota/suv.jpg';
+import minivanImage from '../../images/frota/minivan.jpg';
+import vanImage from '../../images/frota/van.jpg';
 
 const whatsappNumber = '5511952946402';
 const defaultWhatsappMessage = 'Olá Rafael, gostaria de agendar uma corrida com a RC Motorista.';

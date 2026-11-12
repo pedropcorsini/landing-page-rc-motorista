@@ -57,8 +57,8 @@ export function FleetShowcase() {
                       className="fleet-img"
                       src={vehicle.image}
                       alt={`Ilustração: ${vehicle.name}`}
-                      width={1200}
-                      height={896}
+                      width={800}
+                      height={600}
                       loading="lazy"
                       draggable={false}
                     />
