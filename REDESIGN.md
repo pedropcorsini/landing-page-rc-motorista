@@ -123,7 +123,7 @@ Copiar este plano para `REDESIGN.md` na raiz do repo (commitado) e usá-lo como 
 - [x] **T7. Serviços:** grid 3x2 (md 2 col, mobile 1 col) de service cards.
 - [ ] **T8. Opções de Mobilidade:** gerar as 4 ilustrações, `FleetShowcase.tsx` + `src/hooks/useFleetCarousel.ts` conforme spec. **(Sugestão: executar com Fable 5.2)**
   - [x] `FleetShowcase.tsx`, `useFleetCarousel.ts` e `src/styles/fleet.css` conforme spec (setas, dots, clique, teclado, swipe, scroll-snap sincronizado, aria-live).
-  - [ ] Ilustrações finais por IA. Hoje: placeholders SVG em `images/frota/*.svg` (trocar o import em `site.ts` para os PNGs quando chegarem).
+  - [x] Ilustrações finais por IA geradas no Figma, tratadas com `scripts/bake-fleet-images.py` (fundo #08090d gravado e bordas esmaecidas) e salvas em `images/frota/*.jpg` (cerca de 63 KB cada). Prompt e processo em `images/frota/README.md`.
   - [ ] Confirmar capacidades (passageiros e malas) com o Rafael.
 - [x] **T9. Diferenciais:** 6 cards com ícone, hover igual ao review-card.
 - [x] **T10. Como solicitar:** 3 step cards com badge 01 a 03 + CTA.
