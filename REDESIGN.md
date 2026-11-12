@@ -112,25 +112,28 @@ Copiar este plano para `REDESIGN.md` na raiz do repo (commitado) e usá-lo como 
 ## Tasks
 
 ### Fase 1: Fundação
-- [ ] **T1. Design tokens e base:** `tailwind.config.js` (cores, fontes, `ease-expo`, sombras `card`, `card-hover`, `glow`), `index.html` (fontes com preconnect, `theme-color #07080a`), `src/index.css` (base, keyframes, `@layer components` para `.eyebrow`, `.btn-cta`, `.btn-outline`, scrollbar laranja).
-- [ ] **T2. Dados:** reestruturar `src/data/site.ts` (nav, heroFeatures, services x6, fleet, differentials, steps, faq, footer) e criar `buildWhatsappHref(message)` reaproveitando `whatsappNumber`.
-- [ ] **T3. Primitivos:** `SectionHeading` (eyebrow com ponto + título + descrição, variantes centro/esquerda/clara) e `WhatsAppFloat`. Reaproveitar `BrandIcons.tsx`.
+- [x] **T1. Design tokens e base:** `tailwind.config.js` (cores, fontes, `ease-expo`, sombras `card`, `card-hover`, `glow`), `index.html` (fontes com preconnect, `theme-color #07080a`), `src/index.css` (base, keyframes, `@layer components` para `.eyebrow`, `.btn-cta`, `.btn-outline`, scrollbar laranja).
+- [x] **T2. Dados:** reestruturar `src/data/site.ts` (nav, heroFeatures, services x6, fleet, differentials, steps, faq, footer) e criar `buildWhatsappHref(message)` reaproveitando `whatsappNumber`.
+- [x] **T3. Primitivos:** `SectionHeading` (eyebrow com ponto + título + descrição, variantes centro/esquerda/clara) e `WhatsAppFloat`. Reaproveitar `BrandIcons.tsx`.
 
 ### Fase 2: Seções
-- [ ] **T4. Header:** sticky glass, estado `scrolled`, scroll spy com IntersectionObserver, gaveta mobile com overlay, Esc fecha, foco gerenciado.
-- [ ] **T5. Hero:** fundo `hero-carro.jpg` com `heroZoom`, overlays, 6 chips (2 colunas desktop, 1 coluna mobile como no print iPhone), CTA laranja escuro, status pulsante.
-- [ ] **T6. Sobre (clara):** texto à esquerda, foto à direita com radius 16px e sombra; mobile empilha.
-- [ ] **T7. Serviços:** grid 3x2 (md 2 col, mobile 1 col) de service cards.
+- [x] **T4. Header:** sticky glass, estado `scrolled`, scroll spy com IntersectionObserver, gaveta mobile com overlay, Esc fecha, foco gerenciado.
+- [x] **T5. Hero:** fundo `hero-carro.jpg` com `heroZoom`, overlays, 6 chips (2 colunas desktop, 1 coluna mobile como no print iPhone), CTA laranja escuro, status pulsante.
+- [x] **T6. Sobre (clara):** texto à esquerda, foto à direita com radius 16px e sombra; mobile empilha.
+- [x] **T7. Serviços:** grid 3x2 (md 2 col, mobile 1 col) de service cards.
 - [ ] **T8. Opções de Mobilidade:** gerar as 4 ilustrações, `FleetShowcase.tsx` + `src/hooks/useFleetCarousel.ts` conforme spec. **(Sugestão: executar com Fable 5.2)**
-- [ ] **T9. Diferenciais:** 6 cards com ícone, hover igual ao review-card.
-- [ ] **T10. Como solicitar:** 3 step cards com badge 01 a 03 + CTA.
-- [ ] **T11. FAQ:** accordion acessível (`button` com `aria-expanded`/`aria-controls`, animação `grid-rows 0fr → 1fr`).
-- [ ] **T12. CTA final + Footer:** banner com glow; footer 4 colunas; remover `Contact.tsx` antigo e `VisualGallery.tsx`.
-- [ ] **T13. Montagem:** `App.tsx` na nova ordem.
+  - [x] `FleetShowcase.tsx`, `useFleetCarousel.ts` e `src/styles/fleet.css` conforme spec (setas, dots, clique, teclado, swipe, scroll-snap sincronizado, aria-live).
+  - [ ] Ilustrações finais por IA. Hoje: placeholders SVG em `images/frota/*.svg` (trocar o import em `site.ts` para os PNGs quando chegarem).
+  - [ ] Confirmar capacidades (passageiros e malas) com o Rafael.
+- [x] **T9. Diferenciais:** 6 cards com ícone, hover igual ao review-card.
+- [x] **T10. Como solicitar:** 3 step cards com badge 01 a 03 + CTA.
+- [x] **T11. FAQ:** accordion acessível (`button` com `aria-expanded`/`aria-controls`, animação `grid-rows 0fr → 1fr`).
+- [x] **T12. CTA final + Footer:** banner com glow; footer 4 colunas; remover `Contact.tsx` antigo e `VisualGallery.tsx`.
+- [x] **T13. Montagem:** `App.tsx` na nova ordem.
 
 ### Fase 3: Qualidade
-- [ ] **T14. Testes:** atualizar `src/App.test.tsx` (novos headings e âncoras, links WhatsApp/Instagram/telefone, créditos, ausência de depoimentos); criar `FleetShowcase.test.tsx` (wrap prev/next, clique em dot e card, href do WhatsApp contém a categoria, aria-live) e `Faq.test.tsx` (um aberto por vez, `aria-expanded`).
-- [ ] **T15. QA visual:** comparar com a referência em 1440px e 390px via claude-in-chrome; ajustar espaçamentos. **(Sugestão: revisão final com Fable 5.2)**
+- [x] **T14. Testes:** atualizar `src/App.test.tsx` (novos headings e âncoras, links WhatsApp/Instagram/telefone, créditos, ausência de depoimentos); criar `FleetShowcase.test.tsx` (wrap prev/next, clique em dot e card, href do WhatsApp contém a categoria, aria-live) e `Faq.test.tsx` (um aberto por vez, `aria-expanded`).
+- [ ] **T15. QA visual:** (primeira passada feita em 1440px e 390px: header mobile compactado, título do Sobre em 2 linhas, texto do Sobre alinhado à esquerda no mobile, CTA da gaveta). Falta: comparar com a referência em 1440px e 390px via claude-in-chrome; ajustar espaçamentos. **(Sugestão: revisão final com Fable 5.2)**
 - [ ] **T16. Acabamento:** meta/OG atualizados, `prefers-reduced-motion`, foco visível, contraste, compressão das imagens pesadas (`interior-veiculo.png` tem 2 MB), README.
 - [ ] **T17 (opcional).** Reveal suave no scroll (fade-up 16px, .6s expo). A Primus não tem; só se o usuário quiser.
 
