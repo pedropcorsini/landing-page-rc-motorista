@@ -133,7 +133,14 @@ Copiar este plano para `REDESIGN.md` na raiz do repo (commitado) e usá-lo como 
 
 ### Fase 3: Qualidade
 - [x] **T14. Testes:** atualizar `src/App.test.tsx` (novos headings e âncoras, links WhatsApp/Instagram/telefone, créditos, ausência de depoimentos); criar `FleetShowcase.test.tsx` (wrap prev/next, clique em dot e card, href do WhatsApp contém a categoria, aria-live) e `Faq.test.tsx` (um aberto por vez, `aria-expanded`).
-- [ ] **T15. QA visual:** (primeira passada feita em 1440px e 390px: header mobile compactado, título do Sobre em 2 linhas, texto do Sobre alinhado à esquerda no mobile, CTA da gaveta). Falta: comparar com a referência em 1440px e 390px via claude-in-chrome; ajustar espaçamentos. **(Sugestão: revisão final com Fable 5.2)**
+- [x] **T15. QA visual:** comparação seção a seção com a referência via Chrome headless (script CDP) em 1440px e 390px, mais checagem de 360, 768, 1024 e 1280px (sem rolagem horizontal em nenhuma largura).
+  - Container de 1180 para 1280px (mesma largura útil da referência: 1232px).
+  - Títulos: altura de linha 1.2 e espaçamentos eyebrow/título/descrição iguais aos da referência; corrigido bug em que `sm:text-5xl` zerava a altura de linha do hero e do Sobre.
+  - Sobre: colunas iguais com foto maior, texto com entrelinha 1.85, link com sublinhado; sem hifenização no mobile.
+  - Serviços e Diferenciais: espaçamento entre cards maior no desktop.
+  - FAQ: divisor acima da resposta. CTA final: botão preenchido em gradiente. Rodapé: títulos maiores e fundo mais escuro.
+  - Header: menu completo só a partir de 1280px (em 1024px o "Como solicitar" quebrava em duas linhas); "Fale conosco" com texto a partir de 380px.
+  - Frota entre 992 e 1279px: título e link menores para caber sem quebra.
 - [x] **T16. Acabamento:** meta/OG atualizados, `prefers-reduced-motion`, foco visível, contraste, compressão das imagens pesadas (`interior-veiculo.png` tem 2 MB), README.
   - Meta: título, descrição, canonical, OG/Twitter com `public/preview-link-v3.jpg` (1200x630, captura do hero novo).
   - Fontes: removidos os pesos sem uso (Plus Jakarta 500, Playfair itálico 700).
