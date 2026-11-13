@@ -134,7 +134,14 @@ Copiar este plano para `REDESIGN.md` na raiz do repo (commitado) e usá-lo como 
 ### Fase 3: Qualidade
 - [x] **T14. Testes:** atualizar `src/App.test.tsx` (novos headings e âncoras, links WhatsApp/Instagram/telefone, créditos, ausência de depoimentos); criar `FleetShowcase.test.tsx` (wrap prev/next, clique em dot e card, href do WhatsApp contém a categoria, aria-live) e `Faq.test.tsx` (um aberto por vez, `aria-expanded`).
 - [ ] **T15. QA visual:** (primeira passada feita em 1440px e 390px: header mobile compactado, título do Sobre em 2 linhas, texto do Sobre alinhado à esquerda no mobile, CTA da gaveta). Falta: comparar com a referência em 1440px e 390px via claude-in-chrome; ajustar espaçamentos. **(Sugestão: revisão final com Fable 5.2)**
-- [ ] **T16. Acabamento:** meta/OG atualizados, `prefers-reduced-motion`, foco visível, contraste, compressão das imagens pesadas (`interior-veiculo.png` tem 2 MB), README.
+- [x] **T16. Acabamento:** meta/OG atualizados, `prefers-reduced-motion`, foco visível, contraste, compressão das imagens pesadas (`interior-veiculo.png` tem 2 MB), README.
+  - Meta: título, descrição, canonical, OG/Twitter com `public/preview-link-v3.jpg` (1200x630, captura do hero novo).
+  - Fontes: removidos os pesos sem uso (Plus Jakarta 500, Playfair itálico 700).
+  - Imagens: `hero-carro.jpg` 657 KB para 296 KB; `atendimento-executivo.jpg` 769 KB para 237 KB (1000px). `interior-veiculo.png` não é mais usada no site, então não entra no build.
+  - Acessibilidade: link "Pular para o conteúdo"; contorno de foco do FAQ por dentro (o container corta); contorno do link da frota mais próximo (o trilho rola no mobile); rodapé de white/45 para white/55 (4,48 para 5,9:1).
+  - Header em telas abaixo de 400px: "Fale conosco" vira só o ícone (texto mantido para leitores de tela); título do hero um pouco menor.
+  - Exceção consciente de contraste: cards inativos do carrossel (opacidade .35, efeito de foco da referência). Componentes inativos são isentos na WCAG, e o conteúdo fica legível ao selecionar.
+  - README reescrito para o redesign, com nova imagem em `docs/preview-redesign.jpg`.
 - [ ] **T17 (opcional).** Reveal suave no scroll (fade-up 16px, .6s expo). A Primus não tem; só se o usuário quiser.
 
 ---
