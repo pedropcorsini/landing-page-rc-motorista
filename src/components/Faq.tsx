@@ -35,7 +35,7 @@ export function Faq() {
                     aria-expanded={open}
                     aria-controls={panelId}
                     onClick={() => setOpenIndex(open ? null : index)}
-                    className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-5 text-left font-heading text-[0.92rem] font-bold text-white sm:px-[1.6rem] sm:py-[1.4rem] sm:text-[0.98rem]"
+                    className="flex w-full cursor-pointer items-center justify-between gap-4 rounded-xl px-5 py-5 text-left focus-visible:outline-offset-[-3px] font-heading text-[0.92rem] font-bold text-white sm:px-[1.6rem] sm:py-[1.4rem] sm:text-[0.98rem]"
                   >
                     {item.question}
                     <span

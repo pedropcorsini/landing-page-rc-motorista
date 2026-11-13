@@ -85,6 +85,13 @@ describe('Landing page RC Motorista', () => {
     expect(screen.getAllByText('(11) 95294-6402').length).toBeGreaterThan(0);
   });
 
+  it('oferece link para pular direto ao conteudo principal', () => {
+    render(<App />);
+
+    expect(screen.getByRole('link', { name: /pular para o conteúdo/i })).toHaveAttribute('href', '#conteudo');
+    expect(screen.getByRole('main')).toHaveAttribute('id', 'conteudo');
+  });
+
   it('exibe footer com creditos', () => {
     render(<App />);
 

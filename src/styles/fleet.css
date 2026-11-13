@@ -244,6 +244,12 @@
   transform: translateX(5px);
 }
 
+/* O trilho rola na horizontal no mobile e cortaria um contorno mais afastado. */
+.fleet-link:focus-visible {
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 .fleet-dots {
   display: flex;
   align-items: center;

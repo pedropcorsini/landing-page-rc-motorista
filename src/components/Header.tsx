@@ -117,9 +117,14 @@ export function Header() {
           </nav>
 
           <div className="flex flex-none items-center gap-1.5 sm:gap-2">
-            <a href={site.whatsappHref} target="_blank" rel="noreferrer" className="btn-outline gap-1.5 px-2.5 text-[0.62rem] sm:gap-2 sm:px-4 sm:text-[0.7rem]">
-              <WhatsAppIcon className="h-3.5 w-3.5" />
-              Fale conosco
+            <a
+              href={site.whatsappHref}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-outline h-10 gap-1.5 px-2.5 text-[0.62rem] max-[399px]:w-10 max-[399px]:px-0 sm:gap-2 sm:px-4 sm:text-[0.7rem]"
+            >
+              <WhatsAppIcon className="h-4 w-4 min-[400px]:h-3.5 min-[400px]:w-3.5" />
+              <span className="max-[399px]:sr-only">Fale conosco</span>
             </a>
             <button
               ref={toggleRef}
