@@ -24,7 +24,7 @@ export function Hero() {
 
       <div className="container-site">
         <div className="max-w-[580px]">
-          <h1 className="font-display text-[1.95rem] font-bold min-[400px]:text-[2.15rem] leading-[1.1] tracking-[-0.015em] text-champagne sm:text-5xl lg:text-[3.6rem]">
+          <h1 className="font-display text-[1.95rem] font-bold min-[400px]:text-[2.15rem] leading-[1.14] tracking-[-0.015em] text-champagne sm:text-[3rem] lg:text-[3.35rem]">
             {hero.titleLine1}{' '}
             <span className="block sm:whitespace-nowrap">{hero.titleLine2}</span>
           </h1>

@@ -288,12 +288,22 @@
 /* Telas medias: 4 cards cabendo sem cortar */
 @media (min-width: 992px) and (max-width: 1279px) {
   .fleet-track {
-    gap: 2rem;
+    gap: 1.5rem;
     padding: 0 3.5rem;
   }
 
   .fleet-card {
     min-width: 0;
+  }
+
+  .fleet-title {
+    font-size: 1.15rem;
+  }
+
+  .fleet-link {
+    gap: 6px;
+    font-size: 0.76rem;
+    white-space: nowrap;
   }
 }
 

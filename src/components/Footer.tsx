@@ -3,12 +3,12 @@ import { InstagramIcon, WhatsAppIcon } from './BrandIcons';
 import { BrandLogo } from './BrandLogo';
 import { site } from '../data/site';
 
-const columnTitle = 'mb-5 font-heading text-[0.72rem] font-bold uppercase tracking-[0.18em] text-white';
+const columnTitle = 'mb-5 font-heading text-[0.82rem] font-bold uppercase tracking-[0.12em] text-white';
 const footerLink = 'text-[0.88rem] text-mist transition-colors duration-200 hover:text-brand-light';
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] bg-ink pb-8 pt-16">
+    <footer className="border-t border-white/[0.06] bg-[#050608] pb-9 pt-16 lg:pt-[5.5rem]">
       <div className="container-site">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.1fr_1.3fr]">
           <div>

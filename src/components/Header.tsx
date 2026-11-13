@@ -93,7 +93,7 @@ export function Header() {
             <BrandLogo />
           </a>
 
-          <nav aria-label="Navegação principal" className="hidden lg:block">
+          <nav aria-label="Navegação principal" className="hidden xl:block">
             <ul className="flex items-center gap-5 xl:gap-6">
               {site.nav.map((item) => {
                 const active = activeId === item.href.slice(1);
@@ -102,7 +102,7 @@ export function Header() {
                     <a
                       href={item.href}
                       aria-current={active ? 'true' : undefined}
-                      className={`relative inline-flex py-2 font-heading text-[0.66rem] font-bold uppercase tracking-[0.1em] transition-colors duration-300 after:absolute after:bottom-0.5 after:left-0 after:h-[2px] after:bg-brand after:transition-all after:duration-300 after:ease-expo ${
+                      className={`relative inline-flex whitespace-nowrap py-2 font-heading text-[0.66rem] font-bold uppercase tracking-[0.1em] transition-colors duration-300 after:absolute after:bottom-0.5 after:left-0 after:h-[2px] after:bg-brand after:transition-all after:duration-300 after:ease-expo ${
                         active
                           ? 'text-white after:w-full'
                           : 'text-white/60 after:w-0 hover:text-white hover:after:w-full'
@@ -121,15 +121,15 @@ export function Header() {
               href={site.whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="btn-outline h-10 gap-1.5 px-2.5 text-[0.62rem] max-[399px]:w-10 max-[399px]:px-0 sm:gap-2 sm:px-4 sm:text-[0.7rem]"
+              className="btn-outline h-10 gap-1.5 px-2.5 text-[0.62rem] max-[379px]:w-10 max-[379px]:px-0 sm:gap-2 sm:px-4 sm:text-[0.7rem]"
             >
-              <WhatsAppIcon className="h-4 w-4 min-[400px]:h-3.5 min-[400px]:w-3.5" />
-              <span className="max-[399px]:sr-only">Fale conosco</span>
+              <WhatsAppIcon className="h-4 w-4 min-[380px]:h-3.5 min-[380px]:w-3.5" />
+              <span className="max-[379px]:sr-only">Fale conosco</span>
             </a>
             <button
               ref={toggleRef}
               type="button"
-              className="grid h-10 w-10 place-items-center rounded-lg text-white transition-colors hover:bg-white/5 lg:hidden"
+              className="grid h-10 w-10 place-items-center rounded-lg text-white transition-colors hover:bg-white/5 xl:hidden"
               aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
@@ -142,7 +142,7 @@ export function Header() {
       </header>
 
       <div
-        className={`fixed inset-0 z-[60] lg:hidden ${menuOpen ? 'visible' : 'invisible'}`}
+        className={`fixed inset-0 z-[60] xl:hidden ${menuOpen ? 'visible' : 'invisible'}`}
         aria-hidden={!menuOpen}
         inert={!menuOpen}
       >

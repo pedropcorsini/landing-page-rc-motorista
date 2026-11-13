@@ -29,12 +29,12 @@ export function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <h2 id={id} className={`${eyebrow ? 'mt-4' : ''} ${titleClassName}`}>
+      <h2 id={id} className={`${eyebrow ? (centered ? 'mt-5 sm:mt-7' : 'mt-4') : ''} ${titleClassName}`}>
         {title}
       </h2>
       {description ? (
         <p
-          className={`mt-5 text-[0.95rem] leading-relaxed sm:text-base ${centered ? 'mx-auto max-w-[620px]' : ''} ${
+          className={`mt-5 text-[0.95rem] leading-relaxed sm:mt-7 sm:text-base ${centered ? 'mx-auto max-w-[620px]' : ''} ${
             tone === 'light' ? 'text-slate-600' : 'text-mist'
           }`}
         >

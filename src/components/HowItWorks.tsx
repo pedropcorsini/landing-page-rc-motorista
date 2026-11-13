@@ -16,7 +16,7 @@ export function HowItWorks() {
         <SectionHeading
           id="como-solicitar-title"
           eyebrow={stepsSection.eyebrow}
-          titleClassName="font-display text-[2rem] font-semibold leading-[1.12] tracking-[-0.015em] text-white sm:text-[2.6rem] lg:text-[3rem]"
+          titleClassName="font-display text-[2rem] font-semibold leading-[1.2] tracking-[-0.015em] text-white sm:text-[2.6rem] lg:text-[2.95rem]"
           title={
             <>
               {stepsSection.titleLine1}{' '}

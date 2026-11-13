@@ -16,7 +16,7 @@ export function Differentials() {
           description={differentialsSection.description}
         />
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {site.differentials.map((item) => {
             const Icon = icons[item.icon];
             return (

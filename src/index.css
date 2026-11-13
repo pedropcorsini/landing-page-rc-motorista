@@ -73,7 +73,7 @@
   }
 
   .section-title {
-    @apply font-heading text-[1.85rem] font-extrabold leading-[1.15] tracking-[-0.02em] text-white sm:text-[2.4rem] lg:text-[2.75rem];
+    @apply font-heading text-[1.85rem] font-extrabold leading-[1.2] tracking-[-0.02em] text-white sm:text-[2.4rem] lg:text-[2.75rem];
   }
 
   /* Botao principal (btn-hero-bronze da referencia, em laranja) */

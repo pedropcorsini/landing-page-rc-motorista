@@ -30,7 +30,7 @@ export function CtaBanner() {
               href={site.whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full border border-brand bg-brand/15 px-7 py-4 font-heading text-[0.85rem] font-bold text-champagne shadow-[0_0_24px_rgba(255,106,0,0.25)] transition-all duration-300 ease-expo hover:-translate-y-0.5 hover:bg-brand hover:text-ink hover:shadow-[0_0_32px_rgba(255,106,0,0.45)]"
+              className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-[linear-gradient(135deg,#ff9a52_0%,#ff6a00_55%,#e05500_100%)] px-8 py-[1.05rem] font-heading text-[0.92rem] font-bold text-ink shadow-[0_0_28px_rgba(255,106,0,0.35)] transition-all duration-300 ease-expo hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(255,106,0,0.55)]"
             >
               <WhatsAppIcon className="h-[1.1rem] w-[1.1rem]" />
               Agendar pelo WhatsApp

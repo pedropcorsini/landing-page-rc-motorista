@@ -19,7 +19,7 @@ export function Services() {
           description={servicesSection.description}
         />
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {site.services.map((service) => {
             const Icon = icons[service.icon];
             return (

@@ -30,7 +30,7 @@ export default {
         body: ['"Plus Jakarta Sans"', 'Montserrat', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
-        site: '1180px',
+        site: '1280px',
       },
       transitionTimingFunction: {
         expo: 'cubic-bezier(0.16, 1, 0.3, 1)',

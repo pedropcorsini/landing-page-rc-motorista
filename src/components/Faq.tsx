@@ -58,7 +58,7 @@ export function Faq() {
                   style={{ gridTemplateRows: open ? '1fr' : '0fr' }}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 pb-5 text-[0.92rem] leading-relaxed text-mist sm:px-[1.6rem] sm:pb-[1.4rem]">
+                    <p className="mx-5 border-t border-white/[0.06] pb-5 pt-4 text-[0.92rem] leading-[1.75] text-mist sm:mx-[1.6rem] sm:pb-[1.5rem] sm:pt-5">
                       {item.answer}
                     </p>
                   </div>

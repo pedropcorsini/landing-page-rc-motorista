@@ -11,13 +11,13 @@ export function FleetShowcase() {
 
   return (
     <section id="frota" aria-labelledby="frota-title" className="fleet-section">
-      <div className="container-site max-w-[1280px]">
+      <div className="container-site">
         <SectionHeading
           id="frota-title"
           eyebrow={fleetSection.eyebrow}
           title={fleetSection.title}
           description={fleetSection.description}
-          titleClassName="font-heading text-[1.85rem] font-black leading-[1.15] tracking-[-0.01em] text-white sm:text-[2.4rem] lg:text-[2.75rem]"
+          titleClassName="font-heading text-[1.85rem] font-black leading-[1.2] tracking-[-0.01em] text-white sm:text-[2.4rem] lg:text-[2.75rem]"
         />
 
         <div
