@@ -29,3 +29,7 @@ python3 scripts/bake-fleet-images.py <pasta_com_os_pngs> images/frota
 ```
 
 Saída: `sedan.jpg`, `suv.jpg`, `minivan.jpg`, `van.jpg` em 800x600. Se a cor de fundo da seção mudar em `src/styles/fleet.css`, atualize `SECTION` no script e rode de novo.
+
+## Sedã (Chery Arrizo 6 2021)
+
+O `sedan.jpg` foi gerado com o prompt base, usando no lugar de `{veículo}` a descrição do Arrizo 6 turbo 2021: silhueta de cupê de quatro portas com teto caindo até a traseira curta, grade larga em colmeia de losangos com friso cromado, faróis finos puxados para trás com barra de LED, entradas de ar angulares com filetes de LED, vinco de ombro até a lanterna fina e rodas de raios duplos. Sem logo, emblema ou placa. Tratado com o mesmo script de tratamento.
