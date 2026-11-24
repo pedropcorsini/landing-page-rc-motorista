@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { About } from './components/About';
 import { CtaBanner } from './components/CtaBanner';
 import { Differentials } from './components/Differentials';
@@ -32,6 +33,7 @@ export default function App() {
       </main>
       <Footer />
       <WhatsAppFloat />
+      <Analytics />
     </div>
   );
 }
