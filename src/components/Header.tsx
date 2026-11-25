@@ -118,7 +118,7 @@ export function Header() {
           </nav>
 
           <div className="flex flex-none items-center gap-1.5 sm:gap-2">
-            <LanguageSwitcher className="hidden sm:inline-flex" />
+            <LanguageSwitcher compact className="hidden sm:inline-flex" />
             <a
               href={whatsappHref}
               target="_blank"
