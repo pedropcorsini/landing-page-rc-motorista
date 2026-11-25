@@ -1,13 +1,14 @@
 import { WhatsAppIcon } from './BrandIcons';
 import { icons } from './icons';
-import { site } from '../data/site';
+import { useLanguage } from '../i18n/LanguageProvider';
 import heroCar from '../../images/hero-carro.jpg';
 
 const overlay =
   'linear-gradient(0deg, rgba(7,8,10,0.85) 0%, rgba(7,8,10,0.3) 12%, transparent 28%), linear-gradient(90deg, rgba(7,8,10,0.96) 0%, rgba(7,8,10,0.9) 38%, rgba(7,8,10,0.72) 58%, rgba(7,8,10,0.35) 82%, rgba(7,8,10,0.15) 100%)';
 
 export function Hero() {
-  const { hero } = site;
+  const { t, whatsappHref } = useLanguage();
+  const { hero } = t;
 
   return (
     <section id="top" className="relative isolate flex min-h-[100svh] items-center overflow-hidden pb-14 pt-28 sm:pb-20 sm:pt-32">
@@ -25,7 +26,7 @@ export function Hero() {
       <div className="container-site">
         <div className="max-w-[580px]">
           <h1 className="font-display text-[1.95rem] font-bold min-[400px]:text-[2.15rem] leading-[1.14] tracking-[-0.015em] text-champagne sm:text-[3rem] lg:text-[3.35rem]">
-            {hero.titleLine1}{' '}
+            <span className="lg:whitespace-nowrap">{hero.titleLine1}</span>{' '}
             <span className="block sm:whitespace-nowrap">{hero.titleLine2}</span>
           </h1>
 
@@ -47,9 +48,9 @@ export function Hero() {
           <p className="mt-6 max-w-[470px] text-[0.95rem] leading-relaxed text-white/70">{hero.subtitle}</p>
 
           <div className="mt-7 flex flex-col items-start gap-3.5">
-            <a href={site.whatsappHref} target="_blank" rel="noreferrer" className="btn-cta w-full sm:w-auto">
+            <a href={whatsappHref} target="_blank" rel="noreferrer" className="btn-cta w-full sm:w-auto">
               <WhatsAppIcon className="h-[1.15rem] w-[1.15rem]" />
-              Agendar pelo WhatsApp
+              {t.ui.bookWhatsapp}
             </a>
             <p className="flex items-center gap-2 pl-0.5">
               <span

@@ -10,15 +10,26 @@ import { Hero } from './components/Hero';
 import { HowItWorks } from './components/HowItWorks';
 import { Services } from './components/Services';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
+import { LanguageProvider, useLanguage } from './i18n/LanguageProvider';
 
 export default function App() {
+  return (
+    <LanguageProvider>
+      <Page />
+    </LanguageProvider>
+  );
+}
+
+function Page() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen overflow-x-clip bg-ink font-body text-mist antialiased">
       <a
         href="#conteudo"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-3 focus:font-heading focus:text-sm focus:font-bold focus:text-ink"
       >
-        Pular para o conteúdo
+        {t.ui.skipLink}
       </a>
       <Header />
       <main id="conteudo" tabIndex={-1} className="outline-none">

@@ -1,12 +1,13 @@
 import { useId, useState } from 'react';
 import { Plus } from 'lucide-react';
 import { SectionHeading } from './SectionHeading';
-import { site } from '../data/site';
+import { useLanguage } from '../i18n/LanguageProvider';
 
 export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const baseId = useId();
-  const { faqSection } = site;
+  const { t } = useLanguage();
+  const { faqSection } = t;
 
   return (
     <section id="duvidas" aria-labelledby="duvidas-title" className="bg-surface py-20 lg:py-28">
@@ -14,7 +15,7 @@ export function Faq() {
         <SectionHeading id="duvidas-title" title={faqSection.title} description={faqSection.description} />
 
         <div className="mx-auto mt-12 flex max-w-[820px] flex-col gap-4">
-          {site.faq.map((item, index) => {
+          {t.faq.map((item, index) => {
             const open = openIndex === index;
             const buttonId = `${baseId}-trigger-${index}`;
             const panelId = `${baseId}-panel-${index}`;

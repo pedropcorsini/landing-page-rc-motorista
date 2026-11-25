@@ -1,9 +1,10 @@
 import { SectionHeading } from './SectionHeading';
 import { icons } from './icons';
-import { site } from '../data/site';
+import { useLanguage } from '../i18n/LanguageProvider';
 
 export function Services() {
-  const { servicesSection } = site;
+  const { t } = useLanguage();
+  const { servicesSection } = t;
 
   return (
     <section id="servicos" aria-labelledby="servicos-title" className="bg-surface py-20 lg:py-28">
@@ -20,7 +21,7 @@ export function Services() {
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-          {site.services.map((service) => {
+          {t.services.map((service) => {
             const Icon = icons[service.icon];
             return (
               <article

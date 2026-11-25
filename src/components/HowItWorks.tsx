@@ -1,10 +1,11 @@
 import { WhatsAppIcon } from './BrandIcons';
 import { SectionHeading } from './SectionHeading';
 import { icons } from './icons';
-import { site } from '../data/site';
+import { useLanguage } from '../i18n/LanguageProvider';
 
 export function HowItWorks() {
-  const { stepsSection } = site;
+  const { t, whatsappHref } = useLanguage();
+  const { stepsSection } = t;
 
   return (
     <section
@@ -27,7 +28,7 @@ export function HowItWorks() {
         />
 
         <ol className="mx-auto mt-14 grid max-w-[1000px] gap-5 md:grid-cols-3">
-          {site.steps.map((step, index) => {
+          {t.steps.map((step, index) => {
             const Icon = icons[step.icon];
             return (
               <li
@@ -54,9 +55,9 @@ export function HowItWorks() {
         </ol>
 
         <div className="mt-14 flex justify-center">
-          <a href={site.whatsappHref} target="_blank" rel="noreferrer" className="btn-cta">
+          <a href={whatsappHref} target="_blank" rel="noreferrer" className="btn-cta">
             <WhatsAppIcon className="h-[1.15rem] w-[1.15rem]" />
-            Falar com um especialista
+            {t.ui.talkSpecialist}
           </a>
         </div>
       </div>

@@ -1,9 +1,10 @@
 import { ArrowRight } from 'lucide-react';
-import { site } from '../data/site';
+import { useLanguage } from '../i18n/LanguageProvider';
 import aboutImage from '../../images/atendimento-executivo.jpg';
 
 export function About() {
-  const { about } = site;
+  const { t } = useLanguage();
+  const { about } = t;
 
   return (
     <section id="sobre" aria-labelledby="sobre-title" className="bg-white py-20 lg:py-28">
@@ -39,7 +40,7 @@ export function About() {
         <div className="relative">
           <img
             src={aboutImage}
-            alt="Atendimento executivo da RC Motorista"
+            alt={t.ui.aboutImageAlt}
             loading="lazy"
             className="aspect-[4/3] w-full rounded-2xl object-cover shadow-[0_30px_60px_rgba(15,23,42,0.28)]"
           />

@@ -1,9 +1,11 @@
 import { Phone } from 'lucide-react';
 import { InstagramIcon, WhatsAppIcon } from './BrandIcons';
 import { site } from '../data/site';
+import { useLanguage } from '../i18n/LanguageProvider';
 
 export function CtaBanner() {
-  const { cta } = site;
+  const { t, whatsappHref } = useLanguage();
+  const { cta } = t;
 
   return (
     <section id="contato" aria-labelledby="contato-title" className="bg-[#08090e] pb-24 pt-16">
@@ -27,13 +29,13 @@ export function CtaBanner() {
 
           <div className="relative z-10 flex flex-col items-stretch gap-4 sm:items-start lg:items-end">
             <a
-              href={site.whatsappHref}
+              href={whatsappHref}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-[linear-gradient(135deg,#ff9a52_0%,#ff6a00_55%,#e05500_100%)] px-8 py-[1.05rem] font-heading text-[0.92rem] font-bold text-ink shadow-[0_0_28px_rgba(255,106,0,0.35)] transition-all duration-300 ease-expo hover:-translate-y-0.5 hover:shadow-[0_0_40px_rgba(255,106,0,0.55)]"
             >
               <WhatsAppIcon className="h-[1.1rem] w-[1.1rem]" />
-              Agendar pelo WhatsApp
+              {t.ui.bookWhatsapp}
             </a>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-[0.85rem] sm:justify-start lg:justify-end">
               <a
@@ -43,11 +45,11 @@ export function CtaBanner() {
                 className="inline-flex items-center gap-2 text-white/70 transition-colors hover:text-brand-light"
               >
                 <InstagramIcon className="h-4 w-4" />
-                Ver Instagram
+                {t.ui.instagramCta}
               </a>
               <a
                 href={site.phoneHref}
-                aria-label={`Telefone ${site.phoneDisplay}`}
+                aria-label={t.ui.phoneAria(site.phoneDisplay)}
                 className="inline-flex items-center gap-2 text-white/70 transition-colors hover:text-brand-light"
               >
                 <Phone aria-hidden="true" className="h-4 w-4" />

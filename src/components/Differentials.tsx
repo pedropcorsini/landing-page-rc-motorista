@@ -1,9 +1,10 @@
 import { SectionHeading } from './SectionHeading';
 import { icons } from './icons';
-import { site } from '../data/site';
+import { useLanguage } from '../i18n/LanguageProvider';
 
 export function Differentials() {
-  const { differentialsSection } = site;
+  const { t } = useLanguage();
+  const { differentialsSection } = t;
 
   return (
     <section id="diferenciais" aria-labelledby="diferenciais-title" className="bg-ink py-20 lg:py-28">
@@ -17,7 +18,7 @@ export function Differentials() {
         />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-          {site.differentials.map((item) => {
+          {t.differentials.map((item) => {
             const Icon = icons[item.icon];
             return (
               <article

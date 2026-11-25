@@ -1,15 +1,15 @@
 import { render, screen, within } from '@testing-library/react';
 import App from './App';
 
-describe('Landing page RC Motorista', () => {
+describe('Landing page Transporte Executivo RC', () => {
   it('renderiza a promessa principal e CTAs de conversao', () => {
     render(<App />);
 
     expect(
-      screen.getByRole('heading', { level: 1, name: /motorista executivo em são paulo e região/i }),
+      screen.getByRole('heading', { level: 1, name: /transporte executivo em são paulo e região/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText('Mobilidade executiva com atendimento especializado para aeroportos, compromissos, eventos e viagens agendadas.'),
+      screen.getByText('Conforto, segurança e pontualidade em transfers para aeroportos, agendas corporativas, eventos e viagens.'),
     ).toBeInTheDocument();
     expect(screen.getAllByRole('link', { name: /agendar pelo whatsapp/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole('link', { name: /ver instagram/i }).length).toBeGreaterThan(0);
@@ -38,10 +38,10 @@ describe('Landing page RC Motorista', () => {
   it('exibe servicos, frota, diferenciais, passos e duvidas', () => {
     render(<App />);
 
-    expect(screen.getByRole('heading', { level: 2, name: /serviços sob medida para cada compromisso/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: /soluções sob medida para cada compromisso/i })).toBeInTheDocument();
     for (const service of [
       /^transfers para aeroportos$/i,
-      /^compromissos executivos$/i,
+      /^compromissos corporativos$/i,
       /^eventos e ocasiões especiais$/i,
       /^viagens particulares e executivas$/i,
       /^atendimento recorrente$/i,
@@ -95,7 +95,7 @@ describe('Landing page RC Motorista', () => {
   it('exibe footer com creditos', () => {
     render(<App />);
 
-    expect(screen.getByText(/2026 RC Motorista/i)).toBeInTheDocument();
+    expect(screen.getByText(/2026 Transporte Executivo RC/i)).toBeInTheDocument();
     expect(screen.getByText(/todos os direitos reservados/i)).toBeInTheDocument();
     expect(screen.getByText(/desenvolvido por/i)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Pedro Passos Corsini/i })).toHaveAttribute(

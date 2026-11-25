@@ -2,7 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { WhatsAppIcon } from './BrandIcons';
 import { BrandLogo } from './BrandLogo';
-import { site } from '../data/site';
+import { LanguageSwitcher } from './LanguageSwitcher';
+import { sectionIds } from '../data/site';
+import { useLanguage } from '../i18n/LanguageProvider';
 
 function useScrolled(threshold = 10) {
   const [scrolled, setScrolled] = useState(false);
@@ -17,7 +19,7 @@ function useScrolled(threshold = 10) {
   return scrolled;
 }
 
-function useActiveSection(ids: string[]) {
+function useActiveSection(ids: readonly string[]) {
   const [activeId, setActiveId] = useState(ids[0]);
 
   useEffect(() => {
@@ -42,9 +44,8 @@ function useActiveSection(ids: string[]) {
   return activeId;
 }
 
-const sectionIds = site.nav.map((item) => item.href.slice(1));
-
 export function Header() {
+  const { t, whatsappHref } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const scrolled = useScrolled();
   const activeId = useActiveSection(sectionIds);
@@ -87,20 +88,20 @@ export function Header() {
         <div className="container-site flex items-center justify-between gap-3 sm:gap-6">
           <a
             href="#top"
-            aria-label="RC Motorista, voltar ao início"
+            aria-label={t.ui.homeLabel}
             className="rounded-sm transition-transform duration-200 hover:scale-[1.03]"
           >
             <BrandLogo />
           </a>
 
-          <nav aria-label="Navegação principal" className="hidden xl:block">
+          <nav aria-label={t.ui.mainNav} className="hidden xl:block">
             <ul className="flex items-center gap-5 xl:gap-6">
-              {site.nav.map((item) => {
-                const active = activeId === item.href.slice(1);
+              {sectionIds.map((id) => {
+                const active = activeId === id;
                 return (
-                  <li key={item.href}>
+                  <li key={id}>
                     <a
-                      href={item.href}
+                      href={`#${id}`}
                       aria-current={active ? 'true' : undefined}
                       className={`relative inline-flex whitespace-nowrap py-2 font-heading text-[0.66rem] font-bold uppercase tracking-[0.1em] transition-colors duration-300 after:absolute after:bottom-0.5 after:left-0 after:h-[2px] after:bg-brand after:transition-all after:duration-300 after:ease-expo ${
                         active
@@ -108,7 +109,7 @@ export function Header() {
                           : 'text-white/60 after:w-0 hover:text-white hover:after:w-full'
                       }`}
                     >
-                      {item.label}
+                      {t.nav[id]}
                     </a>
                   </li>
                 );
@@ -117,20 +118,21 @@ export function Header() {
           </nav>
 
           <div className="flex flex-none items-center gap-1.5 sm:gap-2">
+            <LanguageSwitcher className="hidden sm:inline-flex" />
             <a
-              href={site.whatsappHref}
+              href={whatsappHref}
               target="_blank"
               rel="noreferrer"
               className="btn-outline h-10 gap-1.5 px-2.5 text-[0.62rem] max-[379px]:w-10 max-[379px]:px-0 sm:gap-2 sm:px-4 sm:text-[0.7rem]"
             >
               <WhatsAppIcon className="h-4 w-4 min-[380px]:h-3.5 min-[380px]:w-3.5" />
-              <span className="max-[379px]:sr-only">Fale conosco</span>
+              <span className="max-[379px]:sr-only">{t.ui.contactShort}</span>
             </a>
             <button
               ref={toggleRef}
               type="button"
               className="grid h-10 w-10 place-items-center rounded-lg text-white transition-colors hover:bg-white/5 xl:hidden"
-              aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+              aria-label={menuOpen ? t.ui.closeMenu : t.ui.openMenu}
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
               onClick={() => setMenuOpen((open) => !open)}
@@ -154,44 +156,45 @@ export function Header() {
         />
         <nav
           id="mobile-navigation"
-          aria-label="Navegação mobile"
+          aria-label={t.ui.mobileNav}
           className={`absolute right-0 top-0 flex h-full w-[min(320px,85vw)] flex-col border-l border-white/10 bg-surface px-6 pb-8 pt-5 shadow-2xl transition-transform duration-[400ms] ease-expo ${
             menuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className="font-heading text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white/50">Menu</span>
+            <span className="font-heading text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white/50">{t.ui.menu}</span>
             <button
               type="button"
               className="grid h-10 w-10 place-items-center rounded-lg text-white transition-colors hover:bg-white/5"
-              aria-label="Fechar menu"
+              aria-label={t.ui.closeMenu}
               onClick={() => setMenuOpen(false)}
             >
               <X aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
           <ul className="mt-6 flex flex-col">
-            {site.nav.map((item, index) => {
-              const active = activeId === item.href.slice(1);
+            {sectionIds.map((id, index) => {
+              const active = activeId === id;
               return (
-                <li key={item.href} className="border-b border-white/[0.06]">
+                <li key={id} className="border-b border-white/[0.06]">
                   <a
                     ref={index === 0 ? firstLinkRef : undefined}
-                    href={item.href}
+                    href={`#${id}`}
                     onClick={() => setMenuOpen(false)}
                     className={`flex items-center justify-between py-4 font-heading text-[0.8rem] font-bold uppercase tracking-[0.12em] transition-colors ${
                       active ? 'text-brand-light' : 'text-white/80 hover:text-white'
                     }`}
                   >
-                    {item.label}
+                    {t.nav[id]}
                   </a>
                 </li>
               );
             })}
           </ul>
-          <a href={site.whatsappHref} target="_blank" rel="noreferrer" className="btn-cta mt-auto w-full px-4 text-[0.8rem]">
+          <LanguageSwitcher className="mt-6 self-start sm:hidden" />
+          <a href={whatsappHref} target="_blank" rel="noreferrer" className="btn-cta mt-auto w-full px-4 text-[0.8rem]">
             <WhatsAppIcon className="h-4 w-4" />
-            Agendar pelo WhatsApp
+            {t.ui.bookWhatsapp}
           </a>
         </nav>
       </div>
