@@ -30,7 +30,7 @@ export function Hero() {
 
       <div className="container-site grid flex-1 items-center gap-12 pb-14 pt-[120px] lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16 lg:pb-16">
         <div>
-          <h1 className="font-display text-[clamp(2.3rem,3.2vw+1rem,4rem)] font-semibold leading-[1.06] tracking-[-0.015em] text-ink [overflow-wrap:break-word]">
+          <h1 className="font-display text-[clamp(1.9rem,2.3vw+1rem,3.1rem)] font-bold leading-[1.08] tracking-[-0.01em] text-ink [overflow-wrap:break-word]">
             <span className="block">{hero.titleLine1}</span> <span className="block">{hero.titleLine2}</span>
           </h1>
           <p className="lead mt-6 max-w-[34rem] text-ink-2">{hero.subtitle}</p>

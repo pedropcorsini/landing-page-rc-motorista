@@ -1,6 +1,6 @@
 /* Hallmark · shape: Catalogue (draw dec4e6) swapped to a mixed deck, the fleet carousel is the catalogue and stays as it was · genre: editorial · theme: brand · redesign: full · job: book · draw: dec4e6
- * paper: oklch(13.4% 0.006 262) · accent: oklch(70.1% 0.201 45) · display: Playfair Display · body: Plus Jakarta Sans · hero: Counter on a full-bleed photograph · nav: slab · footer: letter close · signature: the company's own photographs of the car at work, one per service
- * axes: dark/high-contrast-serif/warm · posture: Committed (an orange field closes the page) · contrast: pass · fold: pass · imagery: photographs, the user's 6, natural · copy: tightened, listed in the handoff · v2.0.0 */
+ * paper: oklch(13.4% 0.006 262) · accent: oklch(70.1% 0.201 45) · display: Archivo Expanded (125%) · body: Inter · wordmark: Playfair Display and Montserrat, untouched · hero: Counter on a full-bleed photograph · nav: slab · footer: letter close · signature: the company's own photographs of the car at work, one per service
+ * axes: dark/grotesk-heavy/warm · posture: Committed (an orange field closes the page) · contrast: pass · fold: pass · imagery: photographs, the user's 6, natural · copy: tightened, listed in the handoff · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H4 E4 S5 R4 V4 · weakest: P, a booking page argues little; it leads with the categories you can book right now instead of a slogan */
 /* Hallmark · kept by request: Opções de Mobilidade (#frota) unchanged, its eyebrow and carousel included · the owner asked to keep that section exactly as it is */
 /* Hallmark · waive 26b · no control on this page can be disabled, every action is a link to WhatsApp, a phone number or an anchor · booking happens on WhatsApp, not in a form */
@@ -17,6 +17,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  /* Archivo é carregada só na largura expandida (125%), que é a voz dos títulos */
+  .font-display {
+    font-stretch: var(--display-stretch);
+  }
+}
 
 @layer base {
   :root {
@@ -71,9 +78,10 @@
 
   .section-title {
     font-family: var(--font-display);
+    font-stretch: var(--display-stretch);
     font-size: var(--text-section);
-    font-weight: 600;
-    line-height: 1.08;
+    font-weight: 700;
+    line-height: 1.1;
     letter-spacing: var(--tracking-display);
     color: var(--color-ink);
     overflow-wrap: break-word;

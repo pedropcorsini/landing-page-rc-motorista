@@ -41,7 +41,7 @@ export function Faq() {
                     aria-expanded={open}
                     aria-controls={panelId}
                     onClick={() => setOpenIndex(open ? null : index)}
-                    className={`flex min-h-[52px] w-full cursor-pointer items-center justify-between gap-6 py-3 text-left text-[1.05rem] font-semibold transition-colors focus-visible:outline-offset-2 ${
+                    className={`flex min-h-[52px] w-full cursor-pointer items-center justify-between gap-6 py-3 text-left font-body text-[1.05rem] font-semibold [font-stretch:100%] transition-colors focus-visible:outline-offset-2 ${
                       open ? 'text-ink' : 'text-ink-2 hover:text-ink'
                     }`}
                   >

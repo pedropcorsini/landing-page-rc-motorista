@@ -17,7 +17,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-7">
             <BrandLogo />
-            <p className="mt-8 max-w-[34ch] font-display text-[1.2rem] font-semibold leading-[1.4] text-ink sm:text-[length:var(--text-xl)] sm:leading-[1.35]">
+            <p className="mt-8 max-w-[38ch] text-[1.2rem] leading-[1.5] text-ink sm:text-[length:var(--text-xl)] sm:leading-[1.45]">
               {t.footer.description}
             </p>
           </div>
