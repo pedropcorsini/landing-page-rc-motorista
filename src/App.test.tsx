@@ -25,7 +25,6 @@ describe('Landing page Transporte Executivo RC', () => {
       ['Serviços', '#servicos'],
       ['Frota', '#frota'],
       ['Diferenciais', '#diferenciais'],
-      ['Como solicitar', '#como-solicitar'],
       ['Dúvidas', '#duvidas'],
     ];
 
@@ -35,7 +34,7 @@ describe('Landing page Transporte Executivo RC', () => {
     }
   });
 
-  it('exibe servicos, frota, diferenciais, passos e duvidas', () => {
+  it('exibe servicos, frota, diferenciais e duvidas', () => {
     render(<App />);
 
     expect(screen.getByRole('heading', { level: 2, name: /soluções sob medida para cada compromisso/i })).toBeInTheDocument();
@@ -59,11 +58,6 @@ describe('Landing page Transporte Executivo RC', () => {
     for (const item of [/^pontualidade$/i, /^discrição$/i, /^atendimento especializado$/i, /^conforto$/i, /^comunicação rápida$/i, /^segurança$/i]) {
       expect(screen.getByRole('heading', { level: 3, name: item })).toBeInTheDocument();
     }
-
-    expect(screen.getByRole('heading', { level: 2, name: /agende em três passos simples/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 3, name: /chame no whatsapp/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 3, name: /informe trajeto, data e horário/i })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 3, name: /receba a confirmação/i })).toBeInTheDocument();
 
     expect(screen.getByRole('heading', { level: 2, name: /perguntas frequentes/i })).toBeInTheDocument();
   });

@@ -21,7 +21,6 @@ export const pt: SiteContent = {
     servicos: 'Serviços',
     frota: 'Frota',
     diferenciais: 'Diferenciais',
-    'como-solicitar': 'Como solicitar',
     duvidas: 'Dúvidas',
   },
   ui: {
@@ -189,30 +188,6 @@ export const pt: SiteContent = {
       icon: 'shield',
       title: 'Segurança',
       description: 'Condução responsável, atenção ao percurso e cuidado em cada etapa do deslocamento.',
-    },
-  ],
-  stepsSection: {
-    eyebrow: 'Processo simples & transparente',
-    titleLine1: 'Agende em três',
-    titleAccent: 'passos simples',
-    description:
-      'Solicite seu atendimento, informe os detalhes do compromisso e receba a confirmação com todas as informações necessárias.',
-  },
-  steps: [
-    {
-      icon: 'message',
-      title: 'Chame no WhatsApp',
-      description: 'Envie sua necessidade de deslocamento e o melhor horário para atendimento.',
-    },
-    {
-      icon: 'list',
-      title: 'Informe trajeto, data e horário',
-      description: 'Compartilhe origem, destino, data, horário e observações importantes.',
-    },
-    {
-      icon: 'calendar',
-      title: 'Receba a confirmação',
-      description: 'Nossa equipe confirma a disponibilidade, combina os detalhes e organiza o atendimento.',
     },
   ],
   faqSection: {

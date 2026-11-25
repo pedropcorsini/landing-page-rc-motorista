@@ -21,7 +21,6 @@ export const en: SiteContent = {
     servicos: 'Services',
     frota: 'Fleet',
     diferenciais: 'Why us',
-    'como-solicitar': 'How to book',
     duvidas: 'FAQ',
   },
   ui: {
@@ -189,29 +188,6 @@ export const en: SiteContent = {
       icon: 'shield',
       title: 'Safety',
       description: 'Responsible driving, attention to the route and care at every step of the trip.',
-    },
-  ],
-  stepsSection: {
-    eyebrow: 'Simple & transparent process',
-    titleLine1: 'Book in three',
-    titleAccent: 'simple steps',
-    description: 'Request your service, share the details of your appointment and receive a confirmation with all the information you need.',
-  },
-  steps: [
-    {
-      icon: 'message',
-      title: 'Message us on WhatsApp',
-      description: 'Tell us where you need to go and the best time for the service.',
-    },
-    {
-      icon: 'list',
-      title: 'Share route, date and time',
-      description: 'Send pickup, destination, date, time and any important notes.',
-    },
-    {
-      icon: 'calendar',
-      title: 'Get your confirmation',
-      description: 'Our team confirms availability, agrees on the details and arranges the service.',
     },
   ],
   faqSection: {

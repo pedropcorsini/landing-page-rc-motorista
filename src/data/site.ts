@@ -26,7 +26,7 @@ export type IconKey =
   | 'map-pin'
   | 'list';
 
-export const sectionIds = ['top', 'sobre', 'servicos', 'frota', 'diferenciais', 'como-solicitar', 'duvidas'] as const;
+export const sectionIds = ['top', 'sobre', 'servicos', 'frota', 'diferenciais', 'duvidas'] as const;
 export type SectionId = (typeof sectionIds)[number];
 
 export type FleetId = 'sedan' | 'suv' | 'minivan' | 'van';

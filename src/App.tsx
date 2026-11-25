@@ -7,7 +7,6 @@ import { FleetShowcase } from './components/FleetShowcase';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { HowItWorks } from './components/HowItWorks';
 import { Services } from './components/Services';
 import { WhatsAppFloat } from './components/WhatsAppFloat';
 import { LanguageProvider, useLanguage } from './i18n/LanguageProvider';
@@ -38,7 +37,6 @@ function Page() {
         <Services />
         <FleetShowcase />
         <Differentials />
-        <HowItWorks />
         <Faq />
         <CtaBanner />
       </main>

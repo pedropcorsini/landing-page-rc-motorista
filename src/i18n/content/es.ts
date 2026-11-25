@@ -21,7 +21,6 @@ export const es: SiteContent = {
     servicos: 'Servicios',
     frota: 'Flota',
     diferenciais: 'Diferenciales',
-    'como-solicitar': 'Cómo reservar',
     duvidas: 'Preguntas',
   },
   ui: {
@@ -189,29 +188,6 @@ export const es: SiteContent = {
       icon: 'shield',
       title: 'Seguridad',
       description: 'Conducción responsable, atención a la ruta y cuidado en cada etapa del desplazamiento.',
-    },
-  ],
-  stepsSection: {
-    eyebrow: 'Proceso simple & transparente',
-    titleLine1: 'Reserve en tres',
-    titleAccent: 'pasos simples',
-    description: 'Solicite su atención, informe los detalles del compromiso y reciba la confirmación con toda la información necesaria.',
-  },
-  steps: [
-    {
-      icon: 'message',
-      title: 'Escríbanos por WhatsApp',
-      description: 'Cuéntenos qué desplazamiento necesita y el mejor horario para la atención.',
-    },
-    {
-      icon: 'list',
-      title: 'Informe ruta, fecha y hora',
-      description: 'Comparta origen, destino, fecha, hora y observaciones importantes.',
-    },
-    {
-      icon: 'calendar',
-      title: 'Reciba la confirmación',
-      description: 'Nuestro equipo confirma la disponibilidad, acuerda los detalles y organiza la atención.',
     },
   ],
   faqSection: {

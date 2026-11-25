@@ -4,6 +4,7 @@
 /* Hallmark · pre-emit critique: P4 H4 E4 S5 R4 V4 · weakest: P, a booking page argues little; it leads with the categories you can book right now instead of a slogan */
 /* Hallmark · kept by request: Opções de Mobilidade (#frota) unchanged, its eyebrow and carousel included · the owner asked to keep that section exactly as it is */
 /* Hallmark · dropped the marquee pause button · the owner asked to remove it; the strip still pauses on hover and on focus, and stays still under reduced motion (gate 18 asks for the button) */
+/* Hallmark · dropped #como-solicitar (Como solicitar, the three steps) · the owner asked to remove the section */
 /* Hallmark · waive 26b · no control on this page can be disabled, every action is a link to WhatsApp, a phone number or an anchor · booking happens on WhatsApp, not in a form */
 /* Hallmark · waive 39b · the three language flags are one segmented control inside a single 40px pill beside the 44px header action · splitting it into 44px buttons would push the header past 1280px in Spanish */
 /* Hallmark · waive 75 · the 8px line is the word Transporte inside the logo lockup, a wordmark drawn as type, not running text · it scales with the logo in the header */

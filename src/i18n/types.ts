@@ -86,13 +86,6 @@ export type SiteContent = {
     description: string;
   };
   differentials: IconCard[];
-  stepsSection: {
-    eyebrow: string;
-    titleLine1: string;
-    titleAccent: string;
-    description: string;
-  };
-  steps: IconCard[];
   faqSection: {
     title: string;
     description: string;

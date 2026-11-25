@@ -10,7 +10,7 @@ export function Faq() {
   const { faqSection } = t;
 
   return (
-    <section id="duvidas" aria-labelledby="duvidas-title" className="bg-paper py-[calc(var(--section-gap)/2)]">
+    <section id="duvidas" aria-labelledby="duvidas-title" className="border-t border-rule bg-paper-2 py-[var(--section-gap-s)]">
       <div className="container-site grid gap-12 lg:grid-cols-12 lg:gap-8">
         <div className="lg:sticky lg:top-28 lg:col-span-4 lg:self-start">
           <h2 id="duvidas-title" className="section-title">
