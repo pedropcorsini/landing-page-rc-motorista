@@ -56,6 +56,8 @@ export const en: SiteContent = {
       { icon: 'briefcase', label: 'Corporate appointments' },
       { icon: 'calendar', label: 'Events and occasions' },
       { icon: 'route', label: 'Private trips' },
+      { icon: 'clock', label: 'Service by appointment' },
+      { icon: 'user', label: 'Specialized service' },
     ],
   },
   about: {

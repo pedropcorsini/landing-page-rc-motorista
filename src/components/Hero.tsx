@@ -48,23 +48,39 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="border-t border-white/[0.1] bg-[rgba(7,8,10,0.72)] backdrop-blur-[10px]">
-        <ul className="container-site grid grid-cols-2 lg:grid-cols-4">
-          {hero.features.map((feature, index) => {
-            const Icon = icons[feature.icon];
-            return (
-              <li
-                key={feature.label}
-                className={`flex items-center gap-3 py-4 pr-3 sm:py-5 ${index % 2 === 1 ? 'border-l border-white/[0.08] pl-4 sm:pl-6' : ''} ${
-                  index === 2 ? 'border-t border-white/[0.08] lg:border-l lg:border-t-0 lg:pl-6' : ''
-                } ${index === 3 ? 'border-t border-white/[0.08] lg:border-t-0' : ''}`}
-              >
-                <Icon aria-hidden="true" className="h-5 w-5 flex-none text-brand" />
-                <span className="text-[0.82rem] font-semibold leading-tight text-white/90 sm:text-[0.9rem]">{feature.label}</span>
-              </li>
-            );
-          })}
-        </ul>
+      <div className="group/marquee relative overflow-hidden border-t border-white/[0.1] bg-[rgba(7,8,10,0.78)] backdrop-blur-[10px]">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-ink to-transparent sm:w-28"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-ink to-transparent sm:w-28"
+        />
+        <div className="flex w-max animate-marquee group-hover/marquee:[animation-play-state:paused] motion-reduce:w-full motion-reduce:animate-none">
+          {[0, 1].map((copy) => (
+            <ul
+              key={copy}
+              aria-hidden={copy === 1 ? true : undefined}
+              className={`flex flex-none items-center motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center ${
+                copy === 1 ? 'motion-reduce:hidden' : ''
+              }`}
+            >
+              {hero.features.map((feature) => {
+                const Icon = icons[feature.icon];
+                return (
+                  <li key={feature.label} className="flex items-center gap-3.5 py-6 sm:py-7">
+                    <Icon aria-hidden="true" className="h-6 w-6 flex-none text-brand sm:h-7 sm:w-7" />
+                    <span className="whitespace-nowrap font-display text-[1.15rem] font-semibold text-white sm:text-[1.4rem]">
+                      {feature.label}
+                    </span>
+                    <span aria-hidden="true" className="ml-6 mr-10 h-1.5 w-1.5 flex-none rotate-45 bg-brand/70 sm:ml-11 sm:mr-14" />
+                  </li>
+                );
+              })}
+            </ul>
+          ))}
+        </div>
       </div>
     </section>
   );

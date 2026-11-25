@@ -61,11 +61,16 @@ export default {
           '0%': { transform: 'scale(1.08)' },
           '100%': { transform: 'scale(1)' },
         },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
         'status-pulse': 'statusPulse 2.5s ease-in-out infinite',
         'whatsapp-pulse': 'whatsappPulse 2.2s ease-out infinite',
         'hero-zoom': 'heroZoom 24s ease-in-out infinite alternate',
+        marquee: 'marquee 38s linear infinite',
       },
     },
   },

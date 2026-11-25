@@ -56,6 +56,8 @@ export const es: SiteContent = {
       { icon: 'briefcase', label: 'Compromisos corporativos' },
       { icon: 'calendar', label: 'Eventos y ocasiones' },
       { icon: 'route', label: 'Viajes particulares' },
+      { icon: 'clock', label: 'Atención con reserva previa' },
+      { icon: 'user', label: 'Atención especializada' },
     ],
   },
   about: {
