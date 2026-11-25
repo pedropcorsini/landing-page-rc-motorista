@@ -82,7 +82,7 @@ export function FleetShowcase() {
                   <a
                     className="fleet-link"
                     href={buildWhatsappHref(
-                      `Olá Rafael, gostaria de consultar a disponibilidade da categoria ${vehicle.name} com a RC Transporte Executivo.`,
+                      `Olá, gostaria de consultar a disponibilidade da categoria ${vehicle.name} com a RC Transporte Executivo.`,
                     )}
                     target="_blank"
                     rel="noreferrer"

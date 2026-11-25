@@ -39,7 +39,7 @@ export function About() {
         <div className="relative">
           <img
             src={aboutImage}
-            alt="Rafael C. em atendimento executivo da RC Motorista"
+            alt="Atendimento executivo da RC Motorista"
             loading="lazy"
             className="aspect-[4/3] w-full rounded-2xl object-cover shadow-[0_30px_60px_rgba(15,23,42,0.28)]"
           />

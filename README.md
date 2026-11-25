@@ -13,7 +13,7 @@
 
 ## Overview
 
-RC Motorista, run by Rafael C., offers private and executive transportation in São Paulo and the surrounding region. The page guides visitors from the value proposition to the main action: a WhatsApp conversation to check availability and book a ride. Every claim on the page comes from the real service (no invented metrics, reviews, or 24/7 promises).
+RC Motorista offers private and executive transportation in São Paulo and the surrounding region. The page guides visitors from the value proposition to the main action: a WhatsApp conversation to check availability and book a ride. Every claim on the page comes from the real service (no invented metrics, reviews, or 24/7 promises).
 
 The 2026 redesign moved the site to a premium executive transfer look: full-screen hero, glass navigation, card-based sections, a focus-effect fleet carousel, and subtle motion throughout.
 

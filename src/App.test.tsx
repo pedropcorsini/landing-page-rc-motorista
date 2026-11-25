@@ -9,7 +9,7 @@ describe('Landing page RC Motorista', () => {
       screen.getByRole('heading', { level: 1, name: /motorista executivo em são paulo e região/i }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText('Mobilidade executiva com Rafael C. para aeroportos, compromissos, eventos e viagens agendadas.'),
+      screen.getByText('Mobilidade executiva com atendimento especializado para aeroportos, compromissos, eventos e viagens agendadas.'),
     ).toBeInTheDocument();
     expect(screen.getAllByRole('link', { name: /agendar pelo whatsapp/i }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole('link', { name: /ver instagram/i }).length).toBeGreaterThan(0);
@@ -56,7 +56,7 @@ describe('Landing page RC Motorista', () => {
     }
 
     expect(screen.getByRole('heading', { name: /diferenciais pensados para sua rotina/i })).toBeInTheDocument();
-    for (const item of [/^pontualidade$/i, /^discrição$/i, /^atendimento direto$/i, /^conforto$/i, /^comunicação rápida$/i, /^segurança$/i]) {
+    for (const item of [/^pontualidade$/i, /^discrição$/i, /^atendimento especializado$/i, /^conforto$/i, /^comunicação rápida$/i, /^segurança$/i]) {
       expect(screen.getByRole('heading', { level: 3, name: item })).toBeInTheDocument();
     }
 

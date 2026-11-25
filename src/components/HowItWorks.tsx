@@ -56,7 +56,7 @@ export function HowItWorks() {
         <div className="mt-14 flex justify-center">
           <a href={site.whatsappHref} target="_blank" rel="noreferrer" className="btn-cta">
             <WhatsAppIcon className="h-[1.15rem] w-[1.15rem]" />
-            Falar com o Rafael
+            Falar com um especialista
           </a>
         </div>
       </div>

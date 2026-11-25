@@ -4,7 +4,7 @@ import minivanImage from '../../images/frota/minivan.jpg';
 import vanImage from '../../images/frota/van.jpg';
 
 const whatsappNumber = '5511952946402';
-const defaultWhatsappMessage = 'Olá Rafael, gostaria de agendar uma corrida com a RC Transporte Executivo.';
+const defaultWhatsappMessage = 'Olá, gostaria de agendar uma corrida com a RC Transporte Executivo.';
 
 export function buildWhatsappHref(message: string = defaultWhatsappMessage) {
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
@@ -78,7 +78,7 @@ const faq: FaqItem[] = [
   {
     question: 'Como faço para agendar uma corrida?',
     answer:
-      'Pelo WhatsApp. Envie origem, destino, data, horário e observações importantes. Rafael confirma a disponibilidade, combina os detalhes e organiza o atendimento.',
+      'Pelo WhatsApp. Envie origem, destino, data, horário e observações importantes. Um de nossos especialistas confirma a disponibilidade, combina os detalhes e organiza o atendimento.',
   },
   {
     question: 'Quais regiões vocês atendem?',
@@ -106,14 +106,14 @@ const faq: FaqItem[] = [
       'Sim. Além do sedã e do SUV, há opções de minivan e van para famílias, grupos e comitivas. Consulte a disponibilidade da categoria desejada.',
   },
   {
-    question: 'Vou falar direto com o motorista?',
-    answer: 'Sim. O contato é direto com Rafael C., sem intermediação ou suporte genérico.',
+    question: 'Com quem eu falo para agendar?',
+    answer:
+      'Com um de nossos especialistas, direto pelo WhatsApp. Nossa equipe de atendimento cuida do seu agendamento do primeiro contato até o destino.',
   },
 ];
 
 export const site = {
   brand: 'RC Motorista',
-  driver: 'Rafael C.',
   location: 'São Paulo e região',
   phoneDisplay: '(11) 95294-6402',
   phoneHref: 'tel:+5511952946402',
@@ -132,7 +132,7 @@ export const site = {
   hero: {
     titleLine1: 'Motorista Executivo',
     titleLine2: 'em São Paulo e região',
-    subtitle: 'Mobilidade executiva com Rafael C. para aeroportos, compromissos, eventos e viagens agendadas.',
+    subtitle: 'Mobilidade executiva com atendimento especializado para aeroportos, compromissos, eventos e viagens agendadas.',
     status: 'Atendimento sob agendamento',
     features: [
       { icon: 'plane', label: 'Transfers para aeroportos' },
@@ -140,7 +140,7 @@ export const site = {
       { icon: 'calendar', label: 'Eventos e ocasiões' },
       { icon: 'route', label: 'Viagens particulares' },
       { icon: 'clock', label: 'Atendimento sob agendamento' },
-      { icon: 'user', label: 'Contato direto com Rafael' },
+      { icon: 'user', label: 'Atendimento especializado' },
     ] satisfies { icon: IconKey; label: string }[],
   },
   about: {
@@ -148,8 +148,8 @@ export const site = {
     titleLine1: 'Atendimento profissional,',
     titleLine2: 'pontual e discreto',
     paragraphs: [
-      'A RC Motorista oferece mobilidade executiva com Rafael C. em São Paulo e região. Cada trajeto é planejado com horários alinhados com antecedência, condução responsável e atenção ao percurso, para que o deslocamento seja a parte mais tranquila da sua agenda.',
-      'O contato é direto com o motorista, sem intermediação, com confirmações e ajustes pelo WhatsApp. Um atendimento reservado para rotinas pessoais, familiares, profissionais e executivas.',
+      'A RC Motorista oferece mobilidade executiva em São Paulo e região. Cada trajeto é planejado com horários alinhados com antecedência, condução responsável e atenção ao percurso, para que o deslocamento seja a parte mais tranquila da sua agenda.',
+      'Nossa equipe de especialistas cuida de cada solicitação, com confirmações e ajustes pelo WhatsApp. Um atendimento reservado para rotinas pessoais, familiares, profissionais e executivas.',
     ],
     linkLabel: 'Conheça os serviços',
   },
@@ -196,7 +196,7 @@ export const site = {
   fleetSection: {
     eyebrow: 'Frota sob medida & agendamento',
     title: 'Opções de Mobilidade',
-    description: 'Escolha a categoria ideal para o seu trajeto. Rafael confirma a disponibilidade e organiza todo o atendimento.',
+    description: 'Escolha a categoria ideal para o seu trajeto. Um de nossos especialistas confirma a disponibilidade e organiza todo o atendimento.',
     linkLabel: 'Consultar disponibilidade',
   },
   fleet,
@@ -219,8 +219,8 @@ export const site = {
     },
     {
       icon: 'user',
-      title: 'Atendimento direto',
-      description: 'Contato direto com Rafael C., sem intermediação ou suporte genérico.',
+      title: 'Atendimento especializado',
+      description: 'Fale com um de nossos especialistas e conte com apoio do primeiro contato até o destino.',
     },
     {
       icon: 'sparkles',
@@ -259,7 +259,7 @@ export const site = {
     {
       icon: 'calendar',
       title: 'Receba a confirmação',
-      description: 'Rafael confirma disponibilidade, combina os detalhes e organiza o atendimento.',
+      description: 'Nossa equipe confirma a disponibilidade, combina os detalhes e organiza o atendimento.',
     },
   ] satisfies { icon: IconKey; title: string; description: string }[],
   faqSection: {
@@ -271,10 +271,10 @@ export const site = {
     eyebrow: 'Atendimento sob agendamento',
     title: 'Pronto para um deslocamento à altura da sua agenda?',
     description:
-      'Fale diretamente com Rafael C. para consultar disponibilidade, combinar trajeto e agendar seu atendimento.',
+      'Fale com um de nossos especialistas para consultar disponibilidade, combinar trajeto e agendar seu atendimento.',
   },
   footer: {
     description:
-      'Motorista executivo em São Paulo e região. Transfers para aeroportos, compromissos, eventos e viagens agendadas com atendimento direto.',
+      'Motorista executivo em São Paulo e região. Transfers para aeroportos, compromissos, eventos e viagens agendadas com atendimento especializado.',
   },
 };
