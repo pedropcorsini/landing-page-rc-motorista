@@ -115,10 +115,10 @@ export function Header() {
               href={whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="btn-cta min-h-[44px] gap-2 px-4 text-[0.875rem] max-[379px]:w-11 max-[379px]:px-0 sm:px-5"
+              className="btn-cta min-h-[44px] w-11 gap-2 px-0 text-[0.875rem] sm:w-auto sm:px-5"
             >
               <WhatsAppIcon className="h-4 w-4" />
-              <span className="max-[379px]:sr-only">{t.ui.contactShort}</span>
+              <span className="max-sm:sr-only">{t.ui.contactShort}</span>
             </a>
             <button
               ref={toggleRef}

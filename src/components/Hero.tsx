@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { ArrowDown, ArrowUpRight, Clock3, Luggage, Pause, Play, Users } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Clock3, Luggage, Users } from 'lucide-react';
 import { WhatsAppIcon } from './BrandIcons';
 import { icons } from './icons';
 import { buildWhatsappHref, fleet } from '../data/site';
@@ -13,7 +12,6 @@ const scrim =
 export function Hero() {
   const { t, whatsappHref } = useLanguage();
   const { hero, fleetSection, carousel } = t;
-  const [paused, setPaused] = useState(false);
 
   return (
     <section id="top" className="relative isolate flex min-h-[100svh] flex-col overflow-hidden">
@@ -100,9 +98,7 @@ export function Hero() {
             className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-paper-deep to-transparent sm:w-28"
           />
           <div
-            className={`flex w-max animate-marquee group-hover/marquee:[animation-play-state:paused] group-focus-within/marquee:[animation-play-state:paused] motion-reduce:w-full motion-reduce:animate-none ${
-              paused ? '[animation-play-state:paused]' : ''
-            }`}
+            className="flex w-max animate-marquee group-hover/marquee:[animation-play-state:paused] group-focus-within/marquee:[animation-play-state:paused] motion-reduce:w-full motion-reduce:animate-none"
           >
             {[0, 1].map((copy) => (
               <ul
@@ -128,15 +124,6 @@ export function Hero() {
             ))}
           </div>
         </div>
-        <button
-          type="button"
-          onClick={() => setPaused((value) => !value)}
-          aria-label={paused ? t.ui.playMotion : t.ui.pauseMotion}
-          title={paused ? t.ui.playMotion : t.ui.pauseMotion}
-          className="mx-3 grid h-11 w-11 flex-none place-items-center rounded-full border border-rule text-ink-2 transition-colors hover:border-rule-strong hover:text-ink active:bg-paper-2 motion-reduce:hidden sm:mx-6"
-        >
-          {paused ? <Play aria-hidden="true" className="h-4 w-4" /> : <Pause aria-hidden="true" className="h-4 w-4" />}
-        </button>
       </div>
     </section>
   );

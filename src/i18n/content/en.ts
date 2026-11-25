@@ -37,8 +37,6 @@ export const en: SiteContent = {
     bookWhatsapp: 'Book on WhatsApp',
     talkSpecialist: 'Talk to a specialist',
     seeFleet: 'See the fleet',
-    pauseMotion: 'Pause the strip',
-    playMotion: 'Resume the strip',
     floatLabel: 'Talk to one of our agents',
     floatAria: 'Talk to one of our agents on WhatsApp',
     instagramCta: 'See Instagram',
