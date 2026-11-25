@@ -36,6 +36,7 @@ export const en: SiteContent = {
     contactShort: 'Contact us',
     bookWhatsapp: 'Book on WhatsApp',
     talkSpecialist: 'Talk to a specialist',
+    seeFleet: 'See the fleet',
     floatLabel: 'Talk to one of our agents',
     floatAria: 'Talk to one of our agents on WhatsApp',
     instagramCta: 'See Instagram',
@@ -55,8 +56,6 @@ export const en: SiteContent = {
       { icon: 'briefcase', label: 'Corporate appointments' },
       { icon: 'calendar', label: 'Events and occasions' },
       { icon: 'route', label: 'Private trips' },
-      { icon: 'clock', label: 'Service by appointment' },
-      { icon: 'user', label: 'Specialized service' },
     ],
   },
   about: {

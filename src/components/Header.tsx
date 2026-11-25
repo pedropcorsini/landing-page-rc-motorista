@@ -103,7 +103,7 @@ export function Header() {
                     <a
                       href={`#${id}`}
                       aria-current={active ? 'true' : undefined}
-                      className={`relative inline-flex whitespace-nowrap py-2 font-heading text-[0.66rem] font-bold uppercase tracking-[0.1em] transition-colors duration-300 after:absolute after:bottom-0.5 after:left-0 after:h-[2px] after:bg-brand after:transition-all after:duration-300 after:ease-expo ${
+                      className={`relative inline-flex whitespace-nowrap py-2 text-[0.84rem] font-medium transition-colors duration-300 after:absolute after:bottom-0.5 after:left-0 after:h-[2px] after:bg-brand after:transition-all after:duration-300 after:ease-expo ${
                         active
                           ? 'text-white after:w-full'
                           : 'text-white/60 after:w-0 hover:text-white hover:after:w-full'
@@ -123,7 +123,7 @@ export function Header() {
               href={whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="btn-outline h-10 gap-1.5 px-2.5 text-[0.62rem] max-[379px]:w-10 max-[379px]:px-0 sm:gap-2 sm:px-4 sm:text-[0.7rem]"
+              className="btn-cta h-10 gap-1.5 px-3 py-0 text-[0.72rem] max-[379px]:w-10 max-[379px]:px-0 sm:gap-2 sm:px-5 sm:text-[0.8rem]"
             >
               <WhatsAppIcon className="h-4 w-4 min-[380px]:h-3.5 min-[380px]:w-3.5" />
               <span className="max-[379px]:sr-only">{t.ui.contactShort}</span>
@@ -162,7 +162,7 @@ export function Header() {
           }`}
         >
           <div className="flex items-center justify-between">
-            <span className="font-heading text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white/50">{t.ui.menu}</span>
+            <span className="kicker">{t.ui.menu}</span>
             <button
               type="button"
               className="grid h-10 w-10 place-items-center rounded-lg text-white transition-colors hover:bg-white/5"
@@ -181,7 +181,7 @@ export function Header() {
                     ref={index === 0 ? firstLinkRef : undefined}
                     href={`#${id}`}
                     onClick={() => setMenuOpen(false)}
-                    className={`flex items-center justify-between py-4 font-heading text-[0.8rem] font-bold uppercase tracking-[0.12em] transition-colors ${
+                    className={`flex items-center justify-between py-3.5 font-display text-[1.3rem] font-semibold transition-colors ${
                       active ? 'text-brand-light' : 'text-white/80 hover:text-white'
                     }`}
                   >

@@ -1,5 +1,4 @@
 import { SectionHeading } from './SectionHeading';
-import { icons } from './icons';
 import { useLanguage } from '../i18n/LanguageProvider';
 
 export function Services() {
@@ -9,36 +8,38 @@ export function Services() {
   return (
     <section id="servicos" aria-labelledby="servicos-title" className="bg-surface py-20 lg:py-28">
       <div className="container-site">
-        <SectionHeading
-          id="servicos-title"
-          title={
-            <>
-              {servicesSection.titleLine1}{' '}
-              <span className="block">{servicesSection.titleLine2}</span>
-            </>
-          }
-          description={servicesSection.description}
-        />
-
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-          {t.services.map((service) => {
-            const Icon = icons[service.icon];
-            return (
-              <article
-                key={service.title}
-                className="flex flex-col rounded-2xl border border-white/[0.08] bg-card p-7 shadow-card transition-all duration-300 ease-expo hover:-translate-y-1 hover:border-brand hover:shadow-card-hover sm:p-[2.2rem]"
-              >
-                <span className="mb-[1.4rem] grid h-[52px] w-[52px] place-items-center rounded-xl border border-brand/[0.32] bg-brand/[0.12] text-brand-light">
-                  <Icon aria-hidden="true" className="h-[1.35rem] w-[1.35rem]" />
-                </span>
-                <h3 className="mb-3 font-heading text-[1.15rem] font-bold leading-snug text-white sm:text-[1.25rem]">
-                  {service.title}
-                </h3>
-                <p className="text-[0.92rem] leading-[1.65] text-mist">{service.description}</p>
-              </article>
-            );
-          })}
+        <div className="grid gap-6 lg:grid-cols-[1.2fr_1fr] lg:items-end lg:gap-16">
+          <SectionHeading
+            id="servicos-title"
+            align="left"
+            eyebrow={t.nav.servicos}
+            title={
+              <>
+                {servicesSection.titleLine1}{' '}
+                <span className="block">{servicesSection.titleLine2}</span>
+              </>
+            }
+          />
+          <p className="max-w-[460px] text-[0.98rem] leading-relaxed text-mist lg:pb-2">{servicesSection.description}</p>
         </div>
+
+        <ol className="mt-14 grid gap-x-14 md:grid-cols-2 lg:mt-16">
+          {t.services.map((service, index) => (
+            <li key={service.title} className="group relative flex gap-5 border-t border-white/[0.1] py-8 sm:gap-7">
+              <span
+                aria-hidden="true"
+                className="absolute left-0 top-[-1px] h-px w-full origin-left scale-x-0 bg-brand transition-transform duration-500 ease-expo group-hover:scale-x-100"
+              />
+              <span aria-hidden="true" className="w-9 flex-none font-display text-[1.35rem] font-semibold leading-none text-brand [font-variant-numeric:lining-nums]">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h3 className="font-heading text-[1.1rem] font-bold leading-snug text-white sm:text-[1.18rem]">{service.title}</h3>
+                <p className="mt-2.5 text-[0.92rem] leading-[1.7] text-mist">{service.description}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

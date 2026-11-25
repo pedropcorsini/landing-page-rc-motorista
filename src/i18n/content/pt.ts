@@ -36,6 +36,7 @@ export const pt: SiteContent = {
     contactShort: 'Fale conosco',
     bookWhatsapp: 'Agendar pelo WhatsApp',
     talkSpecialist: 'Falar com um especialista',
+    seeFleet: 'Ver a frota',
     floatLabel: 'Fale com uma de nossas atendentes',
     floatAria: 'Falar com uma de nossas atendentes no WhatsApp',
     instagramCta: 'Ver Instagram',
@@ -55,8 +56,6 @@ export const pt: SiteContent = {
       { icon: 'briefcase', label: 'Compromissos corporativos' },
       { icon: 'calendar', label: 'Eventos e ocasiões' },
       { icon: 'route', label: 'Viagens particulares' },
-      { icon: 'clock', label: 'Atendimento sob agendamento' },
-      { icon: 'user', label: 'Atendimento especializado' },
     ],
   },
   about: {

@@ -36,6 +36,7 @@ export const es: SiteContent = {
     contactShort: 'Contáctenos',
     bookWhatsapp: 'Reservar por WhatsApp',
     talkSpecialist: 'Hablar con un especialista',
+    seeFleet: 'Ver la flota',
     floatLabel: 'Hable con una de nuestras asesoras',
     floatAria: 'Hablar con una de nuestras asesoras por WhatsApp',
     instagramCta: 'Ver Instagram',
@@ -55,8 +56,6 @@ export const es: SiteContent = {
       { icon: 'briefcase', label: 'Compromisos corporativos' },
       { icon: 'calendar', label: 'Eventos y ocasiones' },
       { icon: 'route', label: 'Viajes particulares' },
-      { icon: 'clock', label: 'Atención con reserva previa' },
-      { icon: 'user', label: 'Atención especializada' },
     ],
   },
   about: {

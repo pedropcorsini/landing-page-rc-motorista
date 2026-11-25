@@ -8,30 +8,25 @@ export function Differentials() {
 
   return (
     <section id="diferenciais" aria-labelledby="diferenciais-title" className="bg-ink py-20 lg:py-28">
-      <div className="container-site">
-        <SectionHeading
-          id="diferenciais-title"
-          align="left"
-          eyebrow={differentialsSection.eyebrow}
-          title={differentialsSection.title}
-          description={differentialsSection.description}
-        />
+      <div className="container-site grid gap-12 lg:grid-cols-[0.85fr_1.4fr] lg:gap-20">
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <SectionHeading
+            id="diferenciais-title"
+            align="left"
+            eyebrow={differentialsSection.eyebrow}
+            title={differentialsSection.title}
+            description={differentialsSection.description}
+          />
+        </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+        <div className="grid gap-x-10 sm:grid-cols-2">
           {t.differentials.map((item) => {
             const Icon = icons[item.icon];
             return (
-              <article
-                key={item.title}
-                className="flex flex-col rounded-2xl border border-white/[0.08] bg-card px-[1.35rem] py-7 shadow-card transition-all duration-300 ease-expo hover:-translate-y-1 hover:border-brand hover:shadow-card-hover"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="grid h-11 w-11 flex-none place-items-center rounded-full border border-brand/[0.32] bg-brand/[0.12] text-brand-light">
-                    <Icon aria-hidden="true" className="h-5 w-5" />
-                  </span>
-                  <h3 className="font-heading text-[1.05rem] font-bold text-white">{item.title}</h3>
-                </div>
-                <p className="mt-4 text-[0.9rem] leading-relaxed text-mist">{item.description}</p>
+              <article key={item.title} className="border-t border-white/[0.1] py-8">
+                <Icon aria-hidden="true" className="h-6 w-6 text-brand" />
+                <h3 className="mt-5 font-heading text-[1.05rem] font-bold text-white">{item.title}</h3>
+                <p className="mt-2.5 text-[0.92rem] leading-relaxed text-mist">{item.description}</p>
               </article>
             );
           })}

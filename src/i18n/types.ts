@@ -30,6 +30,7 @@ export type SiteContent = {
     contactShort: string;
     bookWhatsapp: string;
     talkSpecialist: string;
+    seeFleet: string;
     floatLabel: string;
     floatAria: string;
     instagramCta: string;

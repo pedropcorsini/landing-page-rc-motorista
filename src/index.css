@@ -62,7 +62,7 @@
     @apply mx-auto w-full max-w-site px-4 sm:px-6;
   }
 
-  /* Eyebrow com ponto luminoso (heading-flavor-text da referencia) */
+  /* Eyebrow com ponto luminoso: usado só na seção Opções de Mobilidade (mantida como estava) */
   .eyebrow {
     @apply inline-flex items-center gap-2 font-heading text-[0.68rem] font-bold uppercase tracking-[0.2em] text-brand sm:text-[0.72rem];
   }
@@ -72,44 +72,28 @@
     box-shadow: 0 0 8px #ff6a00;
   }
 
+  /* Selo das seções: traço laranja curto + texto */
+  .kicker {
+    @apply inline-flex items-center gap-3 font-heading text-[0.78rem] font-semibold tracking-[0.02em] text-brand-light;
+  }
+
+  .kicker::before {
+    content: '';
+    @apply h-[1.5px] w-7 flex-none bg-brand;
+  }
+
   .section-title {
-    @apply font-heading text-[1.85rem] font-extrabold leading-[1.2] tracking-[-0.02em] text-white sm:text-[2.4rem] lg:text-[2.75rem];
+    @apply font-display text-[2.1rem] font-semibold leading-[1.12] tracking-[-0.015em] text-white sm:text-[2.7rem] lg:text-[3.05rem];
   }
 
-  /* Botao principal (btn-hero-bronze da referencia, em laranja) */
+  /* Botão principal: laranja sólido, sem brilho */
   .btn-cta {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap rounded-lg px-7 py-[0.92rem] font-heading text-[0.86rem] font-extrabold uppercase tracking-[0.05em] no-underline transition-all duration-300 ease-expo;
-    color: #fbe9dc;
-    background: linear-gradient(180deg, #3a1d07 0%, #220f02 100%);
-    border: 1.5px solid #d9600a;
-    box-shadow:
-      0 0 22px rgba(255, 106, 0, 0.28),
-      0 8px 24px rgba(0, 0, 0, 0.65),
-      inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    @apply inline-flex cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-brand px-7 py-3.5 font-heading text-[0.9rem] font-bold text-ink no-underline transition-[background-color,transform] duration-300 ease-expo hover:-translate-y-px hover:bg-brand-light;
   }
 
-  .btn-cta:hover {
-    color: #fff;
-    background: linear-gradient(180deg, #4d270b 0%, #2f1504 100%);
-    border-color: #ff8a3d;
-    transform: translateY(-2px);
-    box-shadow:
-      0 0 32px rgba(255, 106, 0, 0.48),
-      0 12px 28px rgba(0, 0, 0, 0.75),
-      inset 0 1px 1px rgba(255, 255, 255, 0.25);
-  }
-
-  .btn-cta svg {
-    @apply transition-transform duration-200;
-  }
-
-  .btn-cta:hover svg {
-    transform: scale(1.1);
-  }
-
-  /* Botao contornado (Fale conosco do header) */
-  .btn-outline {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-lg border border-white/25 px-4 py-2.5 font-heading text-[0.7rem] font-bold uppercase tracking-[0.1em] text-white transition-all duration-300 ease-expo hover:border-brand hover:bg-brand/10 hover:text-brand-light;
+  /* Botão secundário contornado */
+  .btn-ghost {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap rounded-full border border-white/25 px-7 py-3.5 font-heading text-[0.9rem] font-bold text-white no-underline transition-[background-color,border-color] duration-300 ease-expo hover:border-white/60 hover:bg-white/[0.06];
   }
 
   .scrollbar-none {

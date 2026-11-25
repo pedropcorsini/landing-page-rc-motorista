@@ -16,6 +16,7 @@ export function FleetShowcase() {
       <div className="container-site">
         <SectionHeading
           id="frota-title"
+          variant="classic"
           eyebrow={fleetSection.eyebrow}
           title={fleetSection.title}
           description={fleetSection.description}

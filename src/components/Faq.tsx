@@ -1,20 +1,33 @@
 import { useId, useState } from 'react';
 import { Plus } from 'lucide-react';
+import { WhatsAppIcon } from './BrandIcons';
 import { SectionHeading } from './SectionHeading';
 import { useLanguage } from '../i18n/LanguageProvider';
 
 export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const baseId = useId();
-  const { t } = useLanguage();
+  const { t, whatsappHref } = useLanguage();
   const { faqSection } = t;
 
   return (
     <section id="duvidas" aria-labelledby="duvidas-title" className="bg-surface py-20 lg:py-28">
-      <div className="container-site">
-        <SectionHeading id="duvidas-title" title={faqSection.title} description={faqSection.description} />
+      <div className="container-site grid gap-12 lg:grid-cols-[0.8fr_1.3fr] lg:gap-20">
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <SectionHeading
+            id="duvidas-title"
+            align="left"
+            eyebrow={t.nav.duvidas}
+            title={faqSection.title}
+            description={faqSection.description}
+          />
+          <a href={whatsappHref} target="_blank" rel="noreferrer" className="btn-cta mt-8">
+            <WhatsAppIcon className="h-[1.1rem] w-[1.1rem]" />
+            {t.ui.talkSpecialist}
+          </a>
+        </div>
 
-        <div className="mx-auto mt-12 flex max-w-[820px] flex-col gap-4">
+        <div className="border-b border-white/[0.1]">
           {t.faq.map((item, index) => {
             const open = openIndex === index;
             const buttonId = `${baseId}-trigger-${index}`;
@@ -23,11 +36,7 @@ export function Faq() {
             return (
               <div
                 key={item.question}
-                className={`overflow-hidden rounded-xl border bg-faq transition-[border-color,box-shadow] duration-200 ${
-                  open
-                    ? 'border-brand shadow-[0_10px_30px_rgba(0,0,0,0.5),0_0_20px_rgba(255,106,0,0.12)]'
-                    : 'border-white/[0.08] shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:border-white/20'
-                }`}
+                className="border-t border-white/[0.1]"
               >
                 <h3>
                   <button
@@ -36,13 +45,15 @@ export function Faq() {
                     aria-expanded={open}
                     aria-controls={panelId}
                     onClick={() => setOpenIndex(open ? null : index)}
-                    className="flex w-full cursor-pointer items-center justify-between gap-4 rounded-xl px-5 py-5 text-left focus-visible:outline-offset-[-3px] font-heading text-[0.92rem] font-bold text-white sm:px-[1.6rem] sm:py-[1.4rem] sm:text-[0.98rem]"
+                    className={`flex w-full cursor-pointer items-center justify-between gap-6 py-6 text-left font-heading text-[0.95rem] font-bold transition-colors focus-visible:outline-offset-2 sm:text-[1.02rem] ${
+                      open ? 'text-white' : 'text-white/85 hover:text-white'
+                    }`}
                   >
                     {item.question}
                     <span
                       aria-hidden="true"
                       className={`grid h-8 w-8 flex-none place-items-center rounded-full border transition-all duration-300 ease-expo ${
-                        open ? 'rotate-45 border-brand bg-brand text-ink' : 'border-white/10 bg-white/[0.06] text-white'
+                        open ? 'rotate-45 border-brand bg-brand text-ink' : 'border-white/15 text-brand'
                       }`}
                     >
                       <Plus className="h-4 w-4" />
@@ -59,7 +70,7 @@ export function Faq() {
                   style={{ gridTemplateRows: open ? '1fr' : '0fr' }}
                 >
                   <div className="overflow-hidden">
-                    <p className="mx-5 border-t border-white/[0.06] pb-5 pt-4 text-[0.92rem] leading-[1.75] text-mist sm:mx-[1.6rem] sm:pb-[1.5rem] sm:pt-5">
+                    <p className="pb-7 pr-12 text-[0.95rem] leading-[1.75] text-mist">
                       {item.answer}
                     </p>
                   </div>

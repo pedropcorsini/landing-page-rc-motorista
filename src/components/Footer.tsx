@@ -5,7 +5,7 @@ import { LanguageSwitcher } from './LanguageSwitcher';
 import { sectionIds, site } from '../data/site';
 import { useLanguage } from '../i18n/LanguageProvider';
 
-const columnTitle = 'mb-5 font-heading text-[0.82rem] font-bold uppercase tracking-[0.12em] text-white';
+const columnTitle = 'mb-5 font-display text-[1.2rem] font-semibold text-white';
 const footerLink = 'text-[0.88rem] text-mist transition-colors duration-200 hover:text-brand-light';
 
 export function Footer() {
