@@ -4,7 +4,7 @@ import minivanImage from '../../images/frota/minivan.jpg';
 import vanImage from '../../images/frota/van.jpg';
 
 const whatsappNumber = '5511952946402';
-const defaultWhatsappMessage = 'Olá Rafael, gostaria de agendar uma corrida com a RC Motorista.';
+const defaultWhatsappMessage = 'Olá Rafael, gostaria de agendar uma corrida com a RC Transporte Executivo.';
 
 export function buildWhatsappHref(message: string = defaultWhatsappMessage) {
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
