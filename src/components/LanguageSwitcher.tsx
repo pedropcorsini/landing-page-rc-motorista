@@ -2,13 +2,13 @@ import { locales, useLanguage } from '../i18n/LanguageProvider';
 import type { Locale } from '../i18n/types';
 
 // Bandeiras em SVG estático (emoji de bandeira não aparece no Windows).
-const flags: Record<Locale, string> = {
+export const flags: Record<Locale, string> = {
   pt: '/flags/br.svg',
   en: '/flags/us.svg',
   es: '/flags/es.svg',
 };
 
-const languages: Record<Locale, { short: string; name: string; lang: string }> = {
+export const languages: Record<Locale, { short: string; name: string; lang: string }> = {
   pt: { short: 'PT', name: 'Português', lang: 'pt-BR' },
   en: { short: 'EN', name: 'English', lang: 'en' },
   es: { short: 'ES', name: 'Español', lang: 'es' },

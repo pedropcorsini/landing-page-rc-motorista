@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { WhatsAppIcon } from './BrandIcons';
 import { BrandLogo } from './BrandLogo';
+import { LanguageDropdown } from './LanguageDropdown';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { sectionIds } from '../data/site';
 import { useLanguage } from '../i18n/LanguageProvider';
@@ -109,13 +110,14 @@ export function Header() {
             </ul>
           </nav>
 
-          <div className="flex flex-none items-center gap-2">
+          <div className="flex flex-none items-center gap-1 min-[380px]:gap-2">
             <LanguageSwitcher compact className="hidden sm:inline-flex" />
+            <LanguageDropdown className="sm:hidden" />
             <a
               href={whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="btn-cta min-h-[44px] w-11 gap-2 px-0 text-[0.875rem] sm:w-auto sm:px-5"
+              className="btn-cta min-h-10 w-10 gap-2 px-0 text-[0.875rem] min-[380px]:min-h-[44px] min-[380px]:w-11 sm:w-auto sm:px-5"
             >
               <WhatsAppIcon className="h-4 w-4" />
               <span className="max-sm:sr-only">{t.ui.contactShort}</span>
@@ -123,7 +125,7 @@ export function Header() {
             <button
               ref={toggleRef}
               type="button"
-              className="grid h-11 w-11 place-items-center rounded-md text-ink transition-colors hover:bg-paper-3 active:bg-paper-2 xl:hidden"
+              className="grid h-10 w-10 place-items-center rounded-md text-ink transition-colors hover:bg-paper-3 active:bg-paper-2 min-[380px]:h-11 min-[380px]:w-11 xl:hidden"
               aria-label={menuOpen ? t.ui.closeMenu : t.ui.openMenu}
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
@@ -181,7 +183,6 @@ export function Header() {
               );
             })}
           </ul>
-          <LanguageSwitcher className="mt-6 self-start sm:hidden" />
           <a href={whatsappHref} target="_blank" rel="noreferrer" className="btn-cta mt-auto w-full">
             <WhatsAppIcon className="h-4 w-4" />
             {t.ui.bookWhatsapp}

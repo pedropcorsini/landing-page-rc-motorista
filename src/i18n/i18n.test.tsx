@@ -50,6 +50,22 @@ describe('Idiomas do site', () => {
     expect(window.location.search).toBe('');
   });
 
+  it('troca o idioma pelo dropdown do header em telas pequenas', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    const trigger = screen.getByRole('button', { name: /idioma: português/i });
+    expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    await user.click(trigger);
+    expect(trigger).toHaveAttribute('aria-expanded', 'true');
+
+    const options = screen.getAllByRole('button', { name: /español/i });
+    await user.click(options[options.length - 1]);
+
+    expect(screen.getByRole('heading', { level: 1, name: /transporte ejecutivo en são paulo y región/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /idioma: español/i })).toHaveAttribute('aria-expanded', 'false');
+  });
+
   it('respeita o idioma do link (?lang=es)', () => {
     window.history.replaceState(null, '', '/?lang=es');
     render(<App />);
