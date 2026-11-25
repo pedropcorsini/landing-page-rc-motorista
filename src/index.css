@@ -1,3 +1,19 @@
+/* Hallmark · shape: Catalogue (draw dec4e6) swapped to a mixed deck, the fleet carousel is the catalogue and stays as it was · genre: editorial · theme: brand · redesign: full · job: book · draw: dec4e6
+ * paper: oklch(13.4% 0.006 262) · accent: oklch(70.1% 0.201 45) · display: Playfair Display · body: Plus Jakarta Sans · hero: Counter on a full-bleed photograph · nav: slab · footer: letter close · signature: the company's own photographs of the car at work, one per service
+ * axes: dark/high-contrast-serif/warm · posture: Committed (an orange field closes the page) · contrast: pass · fold: pass · imagery: photographs, the user's 6, natural · copy: tightened, listed in the handoff · v2.0.0 */
+/* Hallmark · pre-emit critique: P4 H4 E4 S5 R4 V4 · weakest: P, a booking page argues little; it leads with the categories you can book right now instead of a slogan */
+/* Hallmark · kept by request: Opções de Mobilidade (#frota) unchanged, its eyebrow and carousel included · the owner asked to keep that section exactly as it is */
+/* Hallmark · waive 26b · no control on this page can be disabled, every action is a link to WhatsApp, a phone number or an anchor · booking happens on WhatsApp, not in a form */
+/* Hallmark · waive 39b · the three language flags are one segmented control inside a single 40px pill beside the 44px header action · splitting it into 44px buttons would push the header past 1280px in Spanish */
+/* Hallmark · waive 75 · the 8px line is the word Transporte inside the logo lockup, a wordmark drawn as type, not running text · it scales with the logo in the header */
+/* Hallmark · dismissed 29 · the blur and orange glow on .fleet-nav-btn belong to the Opções de Mobilidade carousel the owner asked to keep */
+/* Hallmark · dismissed 28a · the first lazy images sit in the services and fleet sections below the fold; the LCP is the hero photograph, fetchpriority high */
+/* Hallmark · answered F15 · the fleet section keeps its 1280px container because the owner asked for it unchanged */
+/* Hallmark · answered F19 · weights 700 to 900 live only in the wordmark and the kept fleet carousel; the page itself runs 400 and 600 */
+/* Hallmark · dropped atendimento-executivo.jpg from #sobre · the same photograph moved into #servicos as images/servicos/viagens.jpg, one real photograph per service */
+@import './styles/tokens.css';
+@import './styles/base.css' layer(base);
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,95 +21,129 @@
 @layer base {
   :root {
     color-scheme: dark;
-    background: #07080a;
-  }
-
-  * {
-    box-sizing: border-box;
+    background: var(--color-paper);
   }
 
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body {
     margin: 0;
     min-width: 320px;
-    overflow-x: hidden;
-    background: #07080a;
-    color: #9da8b6;
-    font-family: 'Plus Jakarta Sans', Montserrat, system-ui, sans-serif;
+    overflow-x: clip;
+    background: var(--color-paper);
+    color: var(--color-muted);
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
   }
 
   ::selection {
-    background: #ff6a00;
-    color: #07080a;
-  }
-
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #07080a;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border: 3px solid #07080a;
-    border-radius: 999px;
-    background: #2a2d38;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #ff6a00;
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
   }
 
   :focus-visible {
-    outline: 2px solid #ff6a00;
-    outline-offset: 4px;
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
   }
 }
 
 @layer components {
   .container-site {
-    @apply mx-auto w-full max-w-site px-4 sm:px-6;
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
   }
 
-  /* Eyebrow com ponto luminoso: usado só na seção Opções de Mobilidade (mantida como estava) */
+  /* Selo antigo, usado só em Opções de Mobilidade (mantida por pedido) */
   .eyebrow {
-    @apply inline-flex items-center gap-2 font-heading text-[0.68rem] font-bold uppercase tracking-[0.2em] text-brand sm:text-[0.72rem];
+    @apply inline-flex items-center gap-2 font-heading text-[0.68rem] font-bold uppercase tracking-[0.2em] text-accent sm:text-[0.72rem];
   }
 
   .eyebrow-dot {
-    @apply h-1.5 w-1.5 flex-none rounded-full bg-brand;
-    box-shadow: 0 0 8px #ff6a00;
-  }
-
-  /* Selo das seções: traço laranja curto + texto */
-  .kicker {
-    @apply inline-flex items-center gap-3 font-heading text-[0.78rem] font-semibold tracking-[0.02em] text-brand-light;
-  }
-
-  .kicker::before {
-    content: '';
-    @apply h-[1.5px] w-7 flex-none bg-brand;
+    @apply h-1.5 w-1.5 flex-none rounded-full bg-accent;
+    box-shadow: 0 0 8px var(--color-accent);
   }
 
   .section-title {
-    @apply font-display text-[2.1rem] font-semibold leading-[1.12] tracking-[-0.015em] text-white sm:text-[2.7rem] lg:text-[3.05rem];
+    font-family: var(--font-display);
+    font-size: var(--text-section);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: var(--tracking-display);
+    color: var(--color-ink);
+    overflow-wrap: break-word;
+    min-width: 0;
   }
 
-  /* Botão principal: laranja sólido, sem brilho */
+  .lead {
+    font-size: var(--text-lead);
+    line-height: 1.5;
+    color: var(--color-muted);
+  }
+
+  /* Ação principal: laranja sólido */
   .btn-cta {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-brand px-7 py-3.5 font-heading text-[0.9rem] font-bold text-ink no-underline transition-[background-color,transform] duration-300 ease-expo hover:-translate-y-px hover:bg-brand-light;
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    white-space: nowrap;
+    border-radius: var(--radius-pill);
+    background: var(--color-accent);
+    padding: 0 var(--space-lg);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-accent-ink);
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      background-color var(--dur-short) var(--ease-out),
+      transform var(--dur-short) var(--ease-out);
   }
 
-  /* Botão secundário contornado */
+  .btn-cta:hover {
+    background: var(--color-accent-2);
+  }
+
+  .btn-cta:active {
+    transform: translateY(1px);
+  }
+
+  /* Ação secundária: contorno */
   .btn-ghost {
-    @apply inline-flex cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap rounded-full border border-white/25 px-7 py-3.5 font-heading text-[0.9rem] font-bold text-white no-underline transition-[background-color,border-color] duration-300 ease-expo hover:border-white/60 hover:bg-white/[0.06];
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    white-space: nowrap;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-rule-strong);
+    padding: 0 var(--space-lg);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    text-decoration: none;
+    transition:
+      background-color var(--dur-short) var(--ease-out),
+      border-color var(--dur-short) var(--ease-out);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--color-ink-2);
+    background: var(--color-paper-3);
+  }
+
+  .btn-ghost:active {
+    background: var(--color-paper-2);
   }
 
   .scrollbar-none {

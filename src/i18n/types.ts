@@ -31,6 +31,8 @@ export type SiteContent = {
     bookWhatsapp: string;
     talkSpecialist: string;
     seeFleet: string;
+    pauseMotion: string;
+    playMotion: string;
     floatLabel: string;
     floatAria: string;
     instagramCta: string;

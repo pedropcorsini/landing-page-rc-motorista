@@ -5,26 +5,54 @@ import { LanguageSwitcher } from './LanguageSwitcher';
 import { sectionIds, site } from '../data/site';
 import { useLanguage } from '../i18n/LanguageProvider';
 
-const columnTitle = 'mb-5 font-display text-[1.2rem] font-semibold text-white';
-const footerLink = 'text-[0.88rem] text-mist transition-colors duration-200 hover:text-brand-light';
+const rowTitle = 'text-[0.875rem] text-muted';
+const rowLink = 'inline-flex min-h-[32px] items-center text-[0.95rem] text-ink-2 transition-colors duration-200 hover:text-accent-2';
 
 export function Footer() {
   const { t, whatsappHref } = useLanguage();
 
   return (
-    <footer className="border-t border-white/[0.06] bg-[#050608] pb-9 pt-16 lg:pt-[5.5rem]">
+    <footer className="bg-paper-deep pb-10 pt-[var(--section-gap-s)]">
       <div className="container-site">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.1fr_1.3fr]">
-          <div>
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+          <div className="lg:col-span-7">
             <BrandLogo />
-            <p className="mt-5 max-w-xs text-[0.88rem] leading-relaxed text-mist">{t.footer.description}</p>
-            <div className="mt-6 flex gap-2.5">
+            <p className="mt-8 max-w-[34ch] font-display text-[1.2rem] font-semibold leading-[1.4] text-ink sm:text-[length:var(--text-xl)] sm:leading-[1.35]">
+              {t.footer.description}
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-5 lg:col-span-4 lg:col-start-9">
+            <h2 className={rowTitle}>{t.footer.contactTitle}</h2>
+            <ul className="space-y-3 text-[1rem] text-ink-2">
+              <li>
+                <a href={site.phoneHref} className={`gap-3 ${rowLink}`}>
+                  <Phone aria-hidden="true" className="h-4 w-4 text-accent" />
+                  {site.phoneDisplay}
+                </a>
+              </li>
+              <li>
+                <a href={site.instagramHref} target="_blank" rel="noreferrer" className={`gap-3 ${rowLink}`}>
+                  <InstagramIcon className="h-4 w-4 text-accent" />
+                  {site.instagramHandle}
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <MapPin aria-hidden="true" className="h-4 w-4 text-accent" />
+                {t.location}
+              </li>
+              <li className="flex items-center gap-3">
+                <Clock3 aria-hidden="true" className="h-4 w-4 text-accent" />
+                {t.footer.schedule}
+              </li>
+            </ul>
+            <div className="mt-2 flex flex-wrap items-center gap-3">
               <a
                 href={site.instagramHref}
                 target="_blank"
                 rel="noreferrer"
                 aria-label={t.ui.instagramAria}
-                className="grid h-[38px] w-[38px] place-items-center rounded-lg border border-white/10 bg-white/[0.04] text-white/80 transition-colors hover:border-brand hover:text-brand-light"
+                className="grid h-11 w-11 place-items-center rounded-full border border-rule text-ink-2 transition-colors hover:border-accent hover:text-accent-2"
               >
                 <InstagramIcon className="h-4 w-4" />
               </a>
@@ -33,73 +61,43 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={t.ui.whatsappAria}
-                className="grid h-[38px] w-[38px] place-items-center rounded-lg border border-white/10 bg-white/[0.04] text-white/80 transition-colors hover:border-brand hover:text-brand-light"
+                className="grid h-11 w-11 place-items-center rounded-full border border-rule text-ink-2 transition-colors hover:border-accent hover:text-accent-2"
               >
                 <WhatsAppIcon className="h-4 w-4" />
               </a>
+              <LanguageSwitcher />
             </div>
-            <LanguageSwitcher className="mt-6" />
           </div>
+        </div>
 
-          <nav aria-label={t.ui.footerNav}>
-            <h2 className={columnTitle}>{t.footer.navTitle}</h2>
-            <ul className="space-y-2.5">
+        <div className="mt-16 grid gap-8 border-t border-rule pt-8 lg:grid-cols-12 lg:gap-8">
+          <nav aria-label={t.ui.footerNav} className="lg:col-span-7">
+            <h2 className={rowTitle}>{t.footer.navTitle}</h2>
+            <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-1">
               {sectionIds.map((id) => (
                 <li key={id}>
-                  <a href={`#${id}`} className={footerLink}>
+                  <a href={`#${id}`} className={rowLink}>
                     {t.nav[id]}
                   </a>
                 </li>
               ))}
             </ul>
           </nav>
-
-          <div>
-            <h2 className={columnTitle}>{t.footer.servicesTitle}</h2>
-            <ul className="space-y-2.5">
+          <div className="lg:col-span-4 lg:col-start-9">
+            <h2 className={rowTitle}>{t.footer.servicesTitle}</h2>
+            <ul className="mt-3 flex flex-col">
               {t.services.map((service) => (
                 <li key={service.title}>
-                  <a href="#servicos" className={footerLink}>
+                  <a href="#servicos" className={rowLink}>
                     {service.title}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
-
-          <div>
-            <h2 className={columnTitle}>{t.footer.contactTitle}</h2>
-            <ul className="space-y-3.5 text-[0.88rem] text-mist">
-              <li>
-                <a href={site.phoneHref} className={`inline-flex items-center gap-2.5 ${footerLink}`}>
-                  <Phone aria-hidden="true" className="h-4 w-4 text-brand" />
-                  {site.phoneDisplay}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.instagramHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`inline-flex items-center gap-2.5 ${footerLink}`}
-                >
-                  <InstagramIcon className="h-4 w-4 text-brand" />
-                  {site.instagramHandle}
-                </a>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <MapPin aria-hidden="true" className="h-4 w-4 text-brand" />
-                {t.location}
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Clock3 aria-hidden="true" className="h-4 w-4 text-brand" />
-                {t.footer.schedule}
-              </li>
-            </ul>
-          </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/[0.06] pt-6 text-[0.78rem] text-white/55 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-3 border-t border-rule pt-6 text-[0.875rem] text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
             © 2026 {t.brand}. {t.footer.rights}
           </p>
@@ -109,7 +107,7 @@ export function Footer() {
               href="https://github.com/pedropcorsini"
               target="_blank"
               rel="noreferrer"
-              className="font-semibold text-white/65 underline decoration-brand/50 underline-offset-4 transition-colors duration-200 hover:text-brand-light"
+              className="font-semibold text-ink-2 underline decoration-rule-strong underline-offset-4 transition-colors duration-200 hover:text-accent-2"
             >
               Pedro Passos Corsini
             </a>

@@ -24,10 +24,10 @@ function Page() {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen overflow-x-clip bg-ink font-body text-mist antialiased">
+    <div className="min-h-screen overflow-x-clip bg-paper font-body text-muted antialiased">
       <a
         href="#conteudo"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-3 focus:font-heading focus:text-sm focus:font-bold focus:text-ink"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-accent focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-accent-ink"
       >
         {t.ui.skipLink}
       </a>

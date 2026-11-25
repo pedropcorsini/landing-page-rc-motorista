@@ -28,16 +28,16 @@ export function BrandLogo({ className = '' }: BrandLogoProps) {
           fontSize={72}
           letterSpacing={1}
         >
-          <tspan fill="#F5F5F5">R</tspan>
+          <tspan className="fill-ink">R</tspan>
           <tspan className="fill-brand">C</tspan>
         </text>
       </svg>
-      <span aria-hidden="true" className="mx-2.5 h-[23px] w-px flex-none bg-white/20 sm:mx-3.5 sm:h-[31px]" />
-      <span className="flex flex-col whitespace-nowrap font-heading uppercase leading-none">
-        <span className="mb-[3px] pl-[0.06em] text-[6px] font-semibold tracking-[0.62em] text-white/70 sm:mb-1 sm:text-[8px]">
+      <span aria-hidden="true" className="mx-2.5 h-[23px] w-px flex-none bg-rule-strong sm:mx-3.5 sm:h-[31px]" />
+      <span className="brand-wordmark flex flex-col whitespace-nowrap font-heading uppercase leading-none">
+        <span className="wordmark mb-[3px] pl-[0.06em] text-[6px] font-semibold tracking-[0.62em] text-muted sm:mb-1 sm:text-[8px]">
           Transporte
         </span>
-        <span className="text-[13.8px] font-extrabold tracking-[0.1em] text-[#F5F5F5] sm:text-[18.4px]">Executivo</span>
+        <span className="wordmark text-[13.8px] font-extrabold tracking-[0.1em] text-ink sm:text-[18.4px]">Executivo</span>
       </span>
     </span>
   );

@@ -25,15 +25,12 @@ export function SectionHeading({
 
   return (
     <div className={centered ? 'mx-auto max-w-[720px] text-center' : 'max-w-[640px]'}>
-      {eyebrow ? (
-        classic ? (
-          <p className="eyebrow">
-            <span aria-hidden="true" className="eyebrow-dot" />
-            {eyebrow}
-          </p>
-        ) : (
-          <p className="kicker">{eyebrow}</p>
-        )
+      {/* Selo acima do título só no modo clássico (Opções de Mobilidade, mantida por pedido). */}
+      {eyebrow && classic ? (
+        <p className="eyebrow">
+          <span aria-hidden="true" className="eyebrow-dot" />
+          {eyebrow}
+        </p>
       ) : null}
       <h2
         id={id}

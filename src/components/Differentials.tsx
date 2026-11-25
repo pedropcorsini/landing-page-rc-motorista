@@ -1,4 +1,3 @@
-import { SectionHeading } from './SectionHeading';
 import { icons } from './icons';
 import { useLanguage } from '../i18n/LanguageProvider';
 
@@ -7,30 +6,29 @@ export function Differentials() {
   const { differentialsSection } = t;
 
   return (
-    <section id="diferenciais" aria-labelledby="diferenciais-title" className="bg-ink py-20 lg:py-28">
-      <div className="container-site grid gap-12 lg:grid-cols-[0.85fr_1.4fr] lg:gap-20">
-        <div className="lg:sticky lg:top-28 lg:self-start">
-          <SectionHeading
-            id="diferenciais-title"
-            align="left"
-            eyebrow={differentialsSection.eyebrow}
-            title={differentialsSection.title}
-            description={differentialsSection.description}
-          />
+    <section id="diferenciais" aria-labelledby="diferenciais-title" className="bg-paper py-[calc(var(--section-gap-l)/2)]">
+      <div className="container-site">
+        <div className="grid gap-6 lg:grid-cols-12 lg:items-end lg:gap-8">
+          <h2 id="diferenciais-title" className="section-title lg:col-span-6">
+            {differentialsSection.title}
+          </h2>
+          <p className="lead max-w-[32rem] lg:col-span-5 lg:col-start-8 lg:pb-2">{differentialsSection.description}</p>
         </div>
 
-        <div className="grid gap-x-10 sm:grid-cols-2">
+        <ul className="mt-14 border-b border-rule">
           {t.differentials.map((item) => {
             const Icon = icons[item.icon];
             return (
-              <article key={item.title} className="border-t border-white/[0.1] py-8">
-                <Icon aria-hidden="true" className="h-6 w-6 text-brand" />
-                <h3 className="mt-5 font-heading text-[1.05rem] font-bold text-white">{item.title}</h3>
-                <p className="mt-2.5 text-[0.92rem] leading-relaxed text-mist">{item.description}</p>
-              </article>
+              <li key={item.title} className="grid gap-3 border-t border-rule py-7 sm:grid-cols-12 sm:items-baseline sm:gap-8 lg:py-8">
+                <h3 className="flex items-center gap-4 font-display text-[length:var(--text-title)] font-semibold text-ink sm:col-span-5">
+                  <Icon aria-hidden="true" className="h-6 w-6 flex-none self-center text-accent" />
+                  {item.title}
+                </h3>
+                <p className="max-w-[56ch] text-[1rem] leading-relaxed text-muted sm:col-span-7">{item.description}</p>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </section>
   );

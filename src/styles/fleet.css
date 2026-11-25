@@ -2,20 +2,21 @@
    Opcoes de Mobilidade: carrossel com efeito de foco (replica da referencia)
    ========================================================================== */
 .fleet-section {
+  color: var(--fleet-slate-300);
   --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
   padding: 4.5rem 0 5rem;
-  background: #08090d;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--fleet-bg);
+  border-top: 1px solid var(--fleet-edge);
+  border-bottom: 1px solid var(--fleet-edge);
 }
 
 .fleet-wrapper {
   position: relative;
   width: 100%;
-  margin: 3rem 0 1.5rem;
-  padding: 1rem 0;
+  margin: 3rem 0 var(--space-lg);
+  padding: var(--space-md) 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,22 +32,27 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  color: #fff;
+  color: var(--fleet-white);
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  background: var(--fleet-btn-bg);
+  border: 1px solid var(--fleet-btn-edge);
+  box-shadow: 0 6px 20px var(--fleet-shadow);
   backdrop-filter: blur(6px);
   transform: translateY(-50%);
-  transition: all 0.25s var(--ease-expo);
+  transition:
+    color 0.25s var(--ease-expo),
+    background-color 0.25s var(--ease-expo),
+    border-color 0.25s var(--ease-expo),
+    transform 0.25s var(--ease-expo),
+    box-shadow 0.25s var(--ease-expo);
 }
 
 .fleet-nav-btn:hover {
-  color: #0c0d12;
-  background: #ff6a00;
-  border-color: #ff6a00;
+  color: var(--fleet-hover-ink);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 0 25px rgba(255, 106, 0, 0.45);
+  box-shadow: 0 0 25px var(--fleet-glow-45);
 }
 
 .fleet-nav-btn:active {
@@ -70,7 +76,7 @@
   width: 100%;
   max-width: 1160px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 var(--space-md);
 }
 
 .fleet-card {
@@ -116,7 +122,7 @@
   width: auto;
   height: auto;
   object-fit: contain;
-  /* As ilustracoes ja vem com o fundo #08090d gravado e bordas esmaecidas
+  /* As ilustracoes ja vem com o fundo var(--fleet-bg) gravado e bordas esmaecidas
      (ver images/frota/README.md e scripts/bake-fleet-images.py), entao nao precisam de blend nem mascara. */
   transition:
     transform 0.4s var(--ease-expo),
@@ -135,63 +141,63 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 0.75rem;
+  gap: var(--space-sm);
   margin-bottom: 0.65rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--fleet-line);
   transition: border-color 0.3s;
 }
 
 .fleet-card[data-active='true'] .fleet-header {
-  border-bottom-color: rgba(255, 106, 0, 0.4);
+  border-bottom-color: var(--fleet-glow-40);
 }
 
 .fleet-title {
   margin: 0;
-  font-family: Montserrat, system-ui, sans-serif;
+  font-family: var(--font-outlier);
   font-size: 1.4rem;
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -0.015em;
   text-transform: uppercase;
-  color: #64748b;
+  color: var(--fleet-slate-500);
   transition: color 0.3s;
 }
 
 .fleet-card[data-active='true'] .fleet-title {
-  color: #fff;
+  color: var(--fleet-white);
 }
 
 .fleet-card:not([data-active='true']):hover .fleet-title {
-  color: #cbd5e1;
+  color: var(--fleet-slate-300);
 }
 
 .fleet-specs {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-sm);
   margin: 0;
   font-size: 0.84rem;
   font-weight: 600;
   white-space: nowrap;
-  color: #64748b;
+  color: var(--fleet-slate-500);
   transition: color 0.3s;
 }
 
 .fleet-card[data-active='true'] .fleet-specs {
-  color: #e2e8f0;
+  color: var(--fleet-slate-200);
 }
 
 .fleet-spec {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-2xs);
 }
 
 .fleet-spec svg {
   width: 0.85rem;
   height: 0.85rem;
-  color: #ff6a00;
+  color: var(--color-accent);
 }
 
 .fleet-desc {
@@ -199,37 +205,37 @@
   margin: 0 0 1.25rem;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #64748b;
+  color: var(--fleet-slate-500);
   transition: color 0.3s;
 }
 
 .fleet-card[data-active='true'] .fleet-desc {
-  color: #cbd5e1;
+  color: var(--fleet-slate-300);
 }
 
 .fleet-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-xs);
   width: fit-content;
-  font-family: Montserrat, system-ui, sans-serif;
+  font-family: var(--font-outlier);
   font-size: 0.88rem;
   font-weight: 800;
   text-decoration: none;
-  color: #64748b;
-  transition: all 0.25s;
+  color: var(--fleet-slate-500);
+  transition: color 0.25s;
 }
 
 .fleet-card[data-active='true'] .fleet-link {
-  color: #ff8a3d;
+  color: var(--color-accent-2);
 }
 
 .fleet-card:hover .fleet-link {
-  color: #fff;
+  color: var(--fleet-white);
 }
 
 .fleet-card .fleet-link:hover {
-  color: #ff6a00;
+  color: var(--color-accent);
 }
 
 .fleet-link svg {
@@ -254,13 +260,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  margin-top: 1.5rem;
+  gap: var(--space-3xs);
+  margin-top: var(--space-lg);
 }
 
 .fleet-dot-btn {
   display: inline-flex;
-  padding: 8px 3px;
+  padding: var(--space-xs) var(--space-2xs);
   background: none;
   border: 0;
   cursor: pointer;
@@ -271,24 +277,26 @@
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.18);
-  transition: all 0.3s;
+  background: var(--fleet-btn-edge);
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
 }
 
 .fleet-dot-btn[data-active='true'] .fleet-dot {
   width: 24px;
-  background: #ff6a00;
-  box-shadow: 0 0 10px rgba(255, 106, 0, 0.5);
+  background: var(--color-accent);
+  box-shadow: 0 0 10px var(--fleet-glow-50);
 }
 
 .fleet-dot-btn:not([data-active='true']):hover .fleet-dot {
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--fleet-dot-hover);
 }
 
 /* Telas medias: 4 cards cabendo sem cortar */
 @media (min-width: 992px) and (max-width: 1279px) {
   .fleet-track {
-    gap: 1.5rem;
+    gap: var(--space-lg);
     padding: 0 3.5rem;
   }
 
@@ -301,7 +309,7 @@
   }
 
   .fleet-link {
-    gap: 6px;
+    gap: var(--space-xs);
     font-size: 0.76rem;
     white-space: nowrap;
   }
@@ -311,14 +319,14 @@
 @media (max-width: 991px) {
   .fleet-wrapper {
     overflow: hidden;
-    padding: 1rem 0 2rem;
+    padding: var(--space-md) 0 2rem;
   }
 
   .fleet-track {
     justify-content: flex-start;
     gap: 1.25rem;
     max-width: 100%;
-    padding: 0.5rem 0.25rem;
+    padding: var(--space-xs) var(--space-2xs);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -347,7 +355,7 @@
 
 @media (max-width: 580px) {
   .fleet-section {
-    padding: 1.5rem 0 2.8rem;
+    padding: var(--space-lg) 0 2.8rem;
   }
 }
 
@@ -358,5 +366,24 @@
   .fleet-img,
   .fleet-card[data-active='true'] .fleet-img {
     transform: none;
+  }
+}
+
+/* Mantém a seção como era: a base da Hallmark não limita a largura dos títulos aqui. */
+.fleet-section :is(h2, h3) {
+  max-width: none;
+  text-wrap: wrap;
+}
+
+.container-fleet {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .container-fleet {
+    padding-inline: var(--space-lg);
   }
 }

@@ -13,7 +13,7 @@ export function FleetShowcase() {
 
   return (
     <section id="frota" aria-labelledby="frota-title" className="fleet-section">
-      <div className="container-site">
+      <div className="container-fleet">
         <SectionHeading
           id="frota-title"
           variant="classic"

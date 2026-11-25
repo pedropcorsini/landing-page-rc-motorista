@@ -79,23 +79,17 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 border-b backdrop-blur-[16px] transition-all duration-300 ${
-          scrolled
-            ? 'border-white/[0.14] bg-[rgba(8,9,13,0.96)] py-2.5 shadow-nav'
-            : 'border-white/[0.1] bg-[rgba(10,11,15,0.72)] py-3.5'
+        className={`fixed inset-x-0 top-0 z-50 border-b border-rule bg-paper-deep transition-shadow duration-300 ${
+          scrolled ? 'shadow-lift' : ''
         }`}
       >
-        <div className="container-site flex items-center justify-between gap-3 sm:gap-6">
-          <a
-            href="#top"
-            aria-label={t.ui.homeLabel}
-            className="rounded-sm transition-transform duration-200 hover:scale-[1.03]"
-          >
+        <div className="container-site flex h-[72px] items-center justify-between gap-3 sm:gap-6">
+          <a href="#top" aria-label={t.ui.homeLabel} className="rounded-sm">
             <BrandLogo />
           </a>
 
           <nav aria-label={t.ui.mainNav} className="hidden xl:block">
-            <ul className="flex items-center gap-5 xl:gap-6">
+            <ul className="flex items-center gap-7">
               {sectionIds.map((id) => {
                 const active = activeId === id;
                 return (
@@ -103,10 +97,8 @@ export function Header() {
                     <a
                       href={`#${id}`}
                       aria-current={active ? 'true' : undefined}
-                      className={`relative inline-flex whitespace-nowrap py-2 text-[0.84rem] font-medium transition-colors duration-300 after:absolute after:bottom-0.5 after:left-0 after:h-[2px] after:bg-brand after:transition-all after:duration-300 after:ease-expo ${
-                        active
-                          ? 'text-white after:w-full'
-                          : 'text-white/60 after:w-0 hover:text-white hover:after:w-full'
+                      className={`relative inline-flex whitespace-nowrap py-2 text-[0.875rem] transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:bg-accent after:transition-transform after:duration-300 after:ease-expo ${
+                        active ? 'text-ink after:scale-x-100' : 'text-muted after:scale-x-0 hover:text-ink'
                       }`}
                     >
                       {t.nav[id]}
@@ -117,21 +109,21 @@ export function Header() {
             </ul>
           </nav>
 
-          <div className="flex flex-none items-center gap-1.5 sm:gap-2">
+          <div className="flex flex-none items-center gap-2">
             <LanguageSwitcher compact className="hidden sm:inline-flex" />
             <a
               href={whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="btn-cta h-10 gap-1.5 px-3 py-0 text-[0.72rem] max-[379px]:w-10 max-[379px]:px-0 sm:gap-2 sm:px-5 sm:text-[0.8rem]"
+              className="btn-cta min-h-[44px] gap-2 px-4 text-[0.875rem] max-[379px]:w-11 max-[379px]:px-0 sm:px-5"
             >
-              <WhatsAppIcon className="h-4 w-4 min-[380px]:h-3.5 min-[380px]:w-3.5" />
+              <WhatsAppIcon className="h-4 w-4" />
               <span className="max-[379px]:sr-only">{t.ui.contactShort}</span>
             </a>
             <button
               ref={toggleRef}
               type="button"
-              className="grid h-10 w-10 place-items-center rounded-lg text-white transition-colors hover:bg-white/5 xl:hidden"
+              className="grid h-11 w-11 place-items-center rounded-md text-ink transition-colors hover:bg-paper-3 active:bg-paper-2 xl:hidden"
               aria-label={menuOpen ? t.ui.closeMenu : t.ui.openMenu}
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
@@ -149,40 +141,38 @@ export function Header() {
         inert={!menuOpen}
       >
         <div
-          className={`absolute inset-0 bg-black/65 backdrop-blur-sm transition-opacity duration-300 ${
-            menuOpen ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 bg-scrim-soft transition-opacity duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0'}`}
           onClick={() => setMenuOpen(false)}
         />
         <nav
           id="mobile-navigation"
           aria-label={t.ui.mobileNav}
-          className={`absolute right-0 top-0 flex h-full w-[min(320px,85vw)] flex-col border-l border-white/10 bg-surface px-6 pb-8 pt-5 shadow-2xl transition-transform duration-[400ms] ease-expo ${
+          className={`absolute right-0 top-0 flex h-full w-[min(340px,86vw)] flex-col border-l border-rule bg-paper-2 px-6 pb-8 pt-4 transition-transform duration-[400ms] ease-expo ${
             menuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          <div className="flex items-center justify-between">
-            <span className="kicker">{t.ui.menu}</span>
+          <div className="flex h-14 items-center justify-between">
+            <span className="text-[0.875rem] text-muted">{t.ui.menu}</span>
             <button
               type="button"
-              className="grid h-10 w-10 place-items-center rounded-lg text-white transition-colors hover:bg-white/5"
+              className="grid h-11 w-11 place-items-center rounded-md text-ink transition-colors hover:bg-paper-3 active:bg-paper"
               aria-label={t.ui.closeMenu}
               onClick={() => setMenuOpen(false)}
             >
               <X aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>
-          <ul className="mt-6 flex flex-col">
+          <ul className="mt-4 flex flex-col">
             {sectionIds.map((id, index) => {
               const active = activeId === id;
               return (
-                <li key={id} className="border-b border-white/[0.06]">
+                <li key={id} className="border-b border-rule">
                   <a
                     ref={index === 0 ? firstLinkRef : undefined}
                     href={`#${id}`}
                     onClick={() => setMenuOpen(false)}
-                    className={`flex items-center justify-between py-3.5 font-display text-[1.3rem] font-semibold transition-colors ${
-                      active ? 'text-brand-light' : 'text-white/80 hover:text-white'
+                    className={`flex items-center py-3.5 font-display text-[1.35rem] font-semibold transition-colors ${
+                      active ? 'text-accent' : 'text-ink hover:text-accent-2'
                     }`}
                   >
                     {t.nav[id]}
@@ -192,7 +182,7 @@ export function Header() {
             })}
           </ul>
           <LanguageSwitcher className="mt-6 self-start sm:hidden" />
-          <a href={whatsappHref} target="_blank" rel="noreferrer" className="btn-cta mt-auto w-full px-4 text-[0.8rem]">
+          <a href={whatsappHref} target="_blank" rel="noreferrer" className="btn-cta mt-auto w-full">
             <WhatsAppIcon className="h-4 w-4" />
             {t.ui.bookWhatsapp}
           </a>

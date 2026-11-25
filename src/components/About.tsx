@@ -1,57 +1,86 @@
-import { ArrowRight, Clock3, MapPin } from 'lucide-react';
+import { ArrowRight, Clock3, MapPin, Phone } from 'lucide-react';
+import { InstagramIcon } from './BrandIcons';
+import { site } from '../data/site';
 import { useLanguage } from '../i18n/LanguageProvider';
-import aboutImage from '../../images/atendimento-executivo.jpg';
 
 export function About() {
   const { t } = useLanguage();
   const { about } = t;
 
-  return (
-    <section id="sobre" aria-labelledby="sobre-title" className="bg-[#F5F1EC] py-20 lg:py-28">
-      <div className="container-site grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-20">
-        <div className="relative lg:order-first">
-          <img
-            src={aboutImage}
-            alt={t.ui.aboutImageAlt}
-            loading="lazy"
-            className="aspect-[4/3] w-full rounded-[10px] object-cover shadow-[0_30px_60px_rgba(40,25,10,0.22)] lg:aspect-[5/4]"
-          />
-          <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 flex flex-col gap-1.5 rounded-[10px] bg-ink/90 px-4 py-3 text-[0.78rem] sm:gap-2 sm:px-5 sm:py-4 sm:text-[0.84rem] text-white backdrop-blur-[8px]">
-            <span className="flex items-center gap-2.5">
-              <MapPin aria-hidden="true" className="h-4 w-4 flex-none text-brand" />
-              {t.location}
-            </span>
-            <span className="flex items-center gap-2.5 text-white/75">
-              <Clock3 aria-hidden="true" className="h-4 w-4 flex-none text-brand" />
-              {t.footer.schedule}
-            </span>
-          </div>
-        </div>
+  const facts = [
+    { key: 'location', icon: <MapPin aria-hidden="true" className="h-5 w-5" />, label: t.location },
+    { key: 'schedule', icon: <Clock3 aria-hidden="true" className="h-5 w-5" />, label: t.footer.schedule },
+    {
+      key: 'phone',
+      icon: <Phone aria-hidden="true" className="h-5 w-5" />,
+      label: site.phoneDisplay,
+      href: site.phoneHref,
+    },
+    {
+      key: 'instagram',
+      icon: <InstagramIcon className="h-5 w-5" />,
+      label: site.instagramHandle,
+      href: site.instagramHref,
+      aria: t.ui.instagramAria,
+      external: true,
+    },
+  ];
 
-        <div>
-          <p className="kicker text-brand-dark">{about.eyebrow}</p>
-          <h2
-            id="sobre-title"
-            className="mt-4 font-display text-[2.2rem] font-semibold leading-[1.12] tracking-[-0.015em] text-[#14110f] sm:mt-5 sm:text-[2.8rem] lg:text-[2.6rem] xl:text-[3.05rem]"
-          >
-            <span className="sm:whitespace-nowrap">{about.titleLine1}</span>{' '}
-            <span className="block">{about.titleLine2}</span>
+  return (
+    <section id="sobre" aria-labelledby="sobre-title" className="border-t border-rule bg-paper-2 py-[var(--section-gap-s)]">
+      <div className="container-site">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+          <h2 id="sobre-title" className="section-title lg:col-span-5">
+            {about.titleLine1} <span className="block">{about.titleLine2}</span>
           </h2>
-          <div className="mt-7 space-y-4">
+          <div className="space-y-5 lg:col-span-6 lg:col-start-7">
             {about.paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 24)} className="text-[0.98rem] leading-[1.8] text-[#4a4440]">
+              <p key={paragraph.slice(0, 24)} className="max-w-[60ch] text-[1.05rem] leading-[1.75] text-ink-2">
                 {paragraph}
               </p>
             ))}
+            <a
+              href="#servicos"
+              className="group inline-flex min-h-[44px] items-center gap-2 font-semibold text-accent-2 underline decoration-rule-strong underline-offset-[6px] transition-colors hover:decoration-accent-2"
+            >
+              {about.linkLabel}
+              <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
           </div>
-          <a
-            href="#servicos"
-            className="group mt-8 inline-flex items-center gap-2 border-b border-[#14110f]/25 pb-2 font-heading text-sm font-bold text-[#14110f] transition-colors hover:border-brand-dark hover:text-brand-dark"
-          >
-            {about.linkLabel}
-            <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
         </div>
+
+        <ul className="mt-16 grid border-y border-rule sm:grid-cols-2 lg:grid-cols-4">
+          {facts.map((fact, index) => {
+            const content = (
+              <>
+                <span className="text-accent">{fact.icon}</span>
+                <span className="font-display text-[1.3rem] font-semibold text-ink">{fact.label}</span>
+              </>
+            );
+            return (
+              <li
+                key={fact.key}
+                className={`border-rule ${index > 0 ? 'border-t sm:border-t-0' : ''} ${index % 2 === 1 ? 'sm:border-l' : ''} ${
+                  index === 2 ? 'sm:border-t lg:border-l lg:border-t-0' : ''
+                } ${index === 3 ? 'sm:border-t lg:border-t-0' : ''}`}
+              >
+                {fact.href ? (
+                  <a
+                    href={fact.href}
+                    aria-label={fact.aria}
+                    target={fact.external ? '_blank' : undefined}
+                    rel={fact.external ? 'noreferrer' : undefined}
+                    className="flex h-full flex-col gap-3 px-1 py-7 transition-colors hover:bg-paper-3 sm:px-6"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div className="flex h-full flex-col gap-3 px-1 py-7 sm:px-6">{content}</div>
+                )}
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
   );

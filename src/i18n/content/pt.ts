@@ -37,6 +37,8 @@ export const pt: SiteContent = {
     bookWhatsapp: 'Agendar pelo WhatsApp',
     talkSpecialist: 'Falar com um especialista',
     seeFleet: 'Ver a frota',
+    pauseMotion: 'Pausar a faixa',
+    playMotion: 'Retomar a faixa',
     floatLabel: 'Fale com uma de nossas atendentes',
     floatAria: 'Falar com uma de nossas atendentes no WhatsApp',
     instagramCta: 'Ver Instagram',

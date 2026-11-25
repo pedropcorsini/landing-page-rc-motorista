@@ -1,0 +1,35 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "page",
+  "shape": "Catalogue swapped to a mixed deck (fleet kept)",
+  "theme": "brand",
+  "axes": "dark/high-contrast-serif/warm",
+  "hero": "Counter on a full-bleed photograph",
+  "nav": "slab",
+  "footer": "letter close",
+  "imagery": "photographs, the user's 6, natural",
+  "photos": [],
+  "entry": "none",
+  "fingerprint": "counter-hero/pinned-photos/facts-band/kept-carousel/rows/steps/faq-rows/accent-band",
+  "sections": [
+   "Hero (Counter)",
+   "Sobre + facts band",
+   "Serviços (Pinned photos)",
+   "Opções de Mobilidade (kept)",
+   "Diferenciais (Rows)",
+   "Como solicitar (Steps)",
+   "Dúvidas (Rows)",
+   "Fecho (Band)"
+  ],
+  "signature": "the company's own photographs of the car at work, one per service",
+  "waived": [
+   "26b",
+   "75",
+   "39b"
+  ],
+  "prompt": "executive transportation company in São Paulo, book by WhatsApp",
+  "date": "2026-11-25"
+ }
+]

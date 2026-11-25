@@ -1,7 +1,6 @@
 import { useId, useState } from 'react';
 import { Plus } from 'lucide-react';
 import { WhatsAppIcon } from './BrandIcons';
-import { SectionHeading } from './SectionHeading';
 import { useLanguage } from '../i18n/LanguageProvider';
 
 export function Faq() {
@@ -11,23 +10,20 @@ export function Faq() {
   const { faqSection } = t;
 
   return (
-    <section id="duvidas" aria-labelledby="duvidas-title" className="bg-surface py-20 lg:py-28">
-      <div className="container-site grid gap-12 lg:grid-cols-[0.8fr_1.3fr] lg:gap-20">
-        <div className="lg:sticky lg:top-28 lg:self-start">
-          <SectionHeading
-            id="duvidas-title"
-            align="left"
-            eyebrow={t.nav.duvidas}
-            title={faqSection.title}
-            description={faqSection.description}
-          />
+    <section id="duvidas" aria-labelledby="duvidas-title" className="bg-paper py-[calc(var(--section-gap)/2)]">
+      <div className="container-site grid gap-12 lg:grid-cols-12 lg:gap-8">
+        <div className="lg:sticky lg:top-28 lg:col-span-4 lg:self-start">
+          <h2 id="duvidas-title" className="section-title">
+            {faqSection.title}
+          </h2>
+          <p className="lead mt-5 max-w-[28rem]">{faqSection.description}</p>
           <a href={whatsappHref} target="_blank" rel="noreferrer" className="btn-cta mt-8">
-            <WhatsAppIcon className="h-[1.1rem] w-[1.1rem]" />
+            <WhatsAppIcon className="h-5 w-5" />
             {t.ui.talkSpecialist}
           </a>
         </div>
 
-        <div className="border-b border-white/[0.1]">
+        <div className="border-b border-rule lg:col-span-7 lg:col-start-6">
           {t.faq.map((item, index) => {
             const open = openIndex === index;
             const buttonId = `${baseId}-trigger-${index}`;
@@ -36,24 +32,24 @@ export function Faq() {
             return (
               <div
                 key={item.question}
-                className="border-t border-white/[0.1]"
+                className="border-t border-rule"
               >
-                <h3>
+                <h3 className="max-w-none">
                   <button
                     id={buttonId}
                     type="button"
                     aria-expanded={open}
                     aria-controls={panelId}
                     onClick={() => setOpenIndex(open ? null : index)}
-                    className={`flex w-full cursor-pointer items-center justify-between gap-6 py-6 text-left font-heading text-[0.95rem] font-bold transition-colors focus-visible:outline-offset-2 sm:text-[1.02rem] ${
-                      open ? 'text-white' : 'text-white/85 hover:text-white'
+                    className={`flex min-h-[52px] w-full cursor-pointer items-center justify-between gap-6 py-3 text-left text-[1.05rem] font-semibold transition-colors focus-visible:outline-offset-2 ${
+                      open ? 'text-ink' : 'text-ink-2 hover:text-ink'
                     }`}
                   >
                     {item.question}
                     <span
                       aria-hidden="true"
-                      className={`grid h-8 w-8 flex-none place-items-center rounded-full border transition-all duration-300 ease-expo ${
-                        open ? 'rotate-45 border-brand bg-brand text-ink' : 'border-white/15 text-brand'
+                      className={`grid h-7 w-7 flex-none place-items-center rounded-full border transition-[transform,background-color,border-color,color] duration-300 ease-expo ${
+                        open ? 'rotate-45 border-accent bg-accent text-accent-ink' : 'border-rule-strong text-accent'
                       }`}
                     >
                       <Plus className="h-4 w-4" />
@@ -70,7 +66,7 @@ export function Faq() {
                   style={{ gridTemplateRows: open ? '1fr' : '0fr' }}
                 >
                   <div className="overflow-hidden">
-                    <p className="pb-7 pr-12 text-[0.95rem] leading-[1.75] text-mist">
+                    <p className="max-w-[62ch] pb-7 pr-12 text-[1rem] leading-[1.75] text-muted">
                       {item.answer}
                     </p>
                   </div>
