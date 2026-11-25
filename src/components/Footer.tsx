@@ -12,19 +12,44 @@ export function Footer() {
   const { t, whatsappHref } = useLanguage();
 
   return (
-    <footer className="bg-paper-deep pb-10 pt-[var(--section-gap-s)]">
+    <footer className="bg-paper-deep pb-8 pt-12">
       <div className="container-site">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
+        <div className="grid gap-x-8 gap-y-6 lg:grid-cols-12">
+          <nav aria-label={t.ui.footerNav} className="lg:col-span-12">
+            <h2 className="sr-only">{t.footer.navTitle}</h2>
+            <ul className="flex flex-wrap gap-x-7 gap-y-1">
+              {sectionIds.map((id) => (
+                <li key={id}>
+                  <a href={`#${id}`} className={`${rowLink} font-semibold text-ink`}>
+                    {t.nav[id]}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="lg:col-span-12">
+            <h2 className="sr-only">{t.footer.servicesTitle}</h2>
+            <ul className="flex flex-wrap gap-x-5 gap-y-1">
+              {t.services.map((service) => (
+                <li key={service.title}>
+                  <a href="#servicos" className={`${rowLink} !text-[0.875rem] text-muted`}>
+                    {service.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-8 border-t border-rule pt-8 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-7">
             <BrandLogo />
-            <p className="mt-8 max-w-[38ch] text-[1.2rem] leading-[1.5] text-ink sm:text-[length:var(--text-xl)] sm:leading-[1.45]">
-              {t.footer.description}
-            </p>
+            <p className="mt-5 max-w-[48ch] text-[1rem] leading-relaxed text-ink-2">{t.footer.description}</p>
           </div>
 
-          <div className="flex flex-col gap-5 lg:col-span-4 lg:col-start-9">
+          <div className="flex flex-col gap-4 lg:col-span-4 lg:col-start-9">
             <h2 className={rowTitle}>{t.footer.contactTitle}</h2>
-            <ul className="space-y-3 text-[1rem] text-ink-2">
+            <ul className="space-y-1 text-[1rem] text-ink-2">
               <li>
                 <a href={site.phoneHref} className={`gap-3 ${rowLink}`}>
                   <Phone aria-hidden="true" className="h-4 w-4 text-accent" />
@@ -37,16 +62,16 @@ export function Footer() {
                   {site.instagramHandle}
                 </a>
               </li>
-              <li className="flex items-center gap-3">
+              <li className="flex min-h-[32px] items-center gap-3">
                 <MapPin aria-hidden="true" className="h-4 w-4 text-accent" />
                 {t.location}
               </li>
-              <li className="flex items-center gap-3">
+              <li className="flex min-h-[32px] items-center gap-3">
                 <Clock3 aria-hidden="true" className="h-4 w-4 text-accent" />
                 {t.footer.schedule}
               </li>
             </ul>
-            <div className="mt-2 flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <a
                 href={site.instagramHref}
                 target="_blank"
@@ -70,34 +95,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-8 border-t border-rule pt-8 lg:grid-cols-12 lg:gap-8">
-          <nav aria-label={t.ui.footerNav} className="lg:col-span-7">
-            <h2 className={rowTitle}>{t.footer.navTitle}</h2>
-            <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-1">
-              {sectionIds.map((id) => (
-                <li key={id}>
-                  <a href={`#${id}`} className={rowLink}>
-                    {t.nav[id]}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className="lg:col-span-4 lg:col-start-9">
-            <h2 className={rowTitle}>{t.footer.servicesTitle}</h2>
-            <ul className="mt-3 flex flex-col">
-              {t.services.map((service) => (
-                <li key={service.title}>
-                  <a href="#servicos" className={rowLink}>
-                    {service.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <div className="mt-12 flex flex-col gap-3 border-t border-rule pt-6 text-[0.875rem] text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-3 border-t border-rule pt-6 text-[0.875rem] text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
             © 2026 {t.brand}. {t.footer.rights}
           </p>
