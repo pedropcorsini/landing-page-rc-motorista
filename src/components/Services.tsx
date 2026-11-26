@@ -10,9 +10,9 @@ import bordo from '../../images/servicos/bordo.jpg';
 // Uma foto real da empresa para cada serviço, na mesma ordem de t.services.
 const photos = [
   { src: aeroportos, position: '50% 60%' },
-  { src: corporativo, position: '50% 55%' },
+  { src: corporativo, position: '50% 60%' },
   { src: eventos, position: '50% 60%' },
-  { src: viagens, position: '55% 50%' },
+  { src: viagens, position: '50% 60%' },
   { src: recorrente, position: '72% 50%' },
   { src: bordo, position: '50% 45%' },
 ];
@@ -50,7 +50,7 @@ export function Services() {
 
         <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="relative hidden lg:col-span-6 lg:block">
-            <div className="sticky top-[112px] aspect-[5/6] overflow-hidden rounded-[var(--radius-card)] bg-paper-2">
+            <div className="sticky top-[112px] aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-paper-2">
               {photos.map((photo, index) => (
                 <img
                   key={photo.src}
@@ -84,15 +84,13 @@ export function Services() {
                   className="mb-6 aspect-[4/3] w-full rounded-[var(--radius-card)] object-cover lg:hidden"
                   style={{ objectPosition: photos[index].position }}
                 />
-                <div className="flex items-baseline gap-5">
+                <div className="flex items-start gap-5">
                   <span
                     aria-hidden="true"
-                    className={`w-8 flex-none font-display text-[1.25rem] font-semibold [font-variant-numeric:lining-nums] transition-colors duration-300 ${
-                      index === active ? 'text-accent' : 'text-muted'
+                    className={`mt-[0.55em] h-2 w-2 flex-none rounded-full transition-colors duration-300 ${
+                      index === active ? 'bg-accent' : 'bg-rule-strong'
                     }`}
-                  >
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
+                  />
                   <div>
                     <h3
                       className={`font-display text-[length:var(--text-title)] font-semibold leading-snug transition-colors duration-300 ${
