@@ -41,6 +41,6 @@ export const fleet: { id: FleetId; image: string }[] = [
 export const site = {
   phoneDisplay: '(11) 95294-6402',
   phoneHref: 'tel:+5511952946402',
-  instagramHandle: '@rcmotorista',
-  instagramHref: 'https://www.instagram.com/rcmotorista/',
+  instagramHandle: '@transporteexecutivorc',
+  instagramHref: 'https://www.instagram.com/transporteexecutivorc/',
 };

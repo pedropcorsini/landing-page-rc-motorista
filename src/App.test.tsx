@@ -73,7 +73,7 @@ describe('Landing page Transporte Executivo RC', () => {
     expect(whatsappLinks.every((link) => link.getAttribute('href')?.startsWith('https://wa.me/5511952946402'))).toBe(true);
 
     const instagramLinks = screen.getAllByRole('link', { name: /instagram/i });
-    expect(instagramLinks.some((link) => link.getAttribute('href') === 'https://www.instagram.com/rcmotorista/')).toBe(true);
+    expect(instagramLinks.some((link) => link.getAttribute('href') === 'https://www.instagram.com/transporteexecutivorc/')).toBe(true);
 
     expect(screen.getByRole('link', { name: /telefone/i })).toHaveAttribute('href', expect.stringMatching(/^tel:\+55/));
     expect(screen.getAllByText('(11) 95294-6402').length).toBeGreaterThan(0);
