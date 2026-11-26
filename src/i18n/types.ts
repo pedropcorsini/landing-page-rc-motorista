@@ -33,6 +33,7 @@ export type SiteContent = {
     seeFleet: string;
     floatLabel: string;
     floatAria: string;
+    floatOnline: string;
     instagramCta: string;
     instagramAria: string;
     whatsappAria: string;
